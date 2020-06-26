@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python-学习4 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python-functionsothers.upper()–capital the letters .lower()–lower the letters .islower()–check whether all the letters are lower .isupper()–check whether all the letters are capital .isalpha()–check w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-学习4">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python-functionsothers.upper()–capital the letters .lower()–lower the letters .islower()–check whether all the letters are lower .isupper()–check whether all the letters are capital .isalpha()–check w">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-07T08:20:15.000Z">
+<meta property="article:modified_time" content="2020-06-26T12:48:02.709Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="-python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-学习4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/" class="article-date">
+  <time datetime="2020-06-07T08:20:15.000Z" itemprop="datePublished">2020-06-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python-学习4
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-functions"><a href="#Python-functions" class="headerlink" title="Python-functions"></a>Python-functions</h1><h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><p>.upper()–capital the letters</p>
+<p>.lower()–lower the letters</p>
+<p>.islower()–check whether all the letters are lower</p>
+<p>.isupper()–check whether all the letters are capital</p>
+<p>.isalpha()–check wether all are string(includes letters and Chinese)</p>
+<p>.isalnum()–check whether all are string or numbers</p>
+<p>.startswith()–check whether the string starts with the context in the ()</p>
+<p>.endswith()–check whether the string ends with the context in the ()</p>
+<p>‘, ‘.join()–join the list with’,’</p>
+<p>.split()–split to form the list with ‘ ‘</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'MyabcnameabcisabcSimon'</span>.split(<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#out:['My', 'name', 'is', 'Simon']</span></span><br></pre></td></tr></table></figure>
+
+<p>.rjust(10)–add 10 spaces to the left of the string</p>
+<p>.ljust(10)–add 10 spaces to the right of the string</p>
+<p>.rjust(10,’*’)–add 10 stars to the left of the string</p>
+<p>.center(20,’*’)–put the string in the middle of 20 stars</p>
+<p>.strip(‘Spam’)–skip the Spam in the front and in the end</p>
+<h2 id="print-："><a href="#print-：" class="headerlink" title="print()："></a><strong>print()：</strong></h2><p>end:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Hello '</span>,end=<span class="string">''</span>)</span><br><span class="line">print(<span class="string">'World'</span>)</span><br><span class="line"><span class="comment">#out:Hello World</span></span><br></pre></td></tr></table></figure>
+
+<p>sep:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'cats'</span>,<span class="string">'dogs'</span>,<span class="string">'mice'</span>,sep=<span class="string">","</span>)</span><br><span class="line"><span class="comment">#out:cats,dogs,mice</span></span><br></pre></td></tr></table></figure>
+
+<p>print() will return ‘none’ value:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam = print(<span class="string">'Hello!'</span>)</span><br><span class="line"><span class="comment">#out:Hello! </span></span><br><span class="line"></span><br><span class="line"><span class="literal">None</span> == spam</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="def"><a href="#def" class="headerlink" title="def"></a>def</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(name)</span>:</span> </span><br><span class="line">    print(<span class="string">'Hello '</span> + name) </span><br><span class="line">hello(<span class="string">'Alice'</span>) </span><br><span class="line">hello(<span class="string">'Bob'</span>) </span><br><span class="line"><span class="comment">#out：Hello Alice</span></span><br><span class="line"><span class="comment">#    Hello Bob</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p>It will print a random answer.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAnswer</span><span class="params">(answerNumber)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> answerNumber == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'It is certain'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'It is decidedly so'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Yes'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Reply hazy try again'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Ask again later'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">6</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Concentrate and ask again'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">7</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'My reply is no'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Outlook not so good'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">9</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Very doubtful'</span></span><br><span class="line">r = random.randint(<span class="number">1</span>, <span class="number">9</span>)</span><br><span class="line">fortune = getAnswer(r)</span><br><span class="line">print(fortune)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="partial-and-overall"><a href="#partial-and-overall" class="headerlink" title="partial and overall"></a>partial and overall</h3><ol>
+<li>Variables in one part can’t be used in overall situation.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs = <span class="number">31337</span></span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NameError                                 Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-9-4fa03afe709c&gt; in &lt;module&gt;</span><br><span class="line">      2     eggs&#x3D;31337</span><br><span class="line">      3 </span><br><span class="line">----&gt; 4 print(eggs)</span><br><span class="line"></span><br><span class="line">NameError: name &#39;eggs&#39; is not defined</span><br></pre></td></tr></table></figure>
+
+<p>This is because the ‘eggs’ is only in the spam but not the overall situation.</p>
+<ol start="2">
+<li>Variables in one part can’t be used in another part.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="number">99</span></span><br><span class="line">    bacon()</span><br><span class="line">    eggs=bacon()</span><br><span class="line">    print(eggs)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bacon</span><span class="params">()</span>:</span></span><br><span class="line">    ham=<span class="number">101</span></span><br><span class="line">    eggs=<span class="number">0</span></span><br><span class="line">    print(<span class="string">'1'</span>)</span><br><span class="line">    <span class="keyword">return</span> eggs</span><br><span class="line">spam()</span><br><span class="line"><span class="comment">#out:1</span></span><br><span class="line"><span class="comment">#    1</span></span><br><span class="line"><span class="comment">#    0</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Variables in overall situation can be used in one part.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    print(eggs)</span><br><span class="line">eggs=<span class="number">42</span></span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br><span class="line"><span class="comment">#out:42</span></span><br><span class="line"><span class="comment">#    42</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>One part can be used in another part, and their name can be the same.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="string">'spam local'</span></span><br><span class="line">    print(eggs)<span class="comment">#prints 'spam local'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bacon</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="string">'bacon local'</span></span><br><span class="line">    print(eggs)<span class="comment">#print 'bacon local'</span></span><br><span class="line">    spam()</span><br><span class="line">    print(eggs)<span class="comment">#print 'bacon local'</span></span><br><span class="line">eggs=<span class="string">'global'</span></span><br><span class="line">bacon()</span><br><span class="line">print(eggs)<span class="comment">#prints 'global'</span></span><br><span class="line"><span class="comment">#out:bacon local</span></span><br><span class="line"><span class="comment">#    spam local</span></span><br><span class="line"><span class="comment">#    bacon local</span></span><br><span class="line"><span class="comment">#    global</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="try"><a href="#try" class="headerlink" title="try"></a>try</h3><p>try, if the condition can’t be satisfied, move on to the except part:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">(divideBy)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">42</span> / divideBy</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        print(<span class="string">'Error :Invalid argument.'</span>)</span><br><span class="line"></span><br><span class="line">print(spam(<span class="number">2</span>))</span><br><span class="line">print(spam(<span class="number">12</span>))</span><br><span class="line">print(spam(<span class="number">0</span>))</span><br><span class="line">print(spam(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<p>21.0<br>3.5<br>Error :Invalid argument.<br>None<br>42.0</p>
+<h3 id="guess-the-number"><a href="#guess-the-number" class="headerlink" title="guess the number:"></a>guess the number:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#This is a guess the numer game</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">secretNumber=random.randint(<span class="number">1</span>,<span class="number">20</span>)</span><br><span class="line">print(<span class="string">'I am thinking of a number between 1 and 20.'</span>)</span><br><span class="line"><span class="comment">#Ask the player to guess 6 times</span></span><br><span class="line"><span class="keyword">for</span> guessesTaken <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">7</span>):</span><br><span class="line">    print(<span class="string">'Take a guess!'</span>)</span><br><span class="line">    guess=int(input())</span><br><span class="line">    <span class="keyword">if</span> guess&lt;secretNumber:</span><br><span class="line">        print(<span class="string">'Your guess is too low.'</span>)</span><br><span class="line">    <span class="keyword">elif</span> guess&gt;secretNumber:</span><br><span class="line">        print(<span class="string">'Your number is too high.'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">if</span> guess==secretNumber:</span><br><span class="line">    print(<span class="string">'Good job!You guessed my number in '</span>+str(guessesTaken)+<span class="string">' guesses!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Nope. The number I was thinking of was '</span>+str(secretNumber)+<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<p>I am thinking of a number between 1 and 20.<br>Take a guess!<br>1<br>Your guess is too low.<br>Take a guess!<br>4<br>Your guess is too low.<br>Take a guess!<br>6<br>Your guess is too low.<br>Take a guess!<br>9<br>Your guess is too low.<br>Take a guess!<br>15<br>Good job!You guessed my number in 5 guesses!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/" data-id="ckbw9eiq2000c34ur4bqkamaz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">-python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          matplotlib学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/07/guess-numbers/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">guess numbers</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

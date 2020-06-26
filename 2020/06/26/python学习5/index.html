@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>python学习5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python-dictionarydictionary and import123spam&#x3D;&amp;#123;&#39;name&#39;:&#39;Zophie&#39;,&#39;age&#39;:7&amp;#125;spam[&#39;name&#39;]#out:&#39;Zophie&#39;  values&amp;keys&amp;items 1234567spam&#x3D;&amp;#123;&#39;color&#39;:&#39;red&#39;,&#39;age&#39;:&#39;42&#39;&amp;#125;for v in spam.valu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习5">
+<meta property="og:url" content="http://yoursite.com/2020/06/26/python%E5%AD%A6%E4%B9%A05/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python-dictionarydictionary and import123spam&#x3D;&amp;#123;&#39;name&#39;:&#39;Zophie&#39;,&#39;age&#39;:7&amp;#125;spam[&#39;name&#39;]#out:&#39;Zophie&#39;  values&amp;keys&amp;items 1234567spam&#x3D;&amp;#123;&#39;color&#39;:&#39;red&#39;,&#39;age&#39;:&#39;42&#39;&amp;#125;for v in spam.valu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-26T12:43:39.000Z">
+<meta property="article:modified_time" content="2020-06-26T13:11:37.690Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="-python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python学习5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/" class="article-date">
+  <time datetime="2020-06-26T12:43:39.000Z" itemprop="datePublished">2020-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python学习5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-dictionary"><a href="#Python-dictionary" class="headerlink" title="Python-dictionary"></a>Python-dictionary</h1><h2 id="dictionary-and-import"><a href="#dictionary-and-import" class="headerlink" title="dictionary and import"></a>dictionary and import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'name'</span>:<span class="string">'Zophie'</span>,<span class="string">'age'</span>:<span class="number">7</span>&#125;</span><br><span class="line">spam[<span class="string">'name'</span>]</span><br><span class="line"><span class="comment">#out:'Zophie'</span></span><br></pre></td></tr></table></figure>
+
+<p><code>values</code>&amp;<code>keys</code>&amp;<code>items</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> spam.values():</span><br><span class="line">    print(v)</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> spam.keys():</span><br><span class="line">    print(k)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> spam.items():</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<p>red </p>
+<p>42 </p>
+<p>color </p>
+<p>age </p>
+<p>(‘color’, ‘red’)</p>
+<p>(‘age’, ‘42’)</p>
+<h2 id="use-the-factor-in-dictionary-to-form-list"><a href="#use-the-factor-in-dictionary-to-form-list" class="headerlink" title="use the factor in dictionary to form list"></a>use the factor in dictionary to form list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line">list(spam.keys())</span><br><span class="line"><span class="comment">#out:['color', 'age']</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>use the factors in <code>items</code> at the same time</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> spam.items():</span><br><span class="line">    print(<span class="string">'Key: '</span>+k+<span class="string">' Value: '</span>+str(v))</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<p>Key: color Value: red<br>Key: age Value: 42</p>
+<p>use the <code>keys</code> to find the <code>values</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">'one'</span>:<span class="number">1</span>,<span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>&#125;</span><br><span class="line">print(numbers[<span class="string">'two'</span>])</span><br><span class="line"><span class="comment">#out:2</span></span><br></pre></td></tr></table></figure>
+
+<p>but <code>values</code> can’t be used to find <code>keys</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> (numbers[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---------------------------------------------------------------------------</span><br><span class="line">KeyError                                  Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-1-d797711df7b1&gt; in &lt;module&gt;</span><br><span class="line">      1 numbers&#x3D;&#123;&quot;one&quot;: 1, &quot;two&quot;: 2&#125;</span><br><span class="line">----&gt; 2 print (numbers[2])</span><br><span class="line"></span><br><span class="line">KeyError: 2</span><br></pre></td></tr></table></figure>
+
+<p>use with <code>sort</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: [<span class="number">4</span>, <span class="number">6</span>, <span class="number">3</span>], <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line">x = (numbers[<span class="string">"two"</span>])</span><br><span class="line">print(x)</span><br><span class="line">x.sort()</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<p>[4, 6, 3]<br>[3, 4, 6]</p>
+<p>use <code>pop</code> to delete items</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="number">1</span>: <span class="number">2</span>, <span class="number">3</span>:<span class="number">4</span>&#125;</span><br><span class="line">numbers.pop(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (numbers)</span><br><span class="line"><span class="comment">#out:&#123;1: 2&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>use <code>get</code> to get  values</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d=&#123;<span class="string">"uno"</span>:[<span class="string">"one"</span>,<span class="number">1</span>],<span class="string">"dos"</span>:[<span class="string">"two"</span>,<span class="number">2</span>]&#125;</span><br><span class="line">d.get(<span class="string">"uno"</span>)</span><br><span class="line"><span class="comment">#out:['one', 1]</span></span><br></pre></td></tr></table></figure>
+
+<p>if there is no key </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d=&#123;<span class="string">"uno"</span>:[<span class="string">"one"</span>,<span class="number">1</span>],<span class="string">"dos"</span>:[<span class="string">"two"</span>,<span class="number">2</span>]&#125;</span><br><span class="line"><span class="keyword">print</span> (d.get(<span class="number">3</span>,<span class="string">'cat'</span>))</span><br><span class="line"><span class="comment">#out:cat</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>example for dictionary</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">k=input()</span><br><span class="line">v1=int(input())</span><br><span class="line">v2=int(input())</span><br><span class="line">v3=int(input())</span><br><span class="line">d=&#123;k:(v1,v2,v3)&#125;</span><br><span class="line"><span class="keyword">if</span> v1&gt;=<span class="number">78</span> <span class="keyword">and</span> v2&gt;=<span class="number">78</span> <span class="keyword">and</span> v3&gt;=<span class="number">78</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> d.items():</span><br><span class="line">        print(i)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'not pass'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>out:</p>
+<table>
+<thead>
+<tr>
+<th>Jim</th>
+<th>Jim</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>78</td>
+<td>90</td>
+</tr>
+<tr>
+<td>76</td>
+<td>78</td>
+</tr>
+<tr>
+<td>90</td>
+<td>80</td>
+</tr>
+<tr>
+<td>not pass</td>
+<td>(‘Jim’, (90, 78, 80))</td>
+</tr>
+</tbody></table>
+<h2 id="use-setdefault-to-add-items-to-dictionary"><a href="#use-setdefault-to-add-items-to-dictionary" class="headerlink" title="use setdefault to add items to dictionary"></a>use <code>setdefault</code> to add items to dictionary</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'name'</span>:<span class="string">'Pooka'</span>,<span class="string">'age'</span>:<span class="number">5</span>&#125;</span><br><span class="line">spam.setdefault(<span class="string">'color'</span>,<span class="string">'black'</span>)</span><br><span class="line">spam</span><br><span class="line">spam.setdefault(<span class="string">'color'</span>,<span class="string">'white'</span>)</span><br><span class="line">spam</span><br></pre></td></tr></table></figure>
+
+<p>out: {‘name’: ‘Pooka’, ‘age’: 5, ‘color’: ‘black’}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">message=<span class="string">'It was a bright cold day in April,and the clocks were striking thirtheen.'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> character <span class="keyword">in</span> message:</span><br><span class="line">    count.setdefault(character,<span class="number">0</span>)<span class="comment">#creat the items for counting the number</span></span><br><span class="line">    count[character]=count[character]+<span class="number">1</span><span class="comment">#add one more to count</span></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure>
+
+<p>out: {‘I’: 1, ‘t’: 6, ‘ ‘: 12, ‘w’: 2, ‘a’: 4, ‘s’: 3, ‘b’: 1, ‘r’: 5, ‘i’: 6, ‘g’: 2, ‘h’: 4, ‘c’: 3, ‘o’: 2, ‘l’: 3, ‘d’: 3, ‘y’: 1, ‘n’: 4, ‘A’: 1, ‘p’: 1, ‘,’: 1, ‘e’: 5, ‘k’: 2, ‘.’: 1}</p>
+<p>use of <code>pprint</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line">score=[<span class="number">90</span>,<span class="number">89</span>,<span class="number">80</span>,<span class="number">77</span>,<span class="number">89</span>,<span class="number">77</span>,<span class="number">90</span>,<span class="number">81</span>,<span class="number">82</span>,<span class="number">76</span>,<span class="number">89</span>]</span><br><span class="line">result=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> score:</span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">90</span>:</span><br><span class="line">        result.setdefault(<span class="string">'A*'</span>,<span class="number">0</span>) <span class="comment">#if there is no value, the value is 0</span></span><br><span class="line">        result[<span class="string">'A*'</span>]=result[<span class="string">'A*'</span>]+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">75</span> <span class="keyword">and</span> i&lt;<span class="number">90</span>:</span><br><span class="line">        result.setdefault(<span class="string">'A'</span>,<span class="number">0</span>)</span><br><span class="line">        result[<span class="string">'A'</span>]=result[<span class="string">'A'</span>]+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">60</span> <span class="keyword">and</span> i&lt;<span class="number">75</span>:</span><br><span class="line">        result.setdefault(<span class="string">'B'</span>,<span class="number">0</span>)</span><br><span class="line">        result[<span class="string">'B'</span>]=result[<span class="string">'B'</span>]+<span class="number">1</span></span><br><span class="line">pprint.pprint(result)</span><br></pre></td></tr></table></figure>
+
+<p>out:{‘A’: 9, ‘A*’: 2}</p>
+<h2 id="used-in-game"><a href="#used-in-game" class="headerlink" title="used in game:"></a>used in game:</h2><p>create background</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">theBoard = &#123;<span class="string">'top-L'</span>: <span class="string">' '</span>, <span class="string">'top-M'</span>: <span class="string">' '</span>, <span class="string">'top-R'</span>: <span class="string">' '</span>,</span><br><span class="line">            <span class="string">'mid-L'</span>: <span class="string">' '</span>, <span class="string">'mid-M'</span>: <span class="string">' '</span>, <span class="string">'mid-R'</span>: <span class="string">' '</span>,</span><br><span class="line">            <span class="string">'low-L'</span>: <span class="string">' '</span>, <span class="string">'low-M'</span>: <span class="string">' '</span>, <span class="string">'low-R'</span>: <span class="string">' '</span>&#125; <span class="comment">#create dictionary to record the value</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printBoard</span><span class="params">(board)</span>:</span></span><br><span class="line">    print(board[<span class="string">'top-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-R'</span>]) <span class="comment">#put the records in the background</span></span><br><span class="line">    print(<span class="string">'-+-+-'</span>) <span class="comment">#separate the rows</span></span><br><span class="line">    print(board[<span class="string">'mid-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'low-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-R'</span>])</span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
+
+<p> | |<br>-+-+-<br> | |<br>-+-+-<br> | | </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">theBoard = &#123;<span class="string">'top-L'</span>: <span class="string">'O'</span>, <span class="string">'top-M'</span>: <span class="string">'O'</span>, <span class="string">'top-R'</span>: <span class="string">'O'</span>, <span class="string">'mid-L'</span>: <span class="string">'X'</span>, <span class="string">'mid-M'</span>:</span><br><span class="line"><span class="string">'X'</span>, <span class="string">'mid-R'</span>: <span class="string">' '</span>, <span class="string">'low-L'</span>: <span class="string">' '</span>, <span class="string">'low-M'</span>: <span class="string">' '</span>, <span class="string">'low-R'</span>: <span class="string">'X'</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printBoard</span><span class="params">(board)</span>:</span> <span class="comment">#make the printing processes a function</span></span><br><span class="line">    print(board[<span class="string">'top-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'mid-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'low-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-R'</span>])</span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
+
+<p>O|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">turn = <span class="string">'X'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>):</span><br><span class="line">    printBoard(theBoard) <span class="comment">#the function</span></span><br><span class="line">    print(<span class="string">'Turn for '</span> + turn + <span class="string">'. Move on which space?'</span>)</span><br><span class="line">    move = input()</span><br><span class="line">    theBoard[move] = turn</span><br><span class="line">    <span class="keyword">if</span> turn == <span class="string">'X'</span>:</span><br><span class="line">        turn = <span class="string">'O'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        turn = <span class="string">'X'</span></span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
+
+<p>O|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X<br>Turn for X. Move on which space?<br>top-L<br>X|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X</p>
+<p>… …</p>
+<p>another example to record the number:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">allGuests=&#123;<span class="string">'Alice'</span>:&#123;<span class="string">'apples'</span>:<span class="number">5</span>,<span class="string">'pretzels'</span>:<span class="number">12</span>&#125;,</span><br><span class="line">          <span class="string">'Bob'</span>:&#123;<span class="string">'ham sandwiches'</span>:<span class="number">3</span>,<span class="string">'apples'</span>:<span class="number">2</span>&#125;,</span><br><span class="line">          <span class="string">'Carol'</span>:&#123;<span class="string">'cups'</span>:<span class="number">3</span>,<span class="string">'apple pies'</span>:<span class="number">1</span>&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">totalBrought</span><span class="params">(guests,item)</span>:</span></span><br><span class="line">    numBrought=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> guests.items():</span><br><span class="line">        numBrought=numBrought+v.get(item,<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> numBrought</span><br><span class="line">print(<span class="string">'Number of things being brought:'</span>)</span><br><span class="line">print(<span class="string">' - Apples '</span> + str(totalBrought(allGuests, <span class="string">'apples'</span>)))</span><br><span class="line">print(<span class="string">' - Cups '</span> + str(totalBrought(allGuests, <span class="string">'cups'</span>)))</span><br><span class="line">print(<span class="string">' - Cakes '</span> + str(totalBrought(allGuests, <span class="string">'cakes'</span>)))</span><br><span class="line">print(<span class="string">' - Ham Sandwiches '</span> + str(totalBrought(allGuests, <span class="string">'ham sandwiches'</span>)))</span><br><span class="line">print(<span class="string">' - Apple Pies '</span> + str(totalBrought(allGuests, <span class="string">'apple pies'</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>Number of things being brought:</p>
+<ul>
+<li>Apples 7</li>
+<li>Cups 3</li>
+<li>Cakes 0</li>
+<li>Ham Sandwiches 3</li>
+<li>Apple Pies 1</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/26/python%E5%AD%A6%E4%B9%A05/" data-id="ckbw9eiqb000o34ur3jhz0x5q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">-python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          粗读逻辑学logic
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

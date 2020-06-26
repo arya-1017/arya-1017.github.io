@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python-学习3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python-ListObtain the valueThe value is obtained from ‘0’, which means ‘0’ is the first value. 123spam&#x3D;[&#39;cat&#39;,&#39;bat&#39;,&#39;rat&#39;,&#39;elephant&#39;]spam#out:[&#39;cat&#39;, &#39;bat&#39;, &#39;rat&#39;, &#39;elephant&#39;]  12spam[0]#out:&#39;cat&#39;  We">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-学习3">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/Python-%E5%AD%A6%E4%B9%A03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python-ListObtain the valueThe value is obtained from ‘0’, which means ‘0’ is the first value. 123spam&#x3D;[&#39;cat&#39;,&#39;bat&#39;,&#39;rat&#39;,&#39;elephant&#39;]spam#out:[&#39;cat&#39;, &#39;bat&#39;, &#39;rat&#39;, &#39;elephant&#39;]  12spam[0]#out:&#39;cat&#39;  We">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-30T10:59:52.000Z">
+<meta property="article:modified_time" content="2020-06-07T08:18:56.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="-python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-学习3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/30/Python-%E5%AD%A6%E4%B9%A03/" class="article-date">
+  <time datetime="2020-05-30T10:59:52.000Z" itemprop="datePublished">2020-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python-学习3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-List"><a href="#Python-List" class="headerlink" title="Python-List"></a>Python-List</h1><h2 id="Obtain-the-value"><a href="#Obtain-the-value" class="headerlink" title="Obtain the value"></a>Obtain the value</h2><p>The value is obtained from ‘0’, which means ‘0’ is the first value.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['cat', 'bat', 'rat', 'elephant']</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spam[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#out:'cat'</span></span><br></pre></td></tr></table></figure>
+
+<p>We can also add it to a string:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'The '</span>+spam[<span class="number">1</span>]+<span class="string">' ate the '</span>+spam[<span class="number">0</span>]+<span class="string">'.'</span></span><br><span class="line"><span class="comment">#out:'The bat ate the cat.'</span></span><br></pre></td></tr></table></figure>
+
+<p>The list in the list:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>],[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line">spam[<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line"><span class="comment">#out:20</span></span><br></pre></td></tr></table></figure>
+
+<p>Use negative subscripts to get the value:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">-3</span>]</span><br><span class="line"><span class="comment">#out:'bat'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Obtain-the-slice"><a href="#Obtain-the-slice" class="headerlink" title="Obtain the slice"></a>Obtain the slice</h2><p>Use range of subscripts (the range includes the former one, but doesn’t include the later one)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">0</span>:<span class="number">-2</span>]</span><br><span class="line"><span class="comment">#out:['cat','bat']</span></span><br></pre></td></tr></table></figure>
+
+<p>without one/both subscript(s) (from the beginning or/and the end)</p>
+<ul>
+<li>[:] means the  whole list</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[:<span class="number">2</span>]</span><br><span class="line"><span class="comment">#out:['cat', 'bat']</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h2><p>Length is the number of value it has.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'dog'</span>,<span class="string">'moose'</span>]</span><br><span class="line">len(spam)</span><br><span class="line"><span class="comment">#out: 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Changing-the-value-by-using-subscripts"><a href="#Changing-the-value-by-using-subscripts" class="headerlink" title="Changing the value by using subscripts"></a>Changing the value by using subscripts</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">1</span>]=<span class="string">'aardvark'</span>  </span><br><span class="line">spam[<span class="number">2</span>]=spam[<span class="number">1</span>]</span><br><span class="line">spam[<span class="number">-1</span>]=<span class="number">12345</span></span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['cat', 'aardvark', 'aardvark', 12345]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="The-combination-and-calculation-of-list"><a href="#The-combination-and-calculation-of-list" class="headerlink" title="The combination and calculation of list"></a>The combination and calculation of list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]+[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>]</span><br><span class="line"><span class="comment">#out:[1, 2, 3, 'A', 'B', 'C']</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]*<span class="number">3</span></span><br><span class="line"><span class="comment">#out:[1, 2, 3, 1, 2, 3, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>Delete by using del</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">del</span> spam[<span class="number">2</span>]</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 2, 4]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="one-usage-enter-the-cats’-name"><a href="#one-usage-enter-the-cats’-name" class="headerlink" title="one usage: enter the cats’ name:"></a>one usage: enter the cats’ name:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">catnames=[]</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Enter the name of cat '</span>+str(len(catnames)+<span class="number">1</span>)+<span class="string">'(Or enter nothing to stop.):'</span>)</span><br><span class="line">    name=input()</span><br><span class="line">    <span class="keyword">if</span> name ==<span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    catnames=catnames+[name]</span><br><span class="line">print(<span class="string">'The cat names are:'</span>)</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> catnames:</span><br><span class="line">    print(<span class="string">'  '</span>+name)</span><br></pre></td></tr></table></figure>
+
+<p><strong>The processing steps:</strong></p>
+<p>Enter the name of cat 1(Or enter nothing to stop.):<br>Alpha<br>Enter the name of cat 2(Or enter nothing to stop.):<br>Bravo<br>Enter the name of cat 3(Or enter nothing to stop.):<br>Cathy<br>Enter the name of cat 4(Or enter nothing to stop.):</p>
+<p><strong>The result:</strong></p>
+<p>The cat names are:<br>  Alpha<br>  Bravo<br>  Cathy</p>
+<h2 id="Use-list-in-loop"><a href="#Use-list-in-loop" class="headerlink" title="Use list in loop"></a>Use list in loop</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">supplies=[<span class="string">'pen'</span>,<span class="string">'staplers'</span>,<span class="string">'flame-throwers'</span>,<span class="string">'binders'</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(supplies)):</span><br><span class="line">    print(<span class="string">'Index '</span>+str(i)+<span class="string">' in supplies is: '</span>+supplies[i])</span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Index 0 in supplies is: pen</span></span><br><span class="line"><span class="comment">#Index 1 in supplies is: staplers</span></span><br><span class="line"><span class="comment">#Index 2 in supplies is: flame-throwers</span></span><br><span class="line"><span class="comment">#Index 3 in supplies is: binders</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="in-and-not-in"><a href="#in-and-not-in" class="headerlink" title="in and not in"></a><em>in</em> and <em>not in</em></h2><p>example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'howdy'</span><span class="keyword">in</span>[<span class="string">'hello'</span>,<span class="string">'hi'</span>,<span class="string">'howdy'</span>]</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
+
+<p>usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mypet=[<span class="string">'Zophie'</span>,<span class="string">'Pooka'</span>,<span class="string">'Simon'</span>]</span><br><span class="line">print(<span class="string">'Enter a pet name:'</span>)</span><br><span class="line">name=input()</span><br><span class="line"><span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> mypet:</span><br><span class="line">    print(<span class="string">'I do not have a pet named '</span>+name)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(name+<span class="string">' is my pet.'</span>)</span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Enter a pet name:</span></span><br><span class="line"><span class="comment">#Simon</span></span><br><span class="line"><span class="comment">#Simon is my pet.</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>improve the former usage about the cats’ names:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">catnames=[]</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Enter the name of cat '</span>+str(len(catnames)+<span class="number">1</span>)+<span class="string">'(Or enter nothing to stop.):'</span>)</span><br><span class="line">    name=input()</span><br><span class="line">    <span class="keyword">if</span> name ==<span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> catnames:              <span class="comment">#added part    </span></span><br><span class="line">        print(<span class="string">'The name has existed'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        catnames=catnames+[name]</span><br><span class="line">print(<span class="string">'The cat names are:'</span>)</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> catnames:</span><br><span class="line">    print(<span class="string">'  '</span>+name)</span><br></pre></td></tr></table></figure>
+
+<p><strong>The processing steps:</strong></p>
+<p>Enter the name of cat 1(Or enter nothing to stop.):<br>Alpha<br>Enter the name of cat 2(Or enter nothing to stop.):<br>Bravo<br><strong><em>Enter the name of cat 3(Or enter nothing to stop.):</em></strong><br><strong><em>Alpha</em></strong><br><strong><em>The name has existed</em></strong><br>Enter the name of cat 3(Or enter nothing to stop.):<br>Cathy<br>Enter the name of cat 4(Or enter nothing to stop.):</p>
+<p><strong>The result:</strong></p>
+<p>The cat names are:<br>  Alpha<br>  Bravo<br>  Cathy</p>
+<h2 id="Mutiple-values"><a href="#Mutiple-values" class="headerlink" title="Mutiple values:"></a>Mutiple values:</h2><p>We can give the list other values.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat=[<span class="string">'fat'</span>,<span class="string">'black'</span>,<span class="string">'loud'</span>]</span><br><span class="line">size, color, dispostion=cat</span><br><span class="line">print(size)</span><br><span class="line"><span class="comment">#out:fat</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Other-instructions"><a href="#Other-instructions" class="headerlink" title="Other instructions"></a>Other instructions</h2><h3 id="append-add-a-new-value-to-the-list-in-the-end"><a href="#append-add-a-new-value-to-the-list-in-the-end" class="headerlink" title="append: add a new value to the list in the end"></a>append: add a new value to the list in the end</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.append(<span class="string">'mouse'</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 2, 3, 4, 'mouse']</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="insert-add-a-new-value-in-the-middle"><a href="#insert-add-a-new-value-in-the-middle" class="headerlink" title="insert: add a new value in the middle"></a>insert: add a new value in the middle</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.insert(<span class="number">1</span>,<span class="string">'chicken'</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 'chicken', 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="index-show-the-position-of-the-value"><a href="#index-show-the-position-of-the-value" class="headerlink" title="index: show the position of the value"></a>index: show the position of the value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.index(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#out: 2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="remove-remove-the-value-from-the-list"><a href="#remove-remove-the-value-from-the-list" class="headerlink" title="remove:  remove the value from the list"></a>remove:  remove the value from the list</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.remove(<span class="number">1</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="sort-put-the-value-in-order"><a href="#sort-put-the-value-in-order" class="headerlink" title="sort: put the value in order"></a>sort: put the value in order</h3><h4 id="numbers"><a href="#numbers" class="headerlink" title="numbers:"></a>numbers:</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">2</span>,<span class="number">5</span>,<span class="number">3.14</span>,<span class="number">1</span>,<span class="number">-7</span>]</span><br><span class="line">spam.sort()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[-7, 1, 2, 3.14, 5]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="words-the-upper-letters-are-in-the-front"><a href="#words-the-upper-letters-are-in-the-front" class="headerlink" title="words: (the upper letters are in the front)"></a>words: (the upper letters are in the front)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'ants'</span>,<span class="string">'cats'</span>,<span class="string">'dogs'</span>,<span class="string">'badgers'</span>]</span><br><span class="line">spam.sort()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['ants', 'badgers', 'cats', 'dogs']</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="reverse-reverse-the-order-of-the-value"><a href="#reverse-reverse-the-order-of-the-value" class="headerlink" title="reverse: reverse the order of the value"></a>reverse: reverse the order of the value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'ants'</span>, <span class="string">'badgers'</span>, <span class="string">'cats'</span>, <span class="string">'dogs'</span>]</span><br><span class="line">spam.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['dogs', 'cats', 'badgers', 'ants']</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="ignore-the-lower-or-upper-letters"><a href="#ignore-the-lower-or-upper-letters" class="headerlink" title="ignore the lower or upper letters:"></a>ignore the lower or upper letters:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'b'</span>,<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'z'</span>,<span class="string">'Z'</span>]</span><br><span class="line">spam.sort(key=str.lower)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out: ['a', 'A', 'b', 'z', 'Z']</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="tuple-can-be-read-only"><a href="#tuple-can-be-read-only" class="headerlink" title="tuple: (can be read only)"></a>tuple: (can be read only)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="comment">#out:(1, 2, 3, 4)</span></span><br></pre></td></tr></table></figure>
+
+<p>*if turn dictionary to tuple, it will only show the key:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple(&#123;<span class="number">1</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">4</span>&#125;)</span><br><span class="line"><span class="comment">#out:(1, 3)</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/30/Python-%E5%AD%A6%E4%B9%A03/" data-id="ckbw9eipz000834ur2m7f8zn4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">-python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/07/guess-numbers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          guess numbers
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/30/certificate/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">‘certificate</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

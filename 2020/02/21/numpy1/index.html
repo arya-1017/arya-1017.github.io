@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>numpy1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NumPy Introduction 1ArrayFirst step: Import numpy1import numpy as np   Multi-dimensions array12345np.array([range(i,i+3)for i in[2,4,6]])Out[2]:array([[2, 3, 4],              [4, 5, 6],              [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy1">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/numpy1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NumPy Introduction 1ArrayFirst step: Import numpy1import numpy as np   Multi-dimensions array12345np.array([range(i,i+3)for i in[2,4,6]])Out[2]:array([[2, 3, 4],              [4, 5, 6],              [">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-21T13:39:25.000Z">
+<meta property="article:modified_time" content="2020-02-25T09:08:32.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="-NumPy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-numpy1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/21/numpy1/" class="article-date">
+  <time datetime="2020-02-21T13:39:25.000Z" itemprop="datePublished">2020-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      numpy1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NumPy-Introduction-1"><a href="#NumPy-Introduction-1" class="headerlink" title="NumPy Introduction 1"></a>NumPy Introduction 1</h1><h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="First-step-Import-numpy"><a href="#First-step-Import-numpy" class="headerlink" title="First step: Import numpy"></a>First step: Import numpy</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Multi-dimensions-array"><a href="#Multi-dimensions-array" class="headerlink" title="Multi-dimensions array"></a>Multi-dimensions array</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.array([range(i,i+<span class="number">3</span>)<span class="keyword">for</span> i <span class="keyword">in</span>[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line">Out[<span class="number">2</span>]:array([[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">              [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">              [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Creating-repeated-array"><a href="#Creating-repeated-array" class="headerlink" title="Creating repeated array"></a>Creating repeated array</h3><h4 id="create-an-array-with-length10-and-all-the-values-are-0"><a href="#create-an-array-with-length10-and-all-the-values-are-0" class="headerlink" title="create an array with length10,and all the values are 0."></a>create an array with length10,and all the values are 0.</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.zeros(<span class="number">10</span>,dtype=int)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">3</span>]:array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-3x5-type-is-float-and-all-the-values-are-1"><a href="#create-an-array-which-is-3x5-type-is-float-and-all-the-values-are-1" class="headerlink" title="create an array which is 3x5,type is float,and all the values are 1."></a>create an array which is 3x5,type is float,and all the values are 1.</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.ones((<span class="number">3</span>,<span class="number">5</span>),dtype=float)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">5</span>]:array([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">              [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">              [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-3x5-and-all-the-values-are-3-14"><a href="#create-an-array-which-is-3x5-and-all-the-values-are-3-14" class="headerlink" title="create an array which is 3x5,and all the values are 3.14."></a>create an array which is 3x5,and all the values are 3.14.</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.full((<span class="number">3</span>,<span class="number">5</span>),<span class="number">3.14</span>)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">6</span>]:array([[<span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>],</span><br><span class="line">              [<span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>],</span><br><span class="line">              [<span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>, <span class="number">3.14</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-with-5-numbers-from-0-1-uniformly"><a href="#create-an-array-with-5-numbers-from-0-1-uniformly" class="headerlink" title="create an array with 5 numbers from 0~1 uniformly"></a>create an array with 5 numbers from 0~1 uniformly</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.linspace(<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">7</span>]:array([<span class="number">0.</span>  , <span class="number">0.25</span>, <span class="number">0.5</span> , <span class="number">0.75</span>, <span class="number">1.</span>  ])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-3x3-with-random-number"><a href="#create-an-array-which-is-3x3-with-random-number" class="headerlink" title="create an array which is 3x3 with random number"></a>create an array which is 3x3 with random number</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.random.random((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">Out[<span class="number">8</span>]:array([[<span class="number">0.47224148</span>, <span class="number">0.23125945</span>, <span class="number">0.95002522</span>],</span><br><span class="line">              [<span class="number">0.09738343</span>, <span class="number">0.88182864</span>, <span class="number">0.38184937</span>],</span><br><span class="line">              [<span class="number">0.99395495</span>, <span class="number">0.42838151</span>, <span class="number">0.92674988</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-3x3-with-random-normal-number-from-0-1"><a href="#create-an-array-which-is-3x3-with-random-normal-number-from-0-1" class="headerlink" title="create an array which is 3x3 with random normal number from 0~1"></a>create an array which is 3x3 with random normal number from 0~1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.random.normal(<span class="number">0</span>,<span class="number">1</span>,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">Out[<span class="number">9</span>]:array([[<span class="number">-0.55049464</span>, <span class="number">-0.35293695</span>,  <span class="number">0.75417556</span>],</span><br><span class="line">              [<span class="number">-0.63125306</span>,  <span class="number">0.31639634</span>, <span class="number">-2.24209815</span>],</span><br><span class="line">              [ <span class="number">1.44175974</span>, <span class="number">-0.69736733</span>,  <span class="number">0.30666294</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-3x3-with-random-integer-between1and-10"><a href="#create-an-array-which-is-3x3-with-random-integer-between1and-10" class="headerlink" title="create an array which is 3x3 with random integer between1and 10"></a>create an array which is 3x3 with random integer between1and 10</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.random.randint(<span class="number">0</span>,<span class="number">10</span>,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">Out[<span class="number">10</span>]:array([[<span class="number">1</span>, <span class="number">4</span>, <span class="number">4</span>],</span><br><span class="line">               [<span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">               [<span class="number">6</span>, <span class="number">3</span>, <span class="number">3</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-which-is-4x4-its-numbers-have-only-one-digit"><a href="#create-an-array-which-is-4x4-its-numbers-have-only-one-digit" class="headerlink" title="create an array which is 4x4 ,its numbers have only one digit"></a>create an array which is 4x4 ,its numbers have only one digit</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">np.eye(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">11</span>]:array([[<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">               [<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">               [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">               [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="create-an-array-with-3-random-number-from-the-storage"><a href="#create-an-array-with-3-random-number-from-the-storage" class="headerlink" title="create an array with 3 random number from the storage"></a>create an array with 3 random number from the storage</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.empty(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">12</span>]:array([<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="The-factors-of-array"><a href="#The-factors-of-array" class="headerlink" title="The factors of array"></a>The factors of array</h3><h4 id="ndim-the-dimension-shape-and-size"><a href="#ndim-the-dimension-shape-and-size" class="headerlink" title="ndim(the dimension),shape and size"></a>ndim(the dimension),shape and size</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="number">0</span>)</span><br><span class="line">x1=np.random.randint(<span class="number">10</span>,size=<span class="number">6</span>)</span><br><span class="line">x2=np.random.randint(<span class="number">10</span>,size=(<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">x3=np.random.randint(<span class="number">10</span>,size=(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>))</span><br><span class="line">x1.ndim</span><br><span class="line"></span><br><span class="line">Out[<span class="number">13</span>]:<span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">print(<span class="string">'x3 ndim: '</span>, x3.ndim)</span><br><span class="line">print(<span class="string">'x3 shape: '</span>, x3.shape)</span><br><span class="line">print(<span class="string">'x3.size: '</span> , x3.size)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">14</span>]:x3 ndim:  <span class="number">3</span></span><br><span class="line">        x3 shape:  (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">        x3.size:  <span class="number">60</span></span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">print(<span class="string">'dtype: '</span>,x3.dtype)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">15</span>]:dtype:  int32</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Get-one-element"><a href="#Get-one-element" class="headerlink" title="Get one element"></a>Get one element</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1</span><br><span class="line"></span><br><span class="line">Out[<span class="number">16</span>]:array([<span class="number">5</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1[0]</span><br><span class="line"></span><br><span class="line">Out[17]:5</span><br></pre></td></tr></table></figure>
+
+<h4 id="From-the-end"><a href="#From-the-end" class="headerlink" title="From the end"></a>From the end</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">Out[<span class="number">18</span>]:<span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Use-the-comma"><a href="#Use-the-comma" class="headerlink" title="Use the comma"></a>Use the comma</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x2</span><br><span class="line"></span><br><span class="line">Out[<span class="number">19</span>]:array([[<span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>],</span><br><span class="line">               [<span class="number">7</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">8</span>],</span><br><span class="line">               [<span class="number">1</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7</span>]])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x2[<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">Out[<span class="number">20</span>]:<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x2[<span class="number">2</span>,<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">Out[<span class="number">21</span>]:<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Change-element-x1-（-5-0-3-3-7-9-）"><a href="#Change-element-x1-（-5-0-3-3-7-9-）" class="headerlink" title="Change element(x1=（[5, 0, 3, 3, 7, 9]）)"></a>Change element(x1=（[5, 0, 3, 3, 7, 9]）)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x1[<span class="number">0</span>]=<span class="number">3.14</span></span><br><span class="line">x1</span><br><span class="line"></span><br><span class="line">Out[<span class="number">22</span>]:array([<span class="number">3</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">9</span>]) <span class="comment">#float-&gt;integer</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/21/numpy1/" data-id="ckbw9eiq9000m34urayjwewd7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/25/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          有关海华AI比赛
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/13/%E6%88%91%E7%9A%84%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的视频测试文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

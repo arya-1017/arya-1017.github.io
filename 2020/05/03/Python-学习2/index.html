@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python 学习2 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python-if，while, for循环key pointsif语句，及if语句套用 if…else  12345678name&#x3D;input()  #显示输入框，name&#x3D;输入内容 show the inputbox，name&#x3D;input #input 函数if name &#x3D;&#x3D; &#39;Mary&#39;:               #if 语句    print(&#39;Hello Mary&#39;)    pas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 学习2">
+<meta property="og:url" content="http://yoursite.com/2020/05/03/Python-%E5%AD%A6%E4%B9%A02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python-if，while, for循环key pointsif语句，及if语句套用 if…else  12345678name&#x3D;input()  #显示输入框，name&#x3D;输入内容 show the inputbox，name&#x3D;input #input 函数if name &#x3D;&#x3D; &#39;Mary&#39;:               #if 语句    print(&#39;Hello Mary&#39;)    pas">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-03T12:19:56.000Z">
+<meta property="article:modified_time" content="2020-05-30T12:17:56.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="-python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-学习2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/03/Python-%E5%AD%A6%E4%B9%A02/" class="article-date">
+  <time datetime="2020-05-03T12:19:56.000Z" itemprop="datePublished">2020-05-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 学习2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-if，while-for循环"><a href="#Python-if，while-for循环" class="headerlink" title="Python-if，while, for循环"></a>Python-if，while, for循环</h1><h2 id="key-points"><a href="#key-points" class="headerlink" title="key points"></a>key points</h2><h3 id="if语句，及if语句套用"><a href="#if语句，及if语句套用" class="headerlink" title="if语句，及if语句套用"></a>if语句，及if语句套用</h3><ol>
+<li>if…else</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name=input()  <span class="comment">#显示输入框，name=输入内容 show the inputbox，name=input #input 函数</span></span><br><span class="line"><span class="keyword">if</span> name == <span class="string">'Mary'</span>:               <span class="comment">#if 语句</span></span><br><span class="line">    print(<span class="string">'Hello Mary'</span>)</span><br><span class="line">    password=input()</span><br><span class="line">    <span class="keyword">if</span> password == <span class="string">'swordfish'</span>:</span><br><span class="line">        print(<span class="string">'Access granted.'</span>)</span><br><span class="line">    <span class="keyword">else</span>:                        <span class="comment">#if...else语句           </span></span><br><span class="line">        print(<span class="string">'Wrong password.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>该代码可判断用户名及密码是否与设定值相符</p>
+<p>check the user‘s name and password</p>
+<ol start="2">
+<li>if…elif</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">name=input()</span><br><span class="line"><span class="keyword">if</span> name == <span class="string">'Alice'</span>:</span><br><span class="line">    print(<span class="string">'Hi,Alice.'</span>)  </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'What is your age?'</span>)</span><br><span class="line">    age=input()</span><br><span class="line">    <span class="keyword">if</span> age &lt; <span class="string">'12'</span>:</span><br><span class="line">        print(<span class="string">'You are not Alice, kiddo.'</span>)</span><br><span class="line">    <span class="keyword">elif</span> age &gt; <span class="string">'100'</span>:</span><br><span class="line">        print(<span class="string">'You are not Alice,grannie.'</span>)</span><br><span class="line">    <span class="keyword">elif</span> age &gt; <span class="string">'2000'</span>:</span><br><span class="line">        print(<span class="string">'Unlike you, Alice is not an undead, immortal vampire.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>该代码通过判断年龄确定身份</p>
+<p>check the user through age</p>
+<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> spam &lt; <span class="number">5</span>:</span><br><span class="line">    print(<span class="string">'Hello world!'</span>)</span><br><span class="line">    spam = spam+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>output：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hello world!</span><br><span class="line">Hello world!</span><br><span class="line">Hello world!</span><br><span class="line">Hello world!</span><br><span class="line">Hello world!</span><br></pre></td></tr></table></figure>
+
+<h4 id="‘break’-and-‘continue’"><a href="#‘break’-and-‘continue’" class="headerlink" title="‘break’ and ‘continue’"></a>‘break’ and ‘continue’</h4><p>break:</p>
+<p>When the break is executed, the loop ends.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">spam=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Hello world'</span>)</span><br><span class="line">    <span class="keyword">if</span> spam==<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    spam=spam+<span class="number">1</span></span><br><span class="line">print(spam)</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+
+<p>continue:</p>
+<p>When continue is executed, the loop starts again.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">spam=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> spam&lt;<span class="number">4</span>:</span><br><span class="line">    print(<span class="string">'Hello!'</span>)</span><br><span class="line">    spam=spam+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> spam==<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    print(<span class="string">'Hello world'</span>)</span><br><span class="line">    print(<span class="string">' '</span>)</span><br><span class="line">print(spam)</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Hello!</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#Hello!  during this time, spam=3, so it didn't print 'Hello world'.</span></span><br><span class="line"><span class="comment">#Hello!</span></span><br><span class="line"><span class="comment">#Hello world</span></span><br><span class="line"><span class="comment">#4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="while-if"><a href="#while-if" class="headerlink" title="while+if"></a>while+if</h3><p>输入密码 input the password</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">key=input() </span><br><span class="line">spam=<span class="number">0</span> <span class="comment">#record the times tried, make sure no more than 3 times 不超过三次</span></span><br><span class="line"><span class="keyword">if</span> int(key)==<span class="number">12345</span>:</span><br><span class="line">        print(<span class="string">'Pass'</span>)</span><br><span class="line"><span class="keyword">while</span> spam &lt; <span class="number">2</span> <span class="keyword">and</span> int(key)!=<span class="number">12345</span>:</span><br><span class="line">            print(<span class="string">'Try again'</span>)</span><br><span class="line">            key=input()</span><br><span class="line">            spam=spam+<span class="number">1</span>  <span class="comment">#计次 record thetimes</span></span><br><span class="line"><span class="keyword">if</span> int(key)==<span class="number">12345</span> <span class="keyword">and</span> spam!=<span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'Pass'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>e.g.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;1</span><br><span class="line">Try again</span><br><span class="line">&gt;12</span><br><span class="line">Try again</span><br><span class="line">&gt;12345</span><br><span class="line">Pass</span><br></pre></td></tr></table></figure>
+
+<p>another way：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">key=input()</span><br><span class="line"><span class="keyword">if</span> key==<span class="string">'12345'</span>:</span><br><span class="line">    print(<span class="string">'pass'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'try again'</span>)</span><br><span class="line">    key=input()</span><br><span class="line">    <span class="keyword">if</span> key==<span class="string">'12345'</span>:</span><br><span class="line">        print(<span class="string">'pass'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'try again'</span>)</span><br><span class="line">        key=input()</span><br><span class="line">        <span class="keyword">if</span> key==<span class="string">'12345'</span>:</span><br><span class="line">            print(<span class="string">'pass'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">12</span>,<span class="number">16</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<p>12到16的所有整数</p>
+<p>print all integers in 12 to 16</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>,<span class="number">2</span>): <span class="comment">#the 2 here means the step is 2</span></span><br><span class="line">    print(i)</span><br><span class="line"><span class="comment">#out：0 2 4 6 8</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>,<span class="number">-1</span>,<span class="number">-1</span>): </span><br><span class="line">    print(i)</span><br><span class="line"><span class="comment">#output：5 4 3 2 1 0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><h3 id="a-tricky-game："><a href="#a-tricky-game：" class="headerlink" title="a tricky game："></a>a tricky game：</h3><p>You must input ‘your name’ instead of the real name:</p>
+<p>你要输入 ”your name” 而不是真的名字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Please type your name.'</span>)</span><br><span class="line">yourname=input()</span><br><span class="line"><span class="keyword">while</span>  yourname!=<span class="string">'your name'</span>:</span><br><span class="line">    print(<span class="string">'Please type your name.'</span>)</span><br><span class="line">    yourname=input()</span><br><span class="line"><span class="keyword">if</span> yourname==<span class="string">'your name'</span>:</span><br><span class="line">    print(<span class="string">'Thank you!'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>e.g.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Please type your name.</span><br><span class="line">Alice</span><br><span class="line">Please type your name.</span><br><span class="line">Emma</span><br><span class="line">Please type your name.</span><br><span class="line">your name</span><br><span class="line">Thank you!</span><br></pre></td></tr></table></figure>
+
+<p>another way:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Please type your name.'</span>)</span><br><span class="line">    name=input()</span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">'your name'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">print(<span class="string">'Thank you!'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="make-patterns"><a href="#make-patterns" class="headerlink" title="make patterns!"></a>make patterns!</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">6</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'*'</span>*a) <span class="comment">#'*'is the string while * is 'x', multiply</span></span><br><span class="line">    a=a<span class="number">-1</span> <span class="comment">#the number of a is decreasing</span></span><br><span class="line">    <span class="keyword">if</span> a==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span>  <span class="comment">#if there is no more '*', it ends</span></span><br></pre></td></tr></table></figure>
+
+<p>e.g.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">******</span><br><span class="line">*****</span><br><span class="line">****</span><br><span class="line">***</span><br><span class="line">**</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
+
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'*'</span>*a) </span><br><span class="line">    a=a+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a==<span class="number">6</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'*'</span>*a)</span><br><span class="line">    a=a<span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span> a==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br><span class="line">******</span><br><span class="line">*****</span><br><span class="line">****</span><br><span class="line">***</span><br><span class="line">**</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
+
+<p>another way</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">7</span>):</span><br><span class="line">    print(<span class="string">'*'</span>*a)</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">5</span>,<span class="number">0</span>,<span class="number">-1</span>):</span><br><span class="line">    print(<span class="string">'*'</span>*a)</span><br></pre></td></tr></table></figure>
+
+<h3 id="calculation-of-factorial"><a href="#calculation-of-factorial" class="headerlink" title="calculation of factorial"></a>calculation of factorial</h3><p>阶乘计算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">result=<span class="number">1</span></span><br><span class="line">a=int(input())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,a+<span class="number">1</span>):</span><br><span class="line">    result=result*i</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<p>e.g.</p>
+<p>input=9</p>
+<p>output=362880</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/03/Python-%E5%AD%A6%E4%B9%A02/" data-id="ckbw9eipy000734ur9c6j1se8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">-python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/05/VB%E5%B0%8F%E6%B8%B8%E6%88%8Fgame/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VB小游戏game
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/03/Python-%E5%AD%A6%E4%B9%A01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python 学习1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

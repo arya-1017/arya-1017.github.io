@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>有关海华AI比赛5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="05.1.Read annotations from JSON fileImport packages12345678910# -*- coding: UTF-8 -*- # import packages%matplotlib inlineimport numpy as npimport cv2import matplotlibimport matplotlib.pyplot as pltimp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有关海华AI比赛5">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="05.1.Read annotations from JSON fileImport packages12345678910# -*- coding: UTF-8 -*- # import packages%matplotlib inlineimport numpy as npimport cv2import matplotlibimport matplotlib.pyplot as pltimp">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/22/8If1PA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/22/8IfBPs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/23/87h9DP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/23/87OS7d.png">
+<meta property="article:published_time" content="2020-03-23T11:56:23.000Z">
+<meta property="article:modified_time" content="2020-03-23T12:00:56.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Competition">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/22/8If1PA.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-有关海华AI比赛5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B5/" class="article-date">
+  <time datetime="2020-03-23T11:56:23.000Z" itemprop="datePublished">2020-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      有关海华AI比赛5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="05-1-Read-annotations-from-JSON-file"><a href="#05-1-Read-annotations-from-JSON-file" class="headerlink" title="05.1.Read annotations from JSON file"></a>05.1.Read annotations from JSON file</h1><h2 id="Import-packages"><a href="#Import-packages" class="headerlink" title="Import packages"></a>Import packages</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></span><br><span class="line"><span class="comment"># import packages</span></span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+
+<h2 id="Open-JSON-file"><a href="#Open-JSON-file" class="headerlink" title="Open JSON file"></a>Open JSON file</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'./dataset/resizedFullGarbageDataset/train.json'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    train_labels = json.load(f) <span class="comment">#read the file</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Observe-the-data-format"><a href="#Observe-the-data-format" class="headerlink" title="Observe the data format"></a>Observe the data format</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_labels <span class="comment">#observe the types of the data</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">out:&#123;&#39;info&#39;: None,</span><br><span class="line">     &#39;lincenses&#39;: None,</span><br><span class="line">     &#39;images&#39;: [&#123;&#39;file_name&#39;: &#39;images_withoutrect&#x2F;11003.png&#39;,</span><br><span class="line">     &#39;height&#39;: 1080,</span><br><span class="line">     &#39;width&#39;: 1920,</span><br><span class="line">     &#39;image_id&#39;: 11003&#125;,</span><br><span class="line">     &#123;&#39;file_name&#39;: &#39;images_withoutrect&#x2F;11004.png&#39;,</span><br><span class="line">      &#39;height&#39;: 1080,</span><br><span class="line">      &#39;width&#39;: 1920,</span><br><span class="line">      &#39;image_id&#39;: 11004&#125;,</span><br><span class="line">      ......</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(train_labels) <span class="comment">#find the tye of the labels</span></span><br><span class="line"><span class="comment">#out:dict</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_labels.keys()</span><br><span class="line"><span class="comment">#out:dict_keys(['info', 'lincenses', 'images', 'type', 'annotations', 'categories'])</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Read-categories"><a href="#Read-categories" class="headerlink" title="Read categories"></a>Read categories</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_labels[<span class="string">'categories'</span>] <span class="comment">#print the categories</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">out:[&#123;&#39;id&#39;: 1, &#39;name&#39;: &#39;瓜子壳&#39;&#125;,</span><br><span class="line">     &#123;&#39;id&#39;: 2, &#39;name&#39;: &#39;核桃&#39;&#125;,</span><br><span class="line">     &#123;&#39;id&#39;: 3, &#39;name&#39;: &#39;花生壳&#39;&#125;,</span><br><span class="line">     &#123;&#39;id&#39;: 4, &#39;name&#39;: &#39;毛豆壳&#39;&#125;,</span><br><span class="line">     &#123;&#39;id&#39;: 5, &#39;name&#39;: &#39;西瓜子&#39;&#125;,</span><br><span class="line">     &#123;&#39;id&#39;: 6, &#39;name&#39;: &#39;枣核&#39;&#125;,</span><br><span class="line">     ......</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(train_labels[<span class="string">'categories'</span>])</span><br><span class="line"><span class="comment">#out:list</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_labels[<span class="string">'categories'</span>][<span class="number">0</span>]<span class="comment">#choose the first one</span></span><br><span class="line"><span class="comment">#out:&#123;'id': 1, 'name': '瓜子壳'&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p> Convert to list in order to use easier. <strong>(Attention: <code>id</code> begins at 1, while the index of list begins at 0)</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = []</span><br><span class="line"><span class="keyword">for</span> label <span class="keyword">in</span> train_labels[<span class="string">'categories'</span>]:</span><br><span class="line">    names.append(label[<span class="string">'name'</span>])</span><br><span class="line">print(names) <span class="comment">#put the categories into a list and show it</span></span><br></pre></td></tr></table></figure>
+
+<p>#out:[‘瓜子壳’, ‘核桃’, ‘花生壳’, ‘毛豆壳’, ‘西瓜子’, ‘枣核’, ‘话梅核’, ‘苹果皮’, ‘柿子皮’, ‘西瓜皮’, ‘香蕉皮’, ‘柚子皮’, ‘荔枝壳’, ‘芒果皮’, ‘苹果核’, ‘干果’, ‘桔子皮’, ‘饼干’, ‘面包’, ‘糖果’, ‘宠物饲料’, ‘风干食品’, ‘蜜饯’, ‘肉干’, ‘冲泡饮料粉’, ‘奶酪’, ‘罐头’, ‘糕饼’, ‘薯片’, ‘树叶’, ‘杂草’, ‘绿植’, ‘鲜花’, ‘豆类’, ‘动物内脏’, ‘绿豆饭’, ‘谷类及加工物’, ‘贝类去硬壳’, ‘虾’, ‘面食’, ‘肉类’, ‘五谷杂粮’, ‘排骨-小肋排’, ‘鸡’, ‘鸡骨头’, ‘螺蛳’, ‘鸭’, ‘鱼’, ‘菜根’, ‘菜叶’, ‘菌菇类’, ‘鱼鳞’, ‘调料’, ‘茶叶渣’, ‘咖啡渣’, ‘粽子’, ‘动物蹄’, ‘小龙虾’, ‘蟹壳’, ‘酱料’, ‘鱼骨头’, ‘蛋壳’, ‘中药材’, ‘中药渣’, ‘镜子’, ‘玻璃制品’, ‘窗玻璃’, ‘碎玻璃片’, ‘化妆品玻璃瓶’, ‘食品及日用品玻璃瓶罐’, ‘保温杯’, ‘玻璃杯’, ‘图书期刊’, ‘报纸’, ‘食品外包装盒’, ‘鞋盒’, ‘利乐包’, ‘广告单’, ‘打印纸’, ‘购物纸袋’, ‘日历’, ‘快递纸袋’, ‘信封’, ‘烟盒’, ‘易拉罐’, ‘金属制品’, ‘吸铁石’, ‘铝制品’, ‘金属瓶罐’, ‘金属工具’, ‘罐头盒’, ‘勺子’, ‘菜刀’, ‘叉子’, ‘锅’, ‘金属筷子’, ‘数据线’, ‘塑料玩具’, ‘矿泉水瓶’, ‘塑料泡沫’, ‘塑料包装’, ‘硬塑料’, ‘一次性塑料餐盒餐具’, ‘电线’, ‘塑料衣架’, ‘密胺餐具’, ‘亚克力板’, ‘PVC管’, ‘插座’, ‘化妆品塑料瓶’, ‘篮球’, ‘足球’, ‘KT板’, ‘食品塑料盒’, ‘食用油桶’, ‘塑料杯’, ‘塑料盆’, ‘一次性餐盒’, ‘废弃衣服’, ‘鞋’, ‘碎布’, ‘书包’, ‘床上用品’, ‘棉被’, ‘丝绸手绢’, ‘枕头’, ‘毛绒玩具’, ‘皮带’, ‘电路板’, ‘充电宝’, ‘木制品’, ‘优盘’, ‘灯管灯泡’, ‘节能灯’, ‘二极管’, ‘纽扣电池’, ‘手机电池’, ‘镍镉电池’, ‘锂电池’, ‘蓄电池’, ‘胶卷’, ‘照片’, ‘指甲油瓶’, ‘X光片’, ‘农药瓶’, ‘杀虫剂及罐’, ‘蜡烛’, ‘墨盒’, ‘染发剂壳’, ‘消毒液瓶’, ‘油漆桶’, ‘药品包装’, ‘药瓶’, ‘废弃针管’, ‘输液管’, ‘口服液瓶’, ‘眼药水瓶’, ‘水银温度计’, ‘水银血压计’, ‘胶囊’, ‘药片’, ‘固体杀虫剂’, ‘甘蔗皮’, ‘坚果壳’, ‘橡皮泥’, ‘毛发’, ‘棉签’, ‘创可贴’, ‘口红’, ‘笔’, ‘纸巾’, ‘胶带’, ‘湿巾’, ‘水彩笔’, ‘打火机’, ‘防碎气泡膜’, ‘榴莲壳’, ‘睫毛膏’, ‘眼影’, ‘仓鼠浴沙’, ‘大骨棒’, ‘旧毛巾’, ‘竹制品’, ‘粉笔’, ‘一次性口罩’, ‘一次性手套’, ‘粉底液’, ‘灰土’, ‘尼龙制品’, ‘尿片’, ‘雨伞’, ‘带胶制品’, ‘牙膏皮’, ‘狗尿布’, ‘椰子壳’, ‘粉扑’, ‘破碗碟’, ‘陶瓷’, ‘卫生纸’, ‘烟头’, ‘假睫毛’, ‘猫砂’, ‘牙刷’, ‘玉米棒’]</p>
+<h2 id="Read-annotations"><a href="#Read-annotations" class="headerlink" title="Read annotations"></a>Read annotations</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_labels[<span class="string">'annotations'</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">out:[&#123;&#39;area&#39;: 81909.20209190401,</span><br><span class="line">      &#39;iscrowd&#39;: 0,</span><br><span class="line">      &#39;image_id&#39;: 11003,</span><br><span class="line">      &#39;bbox&#39;: [636.08832, 305.77176, 298.5888, 274.32108000000005],</span><br><span class="line">      &#39;category_id&#39;: 2&#125;,</span><br><span class="line">     &#123;&#39;area&#39;: 105273.393928704,</span><br><span class="line">      &#39;iscrowd&#39;: 0,</span><br><span class="line">      &#39;image_id&#39;: 11004,</span><br><span class="line">      &#39;bbox&#39;: [804.4512, 420.56064, 306.46848, 343.5048],</span><br><span class="line">      &#39;category_id&#39;: 2&#125;,</span><br><span class="line">      ......</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(train_labels[<span class="string">'annotations'</span>])</span><br><span class="line"><span class="comment">#out:list</span></span><br></pre></td></tr></table></figure>
+
+<p> As an example, let’s load an image and its annotation. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">n = random.randint(<span class="number">1</span>, len(train_labels[<span class="string">'annotations'</span>])) <span class="comment"># select the random n-th image as example</span></span><br><span class="line"></span><br><span class="line">image_id = train_labels[<span class="string">'annotations'</span>][n][<span class="string">'image_id'</span>]</span><br><span class="line">category_id = train_labels[<span class="string">'annotations'</span>][n][<span class="string">'category_id'</span>]</span><br><span class="line">category_name = names[category_id - <span class="number">1</span>]  <span class="comment"># ←look here</span></span><br><span class="line"></span><br><span class="line">image = cv2.imread(<span class="string">'./dataset/resizedFullGarbageDataset/train_resized/'</span> + str(image_id) + <span class="string">'.jpg'</span>) <span class="comment">#load the pictures</span></span><br><span class="line"></span><br><span class="line">plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB)) <span class="comment">#use cv2 to show the picture</span></span><br><span class="line">print(<span class="string">"Index:%d\nFilename:%d.jpg\nCategory:%d-%s"</span>%(n, image_id, category_id, category_name)) <span class="comment">#\n means changing to another row</span></span><br><span class="line"><span class="comment">#out:Index:47056</span></span><br><span class="line"><span class="comment">#    Filename:265768.jpg</span></span><br><span class="line"><span class="comment">#    Category:122-书包</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/03/22/8If1PA.png" alt="8If1PA.png"></p>
+<p>Observe the distribution of classes.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">image_ids = []</span><br><span class="line">category_ids = []</span><br><span class="line">category_names = []</span><br><span class="line"><span class="keyword">for</span> label <span class="keyword">in</span> train_labels[<span class="string">'annotations'</span>]:</span><br><span class="line">    image_ids.append(label[<span class="string">'image_id'</span>]) <span class="comment">#add pictures to the list</span></span><br><span class="line">    category_ids.append(label[<span class="string">'category_id'</span>]) <span class="comment">#add category</span></span><br><span class="line">    category_names.append(names[label[<span class="string">'category_id'</span>] - <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">plt.hist(category_ids, bins=len(names), density=<span class="number">0</span>)</span><br><span class="line">plt.xlim(<span class="number">1</span>, <span class="number">204</span>)</span><br><span class="line">plt.xlabel(<span class="string">"category_id"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"number"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/03/22/8IfBPs.png" alt="8IfBPs.png"></p>
+<h2 id="Convert-annotations-into-CSV-format"><a href="#Convert-annotations-into-CSV-format" class="headerlink" title="Convert annotations into CSV format"></a>Convert annotations into CSV format</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'./dataset/resizedFullGarbageDataset/train.csv'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"id,label,name,filename\n"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(image_ids)):</span><br><span class="line">        f.write(<span class="string">"%s,%s,%s,%s.jpg\n"</span>%(str(image_ids[i]), str(category_ids[i]), names[category_ids[i]<span class="number">-1</span>], str(image_ids[i])))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="05-2-Train-a-garbage-classifier"><a href="#05-2-Train-a-garbage-classifier" class="headerlink" title="05.2.Train a garbage classifier"></a>05.2.Train a garbage classifier</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import, division, print_function, unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="comment"># TensorFlow and tf.keras</span></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> ImageDataGenerator</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> LearningRateScheduler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Helper libraries</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 用来正常显示负号</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># ← a new package is needed to be install, use &gt; conda install pandas</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">print(tf.__version__)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Import-dataset-and-preprocessing"><a href="#Import-dataset-and-preprocessing" class="headerlink" title="Import dataset and preprocessing"></a>Import dataset and preprocessing</h2><p>Because our dataset is a bit large, RAM may not be enough to directly load all images. We can use <code>flow_from_dataframe</code> to load our dataset. (click <a href="https://keras.io/preprocessing/image/" target="_blank" rel="noopener">here</a> to read more about this function)<br>First, load labels from our <code>.csv</code> file. We use <code>pandas.read_csv</code>, it loads csv file to <code>DataFrame</code> format.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df=pd.read_csv(<span class="string">"./dataset/resizedFullGarbageDataset/train.csv"</span>, encoding=<span class="string">'gbk'</span>, dtype=str)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>id</th>
+<th>label</th>
+<th>name</th>
+<th>filename</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>11003</td>
+<td>2</td>
+<td>核桃</td>
+<td>11003.jpg</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11004</td>
+<td>2</td>
+<td>核桃</td>
+<td>11004.jpg</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11005</td>
+<td>2</td>
+<td>核桃</td>
+<td>11005.jpg</td>
+</tr>
+<tr>
+<td>3</td>
+<td>11006</td>
+<td>2</td>
+<td>核桃</td>
+<td>11006.jpg</td>
+</tr>
+<tr>
+<td>…</td>
+<td>……</td>
+<td>……</td>
+<td>……</td>
+<td>……</td>
+</tr>
+</tbody></table>
+<p> Then, use <code>keras.preprocessing.image.ImageDataGenerator</code> to load trainset.<br>‘catagories’ in the JSON file says, the dataset contains 202 classes, but actually it has only 198 classes. To avoid confusing <code>df[&#39;label&#39;]</code> with index of classifier output, we use <code>df[&#39;name&#39;]</code> as input.<br>75% of images are set as trainset, while 25% of images are set as testset. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">batch_size = <span class="number">32</span></span><br><span class="line">sizeX, sizeY = <span class="number">112</span>, <span class="number">112</span></span><br><span class="line"></span><br><span class="line">datagen=ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>, validation_split=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment">#trainset:</span></span><br><span class="line">trainset = datagen.flow_from_dataframe(dataframe=df, directory=<span class="string">'./dataset/resizedFullGarbageDataset/train_resized'</span>, <span class="comment">#the position of file</span></span><br><span class="line">                                       x_col=<span class="string">'filename'</span>, y_col=<span class="string">'name'</span>, class_mode=<span class="string">'categorical'</span>, target_size=(sizeX,sizeY),</span><br><span class="line">                                       batch_size=batch_size, shuffle=<span class="literal">True</span>, seed=<span class="number">0Xabc123</span>, subset=<span class="string">'training'</span>)</span><br><span class="line"><span class="comment">#testset:</span></span><br><span class="line">testset = datagen.flow_from_dataframe(dataframe=df, directory=<span class="string">'./dataset/resizedFullGarbageDataset/train_resized'</span>,</span><br><span class="line">                                      x_col=<span class="string">'filename'</span>, y_col=<span class="string">'name'</span>, class_mode=<span class="string">'categorical'</span>, target_size=(sizeX,sizeY),</span><br><span class="line">                                      batch_size=batch_size, shuffle=<span class="literal">True</span>, seed=<span class="number">0Xabc123</span>, subset=<span class="string">'validation'</span>)</span><br></pre></td></tr></table></figure>
+
+<p> Correspondingly, we can use <code>.class_indices</code> to see the relationship between <code>name</code> and <code>index</code> before one-hot encoding. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = trainset.class_indices</span><br><span class="line">names</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;KT板&#39;: 0,</span><br><span class="line"> &#39;PVC管&#39;: 1,</span><br><span class="line"> &#39;X光片&#39;: 2,</span><br><span class="line"> &#39;一次性口罩&#39;: 3,</span><br><span class="line"> &#39;一次性塑料餐盒餐具&#39;: 4,</span><br><span class="line"> &#39;一次性手套&#39;: 5,</span><br><span class="line"> ......</span><br></pre></td></tr></table></figure>
+
+<p> We can define a function to get <code>name</code> through <code>index</code>. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getname</span><span class="params">(index)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(names)[index]</span><br></pre></td></tr></table></figure>
+
+<p> <code>trainset[i]</code> has two parts. <code>trainset[i][0]</code> is the i-th batch of image, while <code>trainset[i][1]</code> is one-hot encodings which represents classes. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">16</span>,<span class="number">6</span>))</span><br><span class="line">n = random.randint(<span class="number">0</span>,<span class="number">1874</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    plt.subplot(<span class="number">1</span>,<span class="number">4</span>,i+<span class="number">1</span>)</span><br><span class="line">    plt.imshow(trainset[n][<span class="number">0</span>][i]) <span class="comment">#plot the pictures</span></span><br><span class="line">    index = np.argmax(trainset[n][<span class="number">1</span>][i])</span><br><span class="line">    plt.xlabel(str(index) + <span class="string">':'</span> + getname(index)) <span class="comment">#show the category</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/03/23/87h9DP.png" alt="87h9DP.png"></p>
+<h2 id="Describe-our-model"><a href="#Describe-our-model" class="headerlink" title="Describe our model"></a>Describe our model</h2><p>As an example, we describe the following model.<br><em>(This example may not have good performance.)</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">input_shape = (sizeX, sizeY, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">model = keras.Sequential([</span><br><span class="line">    keras.layers.Conv2D(<span class="number">16</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>),</span><br><span class="line">                 activation=<span class="string">'relu'</span>,</span><br><span class="line">                 input_shape=input_shape),</span><br><span class="line">    keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    keras.layers.Conv2D(<span class="number">32</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), activation=<span class="string">'relu'</span>),</span><br><span class="line">    keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    keras.layers.Flatten(),</span><br><span class="line">    keras.layers.Dense(<span class="number">120</span>, activation=<span class="string">'relu'</span>),</span><br><span class="line">    keras.layers.Dense(<span class="number">84</span>, activation=<span class="string">'relu'</span>),</span><br><span class="line">    keras.layers.Dense(<span class="number">198</span>, activation=<span class="string">'softmax'</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">model.compile(loss=keras.losses.categorical_crossentropy,</span><br><span class="line">              optimizer=keras.optimizers.Adam(),</span><br><span class="line">              metrics=[<span class="string">"accuracy"</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="Start-learning"><a href="#Start-learning" class="headerlink" title="Start learning"></a>Start learning</h2><p> Because the dataset is large, <em>it may take a <strong>very long</strong> time.</em> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">STEP_SIZE_TRAIN=trainset.n//trainset.batch_size</span><br><span class="line">STEP_SIZE_VALID=testset.n//testset.batch_size</span><br><span class="line">print(STEP_SIZE_TRAIN, STEP_SIZE_VALID)</span><br><span class="line"></span><br><span class="line">model.fit_generator(generator=trainset,</span><br><span class="line">                    steps_per_epoch=STEP_SIZE_TRAIN,</span><br><span class="line">                    validation_data=testset,</span><br><span class="line">                    validation_steps=STEP_SIZE_VALID,</span><br><span class="line">                    epochs=<span class="number">1</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Evaluate-the-model"><a href="#Evaluate-the-model" class="headerlink" title="Evaluate the model"></a>Evaluate the model</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate_generator(testset,verbose=<span class="number">1</span>) <span class="comment">#predict</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Save-the-trained-model"><a href="#Save-the-trained-model" class="headerlink" title="Save the trained model"></a>Save the trained model</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">modelname = <span class="string">'garbageExample0'</span></span><br><span class="line">model.save(<span class="string">'./TrainedModels/'</span> + modelname + <span class="string">'.h5'</span>)<span class="comment">#create the file and save it</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="05-3-Make-prediction-on-validationset"><a href="#05-3-Make-prediction-on-validationset" class="headerlink" title="05.3.Make prediction on validationset"></a>05.3.Make prediction on validationset</h1><p>from <strong>future</strong> import absolute_import, division, print_function, unicode_literals</p>
+<h1 id="TensorFlow-and-tf-keras"><a href="#TensorFlow-and-tf-keras" class="headerlink" title="TensorFlow and tf.keras"></a>TensorFlow and tf.keras</h1><p>import tensorflow as tf<br>from tensorflow import keras<br>from tensorflow.keras import backend as K<br>from tensorflow.keras.preprocessing.image import ImageDataGenerator<br>from tensorflow.keras.callbacks import LearningRateScheduler<br>from tensorflow.keras.preprocessing import image</p>
+<h1 id="Helper-libraries"><a href="#Helper-libraries" class="headerlink" title="Helper libraries"></a>Helper libraries</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.rcParams[&#39;font.sans-serif&#39;] &#x3D; [&#39;SimHei&#39;]  # 用来正常显示中文标签</span><br><span class="line">plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False  # 用来正常显示负号</span><br><span class="line">import random</span><br><span class="line">import pandas as pd # ← a new package is needed to be install, use &gt; conda install pandas</span><br><span class="line">import cv2</span><br><span class="line">import os</span><br><span class="line">import json</span><br></pre></td></tr></table></figure>
+
+<h2 id="Load-trained-model"><a href="#Load-trained-model" class="headerlink" title="Load trained model"></a>Load trained model</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">modelname &#x3D; &#39;garbageExample0&#39;</span><br><span class="line">model &#x3D; keras.models.load_model(&#39;.&#x2F;trainedModels&#x2F;&#39; + modelname + &#39;.h5&#39;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Import-validationset"><a href="#Import-validationset" class="headerlink" title="Import validationset"></a>Import validationset</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">valiset_path = <span class="string">'./dataset/resizedFullGarbageDataset/val_resized'</span></span><br><span class="line">valiset_filenames = os.listdir(valiset_path)</span><br><span class="line">len(valiset_filenames)</span><br><span class="line"><span class="comment">#out:10000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Define-getname-function"><a href="#Define-getname-function" class="headerlink" title="Define getname() function"></a>Define <code>getname()</code> function</h2><p>The names is in the order generated by <code>flow_from_dataframe</code> before training.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">names = &#123;<span class="string">'KT板'</span>: <span class="number">0</span>, <span class="string">'PVC管'</span>: <span class="number">1</span>, <span class="string">'X光片'</span>: <span class="number">2</span>, <span class="string">'一次性口罩'</span>: <span class="number">3</span>, <span class="string">'一次性塑料餐盒餐具'</span>: <span class="number">4</span>, <span class="string">'一次性手套'</span>: <span class="number">5</span>,</span><br><span class="line">         <span class="string">'一次性餐盒'</span>: <span class="number">6</span>, <span class="string">'丝绸手绢'</span>: <span class="number">7</span>, <span class="string">'中药材'</span>: <span class="number">8</span>, <span class="string">'中药渣'</span>: <span class="number">9</span>, <span class="string">'书包'</span>: <span class="number">10</span>,</span><br><span class="line">         <span class="string">'二极管'</span>: <span class="number">11</span>, <span class="string">'五谷杂粮'</span>: <span class="number">12</span>, <span class="string">'亚克力板'</span>: <span class="number">13</span>, <span class="string">'仓鼠浴沙'</span>: <span class="number">14</span>, <span class="string">'优盘'</span>: <span class="number">15</span>,</span><br><span class="line">          <span class="string">'保温杯'</span>: <span class="number">16</span>, <span class="string">'信封'</span>: <span class="number">17</span>, <span class="string">'假睫毛'</span>: <span class="number">18</span>, <span class="string">'充电宝'</span>: <span class="number">19</span>, <span class="string">'农药瓶'</span>: <span class="number">20</span>,</span><br><span class="line">          <span class="string">'冲泡饮料粉'</span>: <span class="number">21</span>, <span class="string">'创可贴'</span>: <span class="number">22</span>, <span class="string">'利乐包'</span>: <span class="number">23</span>, <span class="string">'动物内脏'</span>: <span class="number">24</span>, <span class="string">'动物蹄'</span>: <span class="number">25</span>,</span><br><span class="line">          <span class="string">'勺子'</span>: <span class="number">26</span>, <span class="string">'化妆品塑料瓶'</span>: <span class="number">27</span>, <span class="string">'化妆品玻璃瓶'</span>: <span class="number">28</span>, <span class="string">'卫生纸'</span>: <span class="number">29</span>, <span class="string">'叉子'</span>: <span class="number">30</span>,</span><br><span class="line">          <span class="string">'口服液瓶'</span>: <span class="number">31</span>, <span class="string">'口红'</span>: <span class="number">32</span>, <span class="string">'吸铁石'</span>: <span class="number">33</span>, <span class="string">'咖啡渣'</span>: <span class="number">34</span>, <span class="string">'固体杀虫剂'</span>: <span class="number">35</span>,</span><br><span class="line">          <span class="string">'图书期刊'</span>: <span class="number">36</span>, <span class="string">'坚果壳'</span>: <span class="number">37</span>, <span class="string">'塑料包装'</span>: <span class="number">38</span>, <span class="string">'塑料杯'</span>: <span class="number">39</span>, <span class="string">'塑料泡沫'</span>: <span class="number">40</span>,</span><br><span class="line">          <span class="string">'塑料玩具'</span>: <span class="number">41</span>, <span class="string">'塑料盆'</span>: <span class="number">42</span>, <span class="string">'塑料衣架'</span>: <span class="number">43</span>, <span class="string">'墨盒'</span>: <span class="number">44</span>, <span class="string">'大骨棒'</span>: <span class="number">45</span>,</span><br><span class="line">         <span class="string">'奶酪'</span>: <span class="number">46</span>, <span class="string">'宠物饲料'</span>: <span class="number">47</span>, <span class="string">'密胺餐具'</span>: <span class="number">48</span>, <span class="string">'小龙虾'</span>: <span class="number">49</span>, <span class="string">'尼龙制品'</span>: <span class="number">50</span>,</span><br><span class="line">         <span class="string">'尿片'</span>: <span class="number">51</span>, <span class="string">'带胶制品'</span>: <span class="number">52</span>, <span class="string">'干果'</span>: <span class="number">53</span>, <span class="string">'广告单'</span>: <span class="number">54</span>, <span class="string">'床上用品'</span>: <span class="number">55</span>,</span><br><span class="line">         <span class="string">'废弃衣服'</span>: <span class="number">56</span>, <span class="string">'废弃针管'</span>: <span class="number">57</span>, <span class="string">'快递纸袋'</span>: <span class="number">58</span>, <span class="string">'手机电池'</span>: <span class="number">59</span>, <span class="string">'打印纸'</span>: <span class="number">60</span>,</span><br><span class="line">         <span class="string">'报纸'</span>: <span class="number">61</span>, <span class="string">'指甲油瓶'</span>: <span class="number">62</span>, <span class="string">'排骨-小肋排'</span>: <span class="number">63</span>, <span class="string">'插座'</span>: <span class="number">64</span>, <span class="string">'数据线'</span>: <span class="number">65</span>,</span><br><span class="line">         <span class="string">'日历'</span>: <span class="number">66</span>, <span class="string">'旧毛巾'</span>: <span class="number">67</span>, <span class="string">'易拉罐'</span>: <span class="number">68</span>, <span class="string">'木制品'</span>: <span class="number">69</span>, <span class="string">'杀虫剂及罐'</span>: <span class="number">70</span>,</span><br><span class="line">         <span class="string">'杂草'</span>: <span class="number">71</span>, <span class="string">'枕头'</span>: <span class="number">72</span>, <span class="string">'枣核'</span>: <span class="number">73</span>, <span class="string">'染发剂壳'</span>: <span class="number">74</span>, <span class="string">'柚子皮'</span>: <span class="number">75</span>,</span><br><span class="line">         <span class="string">'柿子皮'</span>: <span class="number">76</span>, <span class="string">'树叶'</span>: <span class="number">77</span>, <span class="string">'核桃'</span>: <span class="number">78</span>, <span class="string">'桔子皮'</span>: <span class="number">79</span>, <span class="string">'棉签'</span>: <span class="number">80</span>,</span><br><span class="line">         <span class="string">'棉被'</span>: <span class="number">81</span>, <span class="string">'椰子壳'</span>: <span class="number">82</span>, <span class="string">'榴莲壳'</span>: <span class="number">83</span>, <span class="string">'橡皮泥'</span>: <span class="number">84</span>, <span class="string">'毛发'</span>: <span class="number">85</span>,</span><br><span class="line">         <span class="string">'毛绒玩具'</span>: <span class="number">86</span>, <span class="string">'毛豆壳'</span>: <span class="number">87</span>, <span class="string">'水银温度计'</span>: <span class="number">88</span>, <span class="string">'水银血压计'</span>: <span class="number">89</span>, <span class="string">'油漆桶'</span>: <span class="number">90</span>,</span><br><span class="line">         <span class="string">'消毒液瓶'</span>: <span class="number">91</span>, <span class="string">'湿巾'</span>: <span class="number">92</span>, <span class="string">'灯管灯泡'</span>: <span class="number">93</span>, <span class="string">'灰土'</span>: <span class="number">94</span>, <span class="string">'烟头'</span>: <span class="number">95</span>,</span><br><span class="line">         <span class="string">'烟盒'</span>: <span class="number">96</span>, <span class="string">'照片'</span>: <span class="number">97</span>, <span class="string">'牙刷'</span>: <span class="number">98</span>, <span class="string">'牙膏皮'</span>: <span class="number">99</span>, <span class="string">'狗尿布'</span>: <span class="number">100</span>,</span><br><span class="line">         <span class="string">'猫砂'</span>: <span class="number">101</span>, <span class="string">'玉米棒'</span>: <span class="number">102</span>, <span class="string">'玻璃制品'</span>: <span class="number">103</span>, <span class="string">'玻璃杯'</span>: <span class="number">104</span>, <span class="string">'瓜子壳'</span>: <span class="number">105</span>,</span><br><span class="line">         <span class="string">'甘蔗皮'</span>: <span class="number">106</span>, <span class="string">'电线'</span>: <span class="number">107</span>, <span class="string">'电路板'</span>: <span class="number">108</span>, <span class="string">'皮带'</span>: <span class="number">109</span>, <span class="string">'眼影'</span>: <span class="number">110</span>,</span><br><span class="line">         <span class="string">'眼药水瓶'</span>: <span class="number">111</span>, <span class="string">'睫毛膏'</span>: <span class="number">112</span>, <span class="string">'矿泉水瓶'</span>: <span class="number">113</span>, <span class="string">'破碗碟'</span>: <span class="number">114</span>, <span class="string">'硬塑料'</span>: <span class="number">115</span>,</span><br><span class="line">         <span class="string">'碎玻璃片'</span>: <span class="number">116</span>, <span class="string">'窗玻璃'</span>: <span class="number">117</span>, <span class="string">'竹制品'</span>: <span class="number">118</span>, <span class="string">'笔'</span>: <span class="number">119</span>, <span class="string">'篮球'</span>: <span class="number">120</span>,</span><br><span class="line">         <span class="string">'粉底液'</span>: <span class="number">121</span>, <span class="string">'粉扑'</span>: <span class="number">122</span>, <span class="string">'粉笔'</span>: <span class="number">123</span>, <span class="string">'粽子'</span>: <span class="number">124</span>, <span class="string">'糕饼'</span>: <span class="number">125</span>,</span><br><span class="line">         <span class="string">'糖果'</span>: <span class="number">126</span>, <span class="string">'纸巾'</span>: <span class="number">127</span>, <span class="string">'纽扣电池'</span>: <span class="number">128</span>, <span class="string">'绿植'</span>: <span class="number">129</span>, <span class="string">'罐头'</span>: <span class="number">130</span>,</span><br><span class="line">         <span class="string">'罐头盒'</span>: <span class="number">131</span>, <span class="string">'肉干'</span>: <span class="number">132</span>, <span class="string">'肉类'</span>: <span class="number">133</span>, <span class="string">'胶卷'</span>: <span class="number">134</span>, <span class="string">'胶囊'</span>: <span class="number">135</span>,</span><br><span class="line">         <span class="string">'胶带'</span>: <span class="number">136</span>, <span class="string">'节能灯'</span>: <span class="number">137</span>, <span class="string">'芒果皮'</span>: <span class="number">138</span>, <span class="string">'花生壳'</span>: <span class="number">139</span>, <span class="string">'苹果核'</span>: <span class="number">140</span>,</span><br><span class="line">         <span class="string">'苹果皮'</span>: <span class="number">141</span>, <span class="string">'茶叶渣'</span>: <span class="number">142</span>, <span class="string">'荔枝壳'</span>: <span class="number">143</span>, <span class="string">'药品包装'</span>: <span class="number">144</span>, <span class="string">'药片'</span>: <span class="number">145</span>,</span><br><span class="line">         <span class="string">'药瓶'</span>: <span class="number">146</span>, <span class="string">'菌菇类'</span>: <span class="number">147</span>, <span class="string">'菜刀'</span>: <span class="number">148</span>, <span class="string">'菜叶'</span>: <span class="number">149</span>, <span class="string">'菜根'</span>: <span class="number">150</span>,</span><br><span class="line">         <span class="string">'蓄电池'</span>: <span class="number">151</span>, <span class="string">'薯片'</span>: <span class="number">152</span>, <span class="string">'虾'</span>: <span class="number">153</span>, <span class="string">'蛋壳'</span>: <span class="number">154</span>, <span class="string">'蜜饯'</span>: <span class="number">155</span>,</span><br><span class="line">         <span class="string">'螺蛳'</span>: <span class="number">156</span>, <span class="string">'蟹壳'</span>: <span class="number">157</span>, <span class="string">'西瓜子'</span>: <span class="number">158</span>, <span class="string">'西瓜皮'</span>: <span class="number">159</span>, <span class="string">'话梅核'</span>: <span class="number">160</span>,</span><br><span class="line">         <span class="string">'调料'</span>: <span class="number">161</span>, <span class="string">'谷类及加工物'</span>: <span class="number">162</span>, <span class="string">'豆类'</span>: <span class="number">163</span>, <span class="string">'贝类去硬壳'</span>: <span class="number">164</span>, <span class="string">'购物纸袋'</span>: <span class="number">165</span>,</span><br><span class="line">         <span class="string">'足球'</span>: <span class="number">166</span>, <span class="string">'输液管'</span>: <span class="number">167</span>, <span class="string">'酱料'</span>: <span class="number">168</span>, <span class="string">'金属制品'</span>: <span class="number">169</span>, <span class="string">'金属工具'</span>: <span class="number">170</span>,</span><br><span class="line">         <span class="string">'金属瓶罐'</span>: <span class="number">171</span>, <span class="string">'铝制品'</span>: <span class="number">172</span>, <span class="string">'锂电池'</span>: <span class="number">173</span>, <span class="string">'锅'</span>: <span class="number">174</span>, <span class="string">'镍镉电池'</span>: <span class="number">175</span>,</span><br><span class="line">         <span class="string">'镜子'</span>: <span class="number">176</span>, <span class="string">'防碎气泡膜'</span>: <span class="number">177</span>, <span class="string">'陶瓷'</span>: <span class="number">178</span>, <span class="string">'雨伞'</span>: <span class="number">179</span>, <span class="string">'面包'</span>: <span class="number">180</span>,</span><br><span class="line">         <span class="string">'面食'</span>: <span class="number">181</span>, <span class="string">'鞋'</span>: <span class="number">182</span>, <span class="string">'鞋盒'</span>: <span class="number">183</span>, <span class="string">'风干食品'</span>: <span class="number">184</span>, <span class="string">'食品及日用品玻璃瓶罐'</span>: <span class="number">185</span>,</span><br><span class="line">         <span class="string">'食品塑料盒'</span>: <span class="number">186</span>, <span class="string">'食品外包装盒'</span>: <span class="number">187</span>, <span class="string">'食用油桶'</span>: <span class="number">188</span>, <span class="string">'饼干'</span>: <span class="number">189</span>, <span class="string">'香蕉皮'</span>: <span class="number">190</span>,</span><br><span class="line">         <span class="string">'鱼'</span>: <span class="number">191</span>, <span class="string">'鱼骨头'</span>: <span class="number">192</span>, <span class="string">'鱼鳞'</span>: <span class="number">193</span>, <span class="string">'鲜花'</span>: <span class="number">194</span>, <span class="string">'鸡'</span>: <span class="number">195</span>,</span><br><span class="line">         <span class="string">'鸡骨头'</span>: <span class="number">196</span>, <span class="string">'鸭'</span>: <span class="number">197</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getname</span><span class="params">(index)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(names)[index]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Define-get-category-id-function"><a href="#Define-get-category-id-function" class="headerlink" title="Define get_category_id() function"></a>Define <code>get_category_id()</code> function</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'./dataset/resizedFullGarbageDataset/train.json'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    train_labels = json.load(f)</span><br><span class="line">names_dict = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> label <span class="keyword">in</span> train_labels[<span class="string">'categories'</span>]:</span><br><span class="line">    names_dict.update(&#123;label[<span class="string">'name'</span>] : label[<span class="string">'id'</span>]&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_category_id</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> names_dict[name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Make-prediction-and-post-process"><a href="#Make-prediction-and-post-process" class="headerlink" title="Make prediction and post process"></a>Make prediction and post process</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">results_name = []</span><br><span class="line">results_label = [] <span class="comment"># category_id</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(valiset_filenames)):</span><br><span class="line">    image_path = valiset_path + <span class="string">'/'</span> + valiset_filenames[i]</span><br><span class="line">    img = image.load_img(image_path, target_size=(<span class="number">112</span>, <span class="number">112</span>))</span><br><span class="line">    x = image.img_to_array(img)</span><br><span class="line">    x = np.expand_dims(x, axis=<span class="number">0</span>) /<span class="number">255</span></span><br><span class="line"></span><br><span class="line">    pred = model.predict(x)</span><br><span class="line">    </span><br><span class="line">    index = np.argmax(pred)</span><br><span class="line">    result_name = getname(index)</span><br><span class="line">    result_label = get_category_id(result_name)</span><br><span class="line">    </span><br><span class="line">    results_name.append(result_name)</span><br><span class="line">    results_label.append(result_label)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>((i+<span class="number">1</span>) % <span class="number">100</span> == <span class="number">0</span>):</span><br><span class="line">        print(<span class="string">"finished %d predictions"</span>%(i+<span class="number">1</span>)) <span class="comment">#to show the process</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Observe-random-20-images"><a href="#Observe-random-20-images" class="headerlink" title="Observe random 20 images"></a>Observe random 20 images</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">randNums = random.sample(range(<span class="number">0</span>, len(valiset_filenames)), <span class="number">20</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>,<span class="number">18</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">20</span>):</span><br><span class="line">    filename = valiset_filenames[randNums[i]]</span><br><span class="line">    image_path = valiset_path + <span class="string">'/'</span> + filename</span><br><span class="line">    img = image.load_img(image_path, target_size=(<span class="number">112</span>, <span class="number">112</span>))</span><br><span class="line">    x = image.img_to_array(img)</span><br><span class="line">    x = np.expand_dims(x, axis=<span class="number">0</span>) /<span class="number">255</span></span><br><span class="line">    pred = model.predict(x)</span><br><span class="line">    index = np.argmax(pred)</span><br><span class="line">    result_name = getname(index)</span><br><span class="line">    result_label = get_category_id(result_name)</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">4</span>,<span class="number">5</span>,i+<span class="number">1</span>)</span><br><span class="line">    plt.imshow(x[<span class="number">0</span>])</span><br><span class="line">    plt.title(filename)</span><br><span class="line">    plt.xlabel(<span class="string">"Prediction: %d-%s"</span>%(result_label, result_name))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/03/23/87OS7d.png" alt="87OS7d.png"></p>
+<h2 id="Save-results"><a href="#Save-results" class="headerlink" title="Save results"></a>Save results</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">resultName = <span class="string">'test0'</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'./PredictResults/'</span> + resultName + <span class="string">'.csv'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"id,label\n"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(valiset_filenames)):</span><br><span class="line">        vali_id = str(valiset_filenames[i]).replace(<span class="string">'.jpg'</span>,<span class="string">''</span>)</span><br><span class="line">        f.write(<span class="string">"%s,%s\n"</span>%(vali_id, str(results_label[i])))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B5/" data-id="ckbw9eiqn001i34ur373665xp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/26/b%E7%AB%99bv%E8%BD%ACav/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          b站bv转av
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">有关海华AI比赛4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/daily/">daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/">海华AI competition</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/" rel="tag">-NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">-python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">-translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb/" rel="tag">-vb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competition/" rel="tag">Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NumPy/" style="font-size: 10px;">-NumPy</a> <a href="/tags/python/" style="font-size: 20px;">-python</a> <a href="/tags/translation/" style="font-size: 13.33px;">-translation</a> <a href="/tags/vb/" style="font-size: 10px;">-vb</a> <a href="/tags/Competition/" style="font-size: 16.67px;">Competition</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/">粗读逻辑学logic</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/">python学习5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">matplotlib学习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/">Python-学习4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

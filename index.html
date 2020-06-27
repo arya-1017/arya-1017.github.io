@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,7 +95,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -217,6 +217,256 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/python%E5%AD%A6%E4%B9%A06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/27/python%E5%AD%A6%E4%B9%A06/" itemprop="url">python学习6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-27T18:30:35+08:00">
+                2020-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Python-字符串"><a href="#Python-字符串" class="headerlink" title="Python-字符串"></a>Python-字符串</h1><h3 id="双引号-“-“-表string"><a href="#双引号-“-“-表string" class="headerlink" title="双引号 “ “ 表string"></a>双引号 “ “ 表string</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">"That is Alice's cat."</span></span><br><span class="line"><span class="comment">#out: That is Alice's cat.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>打印为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>```&#39;</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>```&quot;</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>``` \</td>
+<td>倒斜杠</td>
+</tr>
+</tbody></table>
+<p>e.g.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello there!\nHow are you?\nI\'m doing fine."</span>)</span><br><span class="line"><span class="comment">#Hello there!</span></span><br><span class="line"><span class="comment">#How are you?</span></span><br><span class="line"><span class="comment">#I'm doing fine.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="开头加r，表示全部为字符串"><a href="#开头加r，表示全部为字符串" class="headerlink" title="开头加r，表示全部为字符串"></a>开头加r，表示全部为字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">r'That is Carol\'s cat.'</span>)</span><br><span class="line"><span class="comment">#out:That is Carol\'s cat.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="‘’’-‘’’中加段落"><a href="#‘’’-‘’’中加段落" class="headerlink" title="‘’’ ‘’’中加段落"></a>‘’’ ‘’’中加段落</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'''Dear Alice, </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Eve's cat has been arrested for catnapping, cat burglary, and extortion. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Sincerely, </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Bob'''</span>)</span><br></pre></td></tr></table></figure>
+
+<p>out：</p>
+<p>Dear Alice, </p>
+<p>Eve’s cat has been arrested for catnapping, cat burglary, and extortion. </p>
+<p>Sincerely, </p>
+<p>Bob</p>
+<h3 id="“””-“””中加注释："><a href="#“””-“””中加注释：" class="headerlink" title="“”” “””中加注释："></a>“”” “””中加注释：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""This is a test Python program. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Written by Al Sweigart al@inventwithpython.com </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This program was designed for Python 3, not Python 2.  # annotation </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">"""This is a multiline comment to help </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">explain what the spam() function does."""</span> </span><br><span class="line"></span><br><span class="line">print(<span class="string">'Hello!'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="下标与切片-Subscript-and-slice"><a href="#下标与切片-Subscript-and-slice" class="headerlink" title="下标与切片  Subscript and slice"></a>下标与切片  Subscript and slice</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#out：'H' </span></span><br><span class="line">spam[<span class="number">4</span>]</span><br><span class="line"><span class="comment">#out：'o' </span></span><br><span class="line">spam[<span class="number">-1</span>]</span><br><span class="line"><span class="comment">#out：'!' </span></span><br><span class="line">spam[<span class="number">0</span>:<span class="number">5</span>] </span><br><span class="line"><span class="comment">#out：'Hello' </span></span><br><span class="line">spam[:<span class="number">5</span>] </span><br><span class="line"><span class="comment">#out：'Hello' </span></span><br><span class="line">spam[<span class="number">6</span>:]</span><br><span class="line"><span class="comment">#out：'world!'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">fizz = spam[<span class="number">0</span>:<span class="number">5</span>]</span><br><span class="line">fizz</span><br><span class="line"><span class="comment">#out：'Hello'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="in-and-not-in"><a href="#in-and-not-in" class="headerlink" title="in and not in"></a>in and not in</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span> <span class="keyword">in</span> <span class="string">'Hello World'</span></span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello'</span> <span class="keyword">in</span> <span class="string">'Hello'</span></span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'HELLO'</span> <span class="keyword">in</span> <span class="string">'Hello World'</span></span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">''</span> <span class="keyword">in</span> <span class="string">'spam'</span></span><br><span class="line"><span class="comment">#out:True</span></span><br><span class="line"><span class="string">'cats'</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">'cats and dogs'</span></span><br><span class="line"><span class="comment">#out:False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="upper-、lower-、isupper-和-islower"><a href="#upper-、lower-、isupper-和-islower" class="headerlink" title="upper()、lower()、isupper()和 islower()"></a>upper()、lower()、isupper()和 islower()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam = spam.upper()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:'HELLO WORLD!' </span></span><br><span class="line">spam = spam.lower()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:'hello world!'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'How are you?'</span>) </span><br><span class="line">feeling = input() </span><br><span class="line"><span class="keyword">if</span> feeling.lower() == <span class="string">'great'</span>: </span><br><span class="line">	print(<span class="string">'I feel great too.'</span>) </span><br><span class="line"><span class="keyword">else</span>: </span><br><span class="line">	print(<span class="string">'I hope the rest of your day is good.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>out：</p>
+<p>How are you? </p>
+<p><strong>GREat</strong> </p>
+<p>I feel great too.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam.islower()</span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line">spam.isupper() </span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line"><span class="string">'HELLO'</span>.isupper()</span><br><span class="line"><span class="comment">#out：True </span></span><br><span class="line"><span class="string">'abc12345'</span>.islower()</span><br><span class="line"><span class="comment">#out：True </span></span><br><span class="line"><span class="string">'12345'</span>.islower()</span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line"><span class="string">'12345'</span>.isupper()</span><br><span class="line"><span class="comment">#out：False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.upper()</span><br><span class="line"><span class="comment">#out：'HELLO' </span></span><br><span class="line"><span class="string">'Hello'</span>.upper().lower()</span><br><span class="line"><span class="comment">#out：'hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.upper().lower().upper()</span><br><span class="line"><span class="comment">#out：'HELLO' </span></span><br><span class="line"><span class="string">'HELLO'</span>.lower()</span><br><span class="line"><span class="comment">#out：'hello' </span></span><br><span class="line"><span class="string">'HELLO'</span>.lower().islower()</span><br><span class="line"><span class="comment">#out：True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="isX-字符串方法"><a href="#isX-字符串方法" class="headerlink" title="isX 字符串方法"></a>isX 字符串方法</h2><ul>
+<li><p>isalpha()返回 True，如果字符串只包含字母，并且非空； </p>
+</li>
+<li><p>isalnum()返回 True，如果字符串只包含字母和数字，并且非空； </p>
+</li>
+<li><p>isdecimal()返回 True，如果字符串只包含数字字符，并且非空； </p>
+</li>
+<li><p>isspace()返回 True，如果字符串只包含空格、制表符和换行，并且非空； </p>
+</li>
+<li><p>istitle()返回 True，如果字符串仅包含以大写字母开头、后面都是小写字母的单词。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'hello'</span>.isalpha()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'hello123'</span>.isalpha()</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'hello123'</span>.isalnum()</span><br><span class="line"><span class="comment">#out:True</span></span><br><span class="line"><span class="string">'hello'</span>.isalnum()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'123'</span>.isdecimal()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">' '</span>.isspace()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is Title Case'</span>.istitle()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is Title Case 123'</span>.istitle()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is not Title Case'</span>.istitle()</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'This Is NOT Title Case Either'</span>.istitle()</span><br><span class="line"><span class="comment">#out:False</span></span><br></pre></td></tr></table></figure>
+
+<p>e.g.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	print(<span class="string">'Enter your age:'</span>) </span><br><span class="line">	age = input() </span><br><span class="line">	<span class="keyword">if</span> age.isdecimal(): </span><br><span class="line">		<span class="keyword">break</span> </span><br><span class="line">	print(<span class="string">'Please enter a number for your age.'</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	print(<span class="string">'Select a new password (letters and numbers only):'</span>) </span><br><span class="line">    password = input() </span><br><span class="line">    <span class="keyword">if</span> password.isalnum(): </span><br><span class="line">        <span class="keyword">break</span> </span><br><span class="line">    print(<span class="string">'Passwords can only have letters and numbers.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Enter your age: </p>
+<p>forty two </p>
+<p>Please enter a number for your age. </p>
+<p>Enter your age: </p>
+<p>42 </p>
+<p>Select a new password (letters and numbers only): </p>
+<p>secr3t! </p>
+<p>Passwords can only have letters and numbers. </p>
+<p>Select a new password (letters and numbers only): </p>
+<p>secr3t</p>
+<h2 id="startswith-和-endswith"><a href="#startswith-和-endswith" class="headerlink" title="startswith()和 endswith()"></a>startswith()和 endswith()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello world!'</span>.startswith(<span class="string">'Hello'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello world!'</span>.endswith(<span class="string">'world!'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'abc123'</span>.startswith(<span class="string">'abcdef'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'abc123'</span>.endswith(<span class="string">'12'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'Hello world!'</span>.startswith(<span class="string">'Hello world!'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello world!'</span>.endswith(<span class="string">'Hello world!'</span>)</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="join-和-split"><a href="#join-和-split" class="headerlink" title="join()和 split()"></a>join()和 split()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">', '</span>.join([<span class="string">'cats'</span>, <span class="string">'rats'</span>, <span class="string">'bats'</span>])</span><br><span class="line"><span class="string">'cats, rats, bats'</span> </span><br><span class="line"><span class="string">' '</span>.join([<span class="string">'My'</span>, <span class="string">'name'</span>, <span class="string">'is'</span>, <span class="string">'Simon'</span>])</span><br><span class="line"><span class="string">'My name is Simon'</span> </span><br><span class="line"><span class="string">'ABC'</span>.join([<span class="string">'My'</span>, <span class="string">'name'</span>, <span class="string">'is'</span>, <span class="string">'Simon'</span>])</span><br><span class="line"><span class="string">'MyABCnameABCisABCSimon'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'My name is Simon'</span>.split() <span class="comment">#默认以空格分隔</span></span><br><span class="line"><span class="comment">#out：['My', 'name', 'is', 'Simon']</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'MyABCnameABCisABCSimon'</span>.split(<span class="string">'ABC'</span>)</span><br><span class="line"><span class="comment">#out：['My', 'name', 'is', 'Simon'] </span></span><br><span class="line"><span class="string">'My name is Simon'</span>.split(<span class="string">'m'</span>)</span><br><span class="line"><span class="comment">#out：['My na', 'e is Si', 'on']</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'''Dear Alice,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">How have you been? I am fine.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">There is a container in the fridge</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">that is labeled "Milk Experiment".</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please do not drink it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Sincerely,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Bob'''</span></span><br><span class="line">spam.split(<span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">#out：['Dear Alice,', 'How have you been? I am fine.', 'There is a container in the #fridge', 'that is labeled "Milk Experiment".', '', 'Please do not drink it.', </span></span><br><span class="line"><span class="comment">#'Sincerely,', 'Bob']</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="rjust-、ljust-和-center"><a href="#rjust-、ljust-和-center" class="headerlink" title="rjust()、ljust()和 center()"></a>rjust()、ljust()和 center()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">10</span>)</span><br><span class="line"><span class="comment">#out:'          Hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:'                    Hello' </span></span><br><span class="line"><span class="string">'Hello World'</span>.rjust(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:'          Hello World' </span></span><br><span class="line"><span class="string">'Hello'</span>.ljust(<span class="number">10</span>)</span><br><span class="line"><span class="comment">#out:'Hello          '</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">20</span>, <span class="string">'\*'</span>)</span><br><span class="line"><span class="comment">#out:'***************Hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.ljust(<span class="number">20</span>, <span class="string">'-'</span>)</span><br><span class="line"><span class="comment">#out:'Hello---------------'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.center(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:' Hello ' </span></span><br><span class="line"><span class="string">'Hello'</span>.center(<span class="number">20</span>, <span class="string">'='</span>)</span><br><span class="line"><span class="comment">#out:'=======Hello========'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printPicnic</span><span class="params">(itemsDict, leftWidth, rightWidth)</span>:</span> </span><br><span class="line">	print(<span class="string">'PICNIC ITEMS'</span>.center(leftWidth + rightWidth, <span class="string">'-'</span>)) </span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> itemsDict.items(): </span><br><span class="line">		print(k.ljust(leftWidth, <span class="string">'.'</span>) + str(v).rjust(rightWidth)) </span><br><span class="line"></span><br><span class="line">picnicItems = &#123;<span class="string">'sandwiches'</span>: <span class="number">4</span>, <span class="string">'apples'</span>: <span class="number">12</span>, <span class="string">'cups'</span>: <span class="number">4</span>, <span class="string">'cookies'</span>: <span class="number">8000</span>&#125; </span><br><span class="line">printPicnic(picnicItems, <span class="number">12</span>, <span class="number">5</span>) </span><br><span class="line">printPicnic(picnicItems, <span class="number">20</span>, <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<p>—PICNIC ITEMS– </p>
+<p>sandwiches.. 4 </p>
+<p>apples…… 12 </p>
+<p>cups…….. 4 </p>
+<p>cookies….. 8000 </p>
+<p>——-PICNIC ITEMS——- </p>
+<p>sandwiches………. 4 </p>
+<p>apples………….. 12 </p>
+<p>cups……………. 4 </p>
+<p>cookies…………. 8000</p>
+<h2 id="strip-、rstrip-和-lstrip-删除空白字符"><a href="#strip-、rstrip-和-lstrip-删除空白字符" class="headerlink" title="strip()、rstrip()和 lstrip()删除空白字符"></a>strip()、rstrip()和 lstrip()删除空白字符</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">' Hello World '</span></span><br><span class="line">spam.strip()</span><br><span class="line"><span class="comment">#out:'Hello World' </span></span><br><span class="line">spam.lstrip()</span><br><span class="line"><span class="comment">#out:'Hello World ' </span></span><br><span class="line">spam.rstrip()</span><br><span class="line"><span class="comment">#out:' Hello World'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'SpamSpamBaconSpamEggsSpamSpam'</span></span><br><span class="line">spam.strip(<span class="string">'ampS'</span>)</span><br><span class="line"><span class="comment">#out:'BaconSpamEggs'</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -601,145 +851,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arya Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/" itemprop="url">matplotlib学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-19T22:36:00+08:00">
-                2020-06-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>matplotlib   </p>
-<p>‘.scatter()’  ,   ‘.text()’  ,  ‘savefig()’</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ax.scatter(x, y,                              <span class="comment">#坐标</span></span><br><span class="line">           s=df_solar.moon_diameter_km/<span class="number">1.5</span>,   <span class="comment">#图形大小</span></span><br><span class="line">           facecolor=<span class="string">'w'</span>, edgecolor=<span class="string">'k'</span>, </span><br><span class="line">           marker=<span class="string">'o'</span>,                        <span class="comment">#形状                          </span></span><br><span class="line">           alpha=<span class="number">0.5</span>)                         <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax.text(x,y,                      <span class="comment">#坐标                       </span></span><br><span class="line">        <span class="string">'%s (%s)'</span> % (row.moon_name, row.planet_name[<span class="number">0</span>]), </span><br><span class="line">        ha=<span class="string">'center'</span>, va=<span class="string">'center'</span>) <span class="comment">#图形中位置</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.savefig(<span class="string">'x'</span>,                   <span class="comment">#文件名称</span></span><br><span class="line">        bbox_inches=<span class="string">'tight'</span>)     <span class="comment">#图片裁剪</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Seaborn：’sns.set()’</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sns.set(context=<span class="string">'notebook'</span>,                      </span><br><span class="line">        style=<span class="string">'whitegrid'</span>,    <span class="comment">#背景风格</span></span><br><span class="line">        palette=sns.color_palette(<span class="string">'Paired'</span>, <span class="number">12</span>))</span><br><span class="line"><span class="comment">#context 代表风格</span></span><br><span class="line"><span class="comment">#font_scale 为字体大小</span></span><br><span class="line"><span class="comment">#lines.linewidth 指定了线宽</span></span><br><span class="line"><span class="comment">#color_palette()能传入任何Matplotlib所支持的颜色</span></span><br><span class="line"><span class="comment">#color_palette()不写参数则默认颜色</span></span><br><span class="line"><span class="comment">#set_palette()设置所有图的颜色</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.drop_duplicates() <span class="comment">#去除重复项</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>sns.distplot</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df.groupby([<span class="string">'YEAR'</span>, <span class="string">'MONTH'</span>]).sum().PRCP, </span><br><span class="line">             color=<span class="string">'b'</span>, bins=<span class="number">50</span>,   <span class="comment">#50个柱形</span></span><br><span class="line">             hist=<span class="literal">True</span>,            <span class="comment">#开启直方图</span></span><br><span class="line">             rug=<span class="literal">True</span>, kde=<span class="literal">True</span>)   <span class="comment">#开启细线，曲线</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -846,6 +957,145 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/" itemprop="url">matplotlib学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-19T22:36:00+08:00">
+                2020-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>matplotlib   </p>
+<p>‘.scatter()’  ,   ‘.text()’  ,  ‘savefig()’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ax.scatter(x, y,                              <span class="comment">#坐标</span></span><br><span class="line">           s=df_solar.moon_diameter_km/<span class="number">1.5</span>,   <span class="comment">#图形大小</span></span><br><span class="line">           facecolor=<span class="string">'w'</span>, edgecolor=<span class="string">'k'</span>, </span><br><span class="line">           marker=<span class="string">'o'</span>,                        <span class="comment">#形状                          </span></span><br><span class="line">           alpha=<span class="number">0.5</span>)                         <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax.text(x,y,                      <span class="comment">#坐标                       </span></span><br><span class="line">        <span class="string">'%s (%s)'</span> % (row.moon_name, row.planet_name[<span class="number">0</span>]), </span><br><span class="line">        ha=<span class="string">'center'</span>, va=<span class="string">'center'</span>) <span class="comment">#图形中位置</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.savefig(<span class="string">'x'</span>,                   <span class="comment">#文件名称</span></span><br><span class="line">        bbox_inches=<span class="string">'tight'</span>)     <span class="comment">#图片裁剪</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Seaborn：’sns.set()’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sns.set(context=<span class="string">'notebook'</span>,                      </span><br><span class="line">        style=<span class="string">'whitegrid'</span>,    <span class="comment">#背景风格</span></span><br><span class="line">        palette=sns.color_palette(<span class="string">'Paired'</span>, <span class="number">12</span>))</span><br><span class="line"><span class="comment">#context 代表风格</span></span><br><span class="line"><span class="comment">#font_scale 为字体大小</span></span><br><span class="line"><span class="comment">#lines.linewidth 指定了线宽</span></span><br><span class="line"><span class="comment">#color_palette()能传入任何Matplotlib所支持的颜色</span></span><br><span class="line"><span class="comment">#color_palette()不写参数则默认颜色</span></span><br><span class="line"><span class="comment">#set_palette()设置所有图的颜色</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.drop_duplicates() <span class="comment">#去除重复项</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>sns.distplot</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df.groupby([<span class="string">'YEAR'</span>, <span class="string">'MONTH'</span>]).sum().PRCP, </span><br><span class="line">             color=<span class="string">'b'</span>, bins=<span class="number">50</span>,   <span class="comment">#50个柱形</span></span><br><span class="line">             hist=<span class="literal">True</span>,            <span class="comment">#开启直方图</span></span><br><span class="line">             rug=<span class="literal">True</span>, kde=<span class="literal">True</span>)   <span class="comment">#开启细线，曲线</span></span><br></pre></td></tr></table></figure>
+
 
           
         
@@ -1702,163 +1952,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/VB%E5%B0%8F%E6%B8%B8%E6%88%8Fgame/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arya Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/VB%E5%B0%8F%E6%B8%B8%E6%88%8Fgame/" itemprop="url">VB小游戏game</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-05T20:50:31+08:00">
-                2020-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/daily/" itemprop="url" rel="index">
-                    <span itemprop="name">daily</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="VB-simple-game-model"><a href="#VB-simple-game-model" class="headerlink" title="VB simple game model"></a>VB simple game model</h1><p>the flying bird</p>
-<p> <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588693844451&di=f1e5e33b94ba3a3aa019b3a8d1a81129&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180714%2F0f2f7766a90a4614b3c1783e3cad10b5.jpeg" alt="点击查看源网页"> </p>
-<p>Although I can’ t copy the picture, showing the way how to do it is a good way to both understand the game and learn the programming language.</p>
-<h2 id="the-code"><a href="#the-code" class="headerlink" title="the code"></a>the code</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Command1_Click()   <span class="comment">'press botton</span></span><br><span class="line">    Label1.Top = Label1.Top - <span class="number">700</span> <span class="comment">'700 is the distance the 'bird' moves for once</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Command2_Click()   <span class="comment">'reset botton</span></span><br><span class="line">Label1.Left = <span class="number">375</span> <span class="comment">'let the 'bird' get to the original position</span></span><br><span class="line">Label1.Top = <span class="number">2280</span></span><br><span class="line">Timer1.Enabled = <span class="literal">True</span>   <span class="comment">'reset the timer and the command</span></span><br><span class="line">Command1.Enabled = <span class="literal">True</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Timer1_Timer()     <span class="comment">'timer</span></span><br><span class="line">Label1.Top = Label1.Top + <span class="number">40</span>   <span class="comment">'40 is the speed it falls</span></span><br><span class="line">Label1.Left = Label1.Left + <span class="number">20</span>  <span class="comment">'20 is the speed it moves forward</span></span><br><span class="line"><span class="keyword">If</span> Label1.Left &gt; Text1.Left - Label1.Width <span class="keyword">And</span> Label1.Left &lt; Text1.Left + Text1.Width <span class="keyword">Then</span>  <span class="comment">'when the 'bird' moves into the given area</span></span><br><span class="line">    <span class="keyword">If</span> Label1.Top &lt; Text1.Height <span class="keyword">Or</span> Label1.Top &gt; Text2.Top <span class="keyword">Then</span> <span class="comment">'when the 'bird' touch the wall</span></span><br><span class="line">        Timer1.Enabled = <span class="literal">False</span></span><br><span class="line">        Command1.Enabled = <span class="literal">False</span></span><br><span class="line">        Print <span class="string">"you lost!"</span>  <span class="comment">'stop all, and show that you have lost</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">If</span> Label1.Left &gt; Text1.Left + Text1.Width + <span class="number">1000</span> <span class="keyword">Then</span>   <span class="comment">'when the 'bird' get to the final point</span></span><br><span class="line">    Print <span class="string">"you win!"</span>     <span class="comment">'show you win and stop all</span></span><br><span class="line">    Timer1.Enabled = <span class="literal">False</span></span><br><span class="line">    Command1.Enabled = <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
-
-<p>the situation that the ‘bird’ touch the wall:</p>
-<p><img src="https://s1.ax1x.com/2020/05/05/Ykpgf0.png" alt="Ykpgf0.png"></p>
-<p>the situation that the ‘bird’ get to the final point:</p>
-<p><img src="https://s1.ax1x.com/2020/05/05/YkCaqg.png" alt="YkCaqg.png"></p>
-<h2 id="showing-as-video"><a href="#showing-as-video" class="headerlink" title="showing as video"></a>showing as video</h2><video id="video" controls="" preload="none">
-    <source id="mp4" src="C:/Users/Administrator/Desktop/作业/vb/鸟.mp4" type="video/mp4">
-</video>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1909,7 +2002,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1986,7 +2079,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -2085,6 +2178,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

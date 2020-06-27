@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,7 +95,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -217,6 +217,193 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B3/" itemprop="url">有关海华AI比赛3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-23T19:49:42+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%B7%E5%8D%8EAI-competition/" itemprop="url" rel="index">
+                    <span itemprop="name">海华AI competition</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Neural-Network-based-Iris-Flower-Classification"><a href="#Neural-Network-based-Iris-Flower-Classification" class="headerlink" title="Neural-Network-based Iris Flower Classification"></a>Neural-Network-based Iris Flower Classification</h1><h2 id="0-Dataset-Description"><a href="#0-Dataset-Description" class="headerlink" title="0 Dataset Description"></a>0 Dataset Description</h2><p>Description Source: <a href="https://archive.ics.uci.edu/ml/datasets/Iris/" target="_blank" rel="noopener">https://archive.ics.uci.edu/ml/datasets/Iris/</a>  </p>
+<p> <strong>Data Set Information:</strong><br>This is perhaps the best known database to be found in the pattern recognition literature. Fisher’s  paper is a classic in the field and is referenced frequently to this  day. (See Duda &amp; Hart, for example.) The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is linearly separable from the other 2; the latter are NOT  linearly separable from each other.<br>Predicted attribute: class of iris plant.<br>This is an exceedingly simple domain.<br><strong>Attribute Information:</strong><br>column 1: sepal length in cm<br>column 2: sepal width in cm<br>column 3: petal length in cm<br>column 4: petal width in cm<br>column 5: class:<br>– Iris Setosa<br>– Iris Versicolour<br>– Iris Virginica   </p>
+<h2 id="1-Observe-the-data"><a href="#1-Observe-the-data" class="headerlink" title="1 Observe the data"></a>1 Observe the data</h2><p>Load dataset from csv file.  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line"><span class="comment"># Declare list for storing dataset</span></span><br><span class="line">sepal_length = np.array([])</span><br><span class="line">sepal_width = np.array([])</span><br><span class="line">petal_length = np.array([])</span><br><span class="line">petal_width = np.array([])</span><br><span class="line">iris_class = np.array([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load dataset from csv file</span></span><br><span class="line">reader = csv.reader(open(<span class="string">'./irisDataset.csv'</span>,<span class="string">'r'</span>))</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> reader:<span class="comment">#to create the dataframe</span></span><br><span class="line">    sepal_length = np.append(sepal_length, float(row[<span class="number">0</span>])) <span class="comment">#separate different values to different rows</span></span><br><span class="line">    sepal_width = np.append(sepal_width, float(row[<span class="number">1</span>]))</span><br><span class="line">    petal_length = np.append(petal_length, float(row[<span class="number">2</span>]))</span><br><span class="line">    petal_width = np.append(petal_width, float(row[<span class="number">3</span>]))</span><br><span class="line">    iris_class = np.append(iris_class, row[<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+
+<p> Observe the format of data. (Take 10 examples randomly) </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">h =set()</span><br><span class="line"><span class="keyword">while</span>(len(h)&lt;<span class="number">10</span>):</span><br><span class="line">    h.add(random.randint(<span class="number">0</span>, <span class="number">149</span>))<span class="comment">#add the random number</span></span><br><span class="line">    <span class="comment">#choose 10 random example</span></span><br><span class="line">print(<span class="string">"ID \t SEPAL_LENGTH \t SEPAL_WIDTH \t PETAL_LENGTH \t PETAL_WIDTH \t|| CLASS"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> h:</span><br><span class="line">    print(<span class="string">"%d \t %.1f \t\t %.1f \t\t %.1f \t\t %.1f \t\t|| %s"</span> <span class="comment">#print the result</span></span><br><span class="line">          % (i, sepal_length[i], sepal_width[i], petal_length[i], petal_width[i], iris_class[i]))<span class="comment">#print the 10 example</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ID 	 SEPAL_LENGTH 	 SEPAL_WIDTH 	 PETAL_LENGTH 	 PETAL_WIDTH 	|| CLASS</span><br><span class="line">33 	    5.5 		    4.2 		    1.4 		    0.2 		|| setosa</span><br><span class="line">132     6.4 		    2.8 		    5.6 		    2.2 		|| virginica</span><br><span class="line">135     7.7 		    3.0 		    6.1 		    2.3 		|| virginica</span><br><span class="line">77 	    6.7 		    3.0 		    5.0 		    1.7 		|| versicolor</span><br><span class="line">14 	    5.8 		    4.0 		    1.2 		    0.2 		|| setosa</span><br><span class="line">15 	    5.7 		    4.4 		    1.5 		    0.4 		|| setosa</span><br><span class="line">146     6.3 		    2.5 		    5.0 		    1.9 		|| virginica</span><br><span class="line">54 	    6.5 		    2.8 		    4.6 		    1.5 		|| versicolor</span><br><span class="line">58 	    6.6 		    2.9 		    4.6 		    1.3 		|| versicolor</span><br><span class="line">31 	    5.4 		    3.4 		    1.5 		    0.4 		|| setosa</span><br></pre></td></tr></table></figure>
+
+<p> Plot dataset. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#plot 3 kinds of iris, letting width y-axis, length x-axis, and plot the label(using sepal values)</span></span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>) <span class="comment">#plot two background</span></span><br><span class="line">plt.scatter(sepal_length[iris_class==<span class="string">'setosa'</span>], sepal_width[iris_class==<span class="string">'setosa'</span>])</span><br><span class="line">plt.scatter(sepal_length[iris_class==<span class="string">'versicolor'</span>],sepal_width[iris_class==<span class="string">'versicolor'</span>])</span><br><span class="line">plt.scatter(sepal_length[iris_class==<span class="string">'virginica'</span>], sepal_width[iris_class==<span class="string">'virginica'</span>])</span><br><span class="line">plt.legend((<span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,<span class="string">"virginica"</span>)) </span><br><span class="line">plt.xlabel(<span class="string">'sepal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'sepal_width'</span>)</span><br><span class="line"><span class="comment">#plot 3 kinds of iris, letting width y-axis, length x-axis, and plot the label(using petal values)</span></span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">plt.scatter(petal_length[iris_class==<span class="string">'setosa'</span>], petal_width[iris_class==<span class="string">'setosa'</span>])</span><br><span class="line">plt.scatter(petal_length[iris_class==<span class="string">'versicolor'</span>], petal_width[iris_class==<span class="string">'versicolor'</span>])</span><br><span class="line">plt.scatter(petal_length[iris_class==<span class="string">'virginica'</span>], petal_width[iris_class==<span class="string">'virginica'</span>])</span><br><span class="line">plt.legend((<span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,<span class="string">"virginica"</span>))</span><br><span class="line">plt.xlabel(<span class="string">'petal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'petal_width'</span>)</span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment">#sepal values can't separate them as gragh1 shows</span></span><br><span class="line"><span class="comment">#petal values can separate the as gragh2 shows,so we choose the petal values</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://imgchr.com/i/3zsonS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/03/08/3zsonS.png" alt="3zsonS.png"></a></p>
+<h2 id="2-Preprocess-dataset-and-Divide-dataset"><a href="#2-Preprocess-dataset-and-Divide-dataset" class="headerlink" title="2 Preprocess dataset and Divide dataset"></a>2 Preprocess dataset and Divide dataset</h2><p>Through observing the figure above, we can find that it’s easier to classify iris flowers by <code>petal_width</code> and <code>petal_length</code>. So, we can simplify the problem by ignoring <code>sepal_width</code> and <code>sepal_length</code>. (This kind of operation may decrease accuracy)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#put the petal values into array</span></span><br><span class="line">dataset_x = np.array((petal_length, petal_width)).T</span><br><span class="line"></span><br><span class="line"><span class="comment">#change differet kinds of iris into 0,1,2, which is easy to be recognized for computer</span></span><br><span class="line">dataset_y = np.zeros(iris_class.shape, dtype=int)</span><br><span class="line">dataset_y[iris_class == <span class="string">'setosa'</span>] = <span class="number">0</span></span><br><span class="line">dataset_y[iris_class == <span class="string">'versicolor'</span>] = <span class="number">1</span></span><br><span class="line">dataset_y[iris_class == <span class="string">'virginica'</span>] = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num = len(iris_class)</span><br><span class="line">splitLine = int(<span class="number">0.8</span>*num)</span><br><span class="line"></span><br><span class="line"><span class="comment"># generate a random list to select data randomly</span></span><br><span class="line">index = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, num)]</span><br><span class="line">random.shuffle(index) <span class="comment">#put them in random order</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># divide into trainset and testset</span></span><br><span class="line">train_x = dataset_x[index[<span class="number">0</span>:splitLine]]</span><br><span class="line">train_y = dataset_y[index[<span class="number">0</span>:splitLine]] </span><br><span class="line">test_x = dataset_x[index[splitLine:num]]</span><br><span class="line">test_y = dataset_y[index[splitLine:num]]</span><br></pre></td></tr></table></figure>
+
+<p> Encode the classes into one-hot encoding.<br>For example,<br>0→[1,0,0]<br>1→[0,1,0]<br>2→[0,0,1] </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># One-Hot Encoding</span></span><br><span class="line">train_y_onehot = keras.utils.to_categorical(train_y, <span class="number">3</span>)</span><br><span class="line">test_y_onehot = keras.utils.to_categorical(test_y, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Let’s observe the trainset and testset in different marker.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#put the trainset and testset in one graph to compare</span></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line"><span class="comment">#the "+" means trainset</span></span><br><span class="line"><span class="comment">#different colours mean different kinds of iris</span></span><br><span class="line">plt.scatter(train_x[train_y==<span class="number">0</span>, <span class="number">0</span>], train_x[train_y==<span class="number">0</span>, <span class="number">1</span>], marker=<span class="string">'+'</span>, color=<span class="string">'red'</span>)</span><br><span class="line">plt.scatter(train_x[train_y==<span class="number">1</span>, <span class="number">0</span>], train_x[train_y==<span class="number">1</span>, <span class="number">1</span>], marker=<span class="string">'+'</span>, color=<span class="string">'green'</span>)</span><br><span class="line">plt.scatter(train_x[train_y==<span class="number">2</span>, <span class="number">0</span>], train_x[train_y==<span class="number">2</span>, <span class="number">1</span>], marker=<span class="string">'+'</span>, color=<span class="string">'blue'</span>)</span><br><span class="line"><span class="comment"># "v" means testset</span></span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">0</span>, <span class="number">0</span>], test_x[test_y==<span class="number">0</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'red'</span>)</span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">1</span>, <span class="number">0</span>], test_x[test_y==<span class="number">1</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'green'</span>)</span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">2</span>, <span class="number">0</span>], test_x[test_y==<span class="number">2</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'blue'</span>)</span><br><span class="line">plt.legend((<span class="string">"train_setosa"</span>,<span class="string">"train_versicolor"</span>,<span class="string">"train_virginica"</span>,<span class="string">"test_setosa"</span>,<span class="string">"test_versicolor"</span>,<span class="string">"test_virginica"</span>)) <span class="comment">#plot the label</span></span><br><span class="line">plt.xlabel(<span class="string">'petal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'petal_width'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2020/03/08/3zc16P.png" alt="3zc16P.png"></p>
+<h2 id="3-Describe-your-neural-network"><a href="#3-Describe-your-neural-network" class="headerlink" title="3 Describe your neural network"></a>3 Describe your neural network</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># describe the model</span></span><br><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(units=<span class="number">64</span>, activation=<span class="string">'relu'</span>, input_shape=(<span class="number">2</span>,)),</span><br><span class="line">    layers.Dense(units=<span class="number">64</span>, activation=<span class="string">'relu'</span>),</span><br><span class="line">    layers.Dense(units=<span class="number">3</span>, activation=<span class="string">'softmax'</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Model: &quot;sequential_1&quot;</span><br><span class="line">_________________________________________________________________</span><br><span class="line">Layer (type)                 Output Shape              Param #   </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">dense_3 (Dense)              (None, 64)                192       </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_4 (Dense)              (None, 64)                4160      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_5 (Dense)              (None, 3)                 195       </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">Total params: 4,547</span><br><span class="line">Trainable params: 4,547</span><br><span class="line">Non-trainable params: 0</span><br><span class="line">_________________________________________________________________</span><br></pre></td></tr></table></figure>
+
+<p> We can use <strong>Mean Square Error (MSE)</strong> as <code>loss</code> function, and use <strong>Stochastic Gradient Descent (SGD)</strong> as the process we train the model (i.e. “<code>optimizer</code>“).<br>(PS: MSE is not so suitable for classification) </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.compile(loss=<span class="string">'mse'</span>, optimizer=<span class="string">'sgd'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Training"><a href="#4-Training" class="headerlink" title="4 Training"></a>4 Training</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.fit(train_x, train_y_onehot, batch_size=<span class="number">4</span>, epochs=<span class="number">100</span>, verbose=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#fit( x, y, batch_size=32, epochs=10, verbose=1, callbacks=None,validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=None, initial_epoch=0)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Evaluation-of-the-trained-model"><a href="#5-Evaluation-of-the-trained-model" class="headerlink" title="5 Evaluation of the trained model"></a>5 Evaluation of the trained model</h2><p>We can use <code>.evaluate</code> to compute <strong>loss</strong> on testset.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cost = model.evaluate(test_x, test_y_onehot)</span><br><span class="line">print(<span class="string">'test cost:'</span>, cost) <span class="comment">#find the cost(difference to the real value)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scores = model.predict(test_x)<span class="comment">#predict the next five value</span></span><br><span class="line">print(scores)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">results = np.array([])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> scores:</span><br><span class="line">    results = np.append(results, np.argmax(i))</span><br><span class="line">print(results)</span><br><span class="line"><span class="comment">#out:[0. 2. 0. 2. 1. 2. 1. 1. 2. 2. 2. 2. 0. 0. 1. 2. 2. 0. 2. 0. 2. 2. 1. 1. 0. 2. 2. 1. 1. 1.]</span></span><br></pre></td></tr></table></figure>
+
+<p> Visualize our model of prediction. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">15</span>,<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># draw ground truth</span></span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">0</span>, <span class="number">0</span>], test_x[test_y==<span class="number">0</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'red'</span>)</span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">1</span>, <span class="number">0</span>], test_x[test_y==<span class="number">1</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'green'</span>)</span><br><span class="line">plt.scatter(test_x[test_y==<span class="number">2</span>, <span class="number">0</span>], test_x[test_y==<span class="number">2</span>, <span class="number">1</span>], marker=<span class="string">'v'</span>, color=<span class="string">'blue'</span>)</span><br><span class="line">plt.legend((<span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,<span class="string">"virginica"</span>))</span><br><span class="line">plt.xlabel(<span class="string">'petal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'petal_width'</span>)</span><br><span class="line">plt.title(<span class="string">'Ground Truth of Testset'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># draw prediction</span></span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">plt.scatter(test_x[results==<span class="number">0</span>, <span class="number">0</span>], test_x[results==<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">'red'</span>)</span><br><span class="line">plt.scatter(test_x[results==<span class="number">1</span>, <span class="number">0</span>], test_x[results==<span class="number">1</span>, <span class="number">1</span>], color=<span class="string">'green'</span>)</span><br><span class="line">plt.scatter(test_x[results==<span class="number">2</span>, <span class="number">0</span>], test_x[results==<span class="number">2</span>, <span class="number">1</span>], color=<span class="string">'blue'</span>)</span><br><span class="line">plt.legend((<span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,<span class="string">"virginica"</span>))</span><br><span class="line">plt.xlabel(<span class="string">'petal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'petal_width'</span>)</span><br><span class="line">plt.title(<span class="string">'Prediction of Testset'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># draw classiication areas</span></span><br><span class="line">x = np.arange(min(test_x[:,<span class="number">0</span>]), max(test_x[:,<span class="number">0</span>]), <span class="number">0.05</span>)</span><br><span class="line">y = np.arange(min(test_x[:,<span class="number">1</span>]), max(test_x[:,<span class="number">1</span>]), <span class="number">0.05</span>)</span><br><span class="line">X,Y = np.meshgrid(x,y)</span><br><span class="line">grid = np.array((X.flatten(), Y.flatten())).T</span><br><span class="line">scores_1 = model.predict(grid)</span><br><span class="line">decisions = np.array([])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> scores_1:</span><br><span class="line">    decisions = np.append(decisions, np.argmax(i))</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">plt.scatter(grid[decisions==<span class="number">0</span>, <span class="number">0</span>], grid[decisions==<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">'red'</span>)</span><br><span class="line">plt.scatter(grid[decisions==<span class="number">1</span>, <span class="number">0</span>], grid[decisions==<span class="number">1</span>, <span class="number">1</span>], color=<span class="string">'green'</span>)</span><br><span class="line">plt.scatter(grid[decisions==<span class="number">2</span>, <span class="number">0</span>], grid[decisions==<span class="number">2</span>, <span class="number">1</span>], color=<span class="string">'blue'</span>)</span><br><span class="line">plt.legend((<span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,<span class="string">"virginica"</span>))</span><br><span class="line">plt.xlabel(<span class="string">'petal_length'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'petal_width'</span>)</span><br><span class="line">plt.title(<span class="string">'Classification Areas'</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2020/03/08/3zgTvq.png" alt="3zgTvq.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1563,7 +1750,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1640,7 +1827,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -1739,6 +1926,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

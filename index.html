@@ -220,9 +220,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -322,139 +356,39 @@
       
         
           
-            <h1 id="Python-字符串"><a href="#Python-字符串" class="headerlink" title="Python-字符串"></a>Python-字符串</h1><h3 id="双引号-“-“-表string"><a href="#双引号-“-“-表string" class="headerlink" title="双引号 “ “ 表string"></a>双引号 “ “ 表string</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">"That is Alice's cat."</span></span><br><span class="line"><span class="comment">#out: That is Alice's cat.</span></span><br></pre></td></tr></table></figure>
+          Python-字符串双引号 “ “ 表string12spam = "That is Alice's cat."#out: That is Alice's cat.
 
-<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><table>
-<thead>
-<tr>
-<th>转义字符</th>
-<th>打印为</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>```&#39;</td>
-<td>单引号</td>
-</tr>
-<tr>
-<td>```&quot;</td>
-<td>双引号</td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符</td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符</td>
-</tr>
-<tr>
-<td>``` \</td>
-<td>倒斜杠</td>
-</tr>
-</tbody></table>
-<p>e.g.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello there!\nHow are you?\nI\'m doing fine."</span>)</span><br><span class="line"><span class="comment">#Hello there!</span></span><br><span class="line"><span class="comment">#How are you?</span></span><br><span class="line"><span class="comment">#I'm doing fine.</span></span><br></pre></td></tr></table></figure>
+转义字符
 
-<h3 id="开头加r，表示全部为字符串"><a href="#开头加r，表示全部为字符串" class="headerlink" title="开头加r，表示全部为字符串"></a>开头加r，表示全部为字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">r'That is Carol\'s cat.'</span>)</span><br><span class="line"><span class="comment">#out:That is Carol\'s cat.</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="‘’’-‘’’中加段落"><a href="#‘’’-‘’’中加段落" class="headerlink" title="‘’’ ‘’’中加段落"></a>‘’’ ‘’’中加段落</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'''Dear Alice, </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Eve's cat has been arrested for catnapping, cat burglary, and extortion. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Sincerely, </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Bob'''</span>)</span><br></pre></td></tr></table></figure>
-
-<p>out：</p>
-<p>Dear Alice, </p>
-<p>Eve’s cat has been arrested for catnapping, cat burglary, and extortion. </p>
-<p>Sincerely, </p>
-<p>Bob</p>
-<h3 id="“””-“””中加注释："><a href="#“””-“””中加注释：" class="headerlink" title="“”” “””中加注释："></a>“”” “””中加注释：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""This is a test Python program. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Written by Al Sweigart al@inventwithpython.com </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This program was designed for Python 3, not Python 2.  # annotation </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">"""This is a multiline comment to help </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">explain what the spam() function does."""</span> </span><br><span class="line"></span><br><span class="line">print(<span class="string">'Hello!'</span>)</span><br></pre></td></tr></table></figure>
+转义字符
+打印为
 
 
 
-<h3 id="下标与切片-Subscript-and-slice"><a href="#下标与切片-Subscript-and-slice" class="headerlink" title="下标与切片  Subscript and slice"></a>下标与切片  Subscript and slice</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#out：'H' </span></span><br><span class="line">spam[<span class="number">4</span>]</span><br><span class="line"><span class="comment">#out：'o' </span></span><br><span class="line">spam[<span class="number">-1</span>]</span><br><span class="line"><span class="comment">#out：'!' </span></span><br><span class="line">spam[<span class="number">0</span>:<span class="number">5</span>] </span><br><span class="line"><span class="comment">#out：'Hello' </span></span><br><span class="line">spam[:<span class="number">5</span>] </span><br><span class="line"><span class="comment">#out：'Hello' </span></span><br><span class="line">spam[<span class="number">6</span>:]</span><br><span class="line"><span class="comment">#out：'world!'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">fizz = spam[<span class="number">0</span>:<span class="number">5</span>]</span><br><span class="line">fizz</span><br><span class="line"><span class="comment">#out：'Hello'</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="in-and-not-in"><a href="#in-and-not-in" class="headerlink" title="in and not in"></a>in and not in</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span> <span class="keyword">in</span> <span class="string">'Hello World'</span></span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello'</span> <span class="keyword">in</span> <span class="string">'Hello'</span></span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'HELLO'</span> <span class="keyword">in</span> <span class="string">'Hello World'</span></span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">''</span> <span class="keyword">in</span> <span class="string">'spam'</span></span><br><span class="line"><span class="comment">#out:True</span></span><br><span class="line"><span class="string">'cats'</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">'cats and dogs'</span></span><br><span class="line"><span class="comment">#out:False</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="upper-、lower-、isupper-和-islower"><a href="#upper-、lower-、isupper-和-islower" class="headerlink" title="upper()、lower()、isupper()和 islower()"></a>upper()、lower()、isupper()和 islower()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam = spam.upper()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:'HELLO WORLD!' </span></span><br><span class="line">spam = spam.lower()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:'hello world!'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'How are you?'</span>) </span><br><span class="line">feeling = input() </span><br><span class="line"><span class="keyword">if</span> feeling.lower() == <span class="string">'great'</span>: </span><br><span class="line">	print(<span class="string">'I feel great too.'</span>) </span><br><span class="line"><span class="keyword">else</span>: </span><br><span class="line">	print(<span class="string">'I hope the rest of your day is good.'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>out：</p>
-<p>How are you? </p>
-<p><strong>GREat</strong> </p>
-<p>I feel great too.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'Hello world!'</span></span><br><span class="line">spam.islower()</span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line">spam.isupper() </span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line"><span class="string">'HELLO'</span>.isupper()</span><br><span class="line"><span class="comment">#out：True </span></span><br><span class="line"><span class="string">'abc12345'</span>.islower()</span><br><span class="line"><span class="comment">#out：True </span></span><br><span class="line"><span class="string">'12345'</span>.islower()</span><br><span class="line"><span class="comment">#out：False </span></span><br><span class="line"><span class="string">'12345'</span>.isupper()</span><br><span class="line"><span class="comment">#out：False</span></span><br></pre></td></tr></table></figure>
+```&#39;
+单引号
 
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.upper()</span><br><span class="line"><span class="comment">#out：'HELLO' </span></span><br><span class="line"><span class="string">'Hello'</span>.upper().lower()</span><br><span class="line"><span class="comment">#out：'hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.upper().lower().upper()</span><br><span class="line"><span class="comment">#out：'HELLO' </span></span><br><span class="line"><span class="string">'HELLO'</span>.lower()</span><br><span class="line"><span class="comment">#out：'hello' </span></span><br><span class="line"><span class="string">'HELLO'</span>.lower().islower()</span><br><span class="line"><span class="comment">#out：True</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="isX-字符串方法"><a href="#isX-字符串方法" class="headerlink" title="isX 字符串方法"></a>isX 字符串方法</h2><ul>
-<li><p>isalpha()返回 True，如果字符串只包含字母，并且非空； </p>
-</li>
-<li><p>isalnum()返回 True，如果字符串只包含字母和数字，并且非空； </p>
-</li>
-<li><p>isdecimal()返回 True，如果字符串只包含数字字符，并且非空； </p>
-</li>
-<li><p>isspace()返回 True，如果字符串只包含空格、制表符和换行，并且非空； </p>
-</li>
-<li><p>istitle()返回 True，如果字符串仅包含以大写字母开头、后面都是小写字母的单词。</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'hello'</span>.isalpha()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'hello123'</span>.isalpha()</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'hello123'</span>.isalnum()</span><br><span class="line"><span class="comment">#out:True</span></span><br><span class="line"><span class="string">'hello'</span>.isalnum()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'123'</span>.isdecimal()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">' '</span>.isspace()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is Title Case'</span>.istitle()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is Title Case 123'</span>.istitle()</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'This Is not Title Case'</span>.istitle()</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'This Is NOT Title Case Either'</span>.istitle()</span><br><span class="line"><span class="comment">#out:False</span></span><br></pre></td></tr></table></figure>
-
-<p>e.g.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	print(<span class="string">'Enter your age:'</span>) </span><br><span class="line">	age = input() </span><br><span class="line">	<span class="keyword">if</span> age.isdecimal(): </span><br><span class="line">		<span class="keyword">break</span> </span><br><span class="line">	print(<span class="string">'Please enter a number for your age.'</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	print(<span class="string">'Select a new password (letters and numbers only):'</span>) </span><br><span class="line">    password = input() </span><br><span class="line">    <span class="keyword">if</span> password.isalnum(): </span><br><span class="line">        <span class="keyword">break</span> </span><br><span class="line">    print(<span class="string">'Passwords can only have letters and numbers.'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>Enter your age: </p>
-<p>forty two </p>
-<p>Please enter a number for your age. </p>
-<p>Enter your age: </p>
-<p>42 </p>
-<p>Select a new password (letters and numbers only): </p>
-<p>secr3t! </p>
-<p>Passwords can only have letters and numbers. </p>
-<p>Select a new password (letters and numbers only): </p>
-<p>secr3t</p>
-<h2 id="startswith-和-endswith"><a href="#startswith-和-endswith" class="headerlink" title="startswith()和 endswith()"></a>startswith()和 endswith()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello world!'</span>.startswith(<span class="string">'Hello'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello world!'</span>.endswith(<span class="string">'world!'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'abc123'</span>.startswith(<span class="string">'abcdef'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'abc123'</span>.endswith(<span class="string">'12'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"><span class="string">'Hello world!'</span>.startswith(<span class="string">'Hello world!'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"><span class="string">'Hello world!'</span>.endswith(<span class="string">'Hello world!'</span>)</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="join-和-split"><a href="#join-和-split" class="headerlink" title="join()和 split()"></a>join()和 split()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">', '</span>.join([<span class="string">'cats'</span>, <span class="string">'rats'</span>, <span class="string">'bats'</span>])</span><br><span class="line"><span class="string">'cats, rats, bats'</span> </span><br><span class="line"><span class="string">' '</span>.join([<span class="string">'My'</span>, <span class="string">'name'</span>, <span class="string">'is'</span>, <span class="string">'Simon'</span>])</span><br><span class="line"><span class="string">'My name is Simon'</span> </span><br><span class="line"><span class="string">'ABC'</span>.join([<span class="string">'My'</span>, <span class="string">'name'</span>, <span class="string">'is'</span>, <span class="string">'Simon'</span>])</span><br><span class="line"><span class="string">'MyABCnameABCisABCSimon'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'My name is Simon'</span>.split() <span class="comment">#默认以空格分隔</span></span><br><span class="line"><span class="comment">#out：['My', 'name', 'is', 'Simon']</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'MyABCnameABCisABCSimon'</span>.split(<span class="string">'ABC'</span>)</span><br><span class="line"><span class="comment">#out：['My', 'name', 'is', 'Simon'] </span></span><br><span class="line"><span class="string">'My name is Simon'</span>.split(<span class="string">'m'</span>)</span><br><span class="line"><span class="comment">#out：['My na', 'e is Si', 'on']</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'''Dear Alice,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">How have you been? I am fine.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">There is a container in the fridge</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">that is labeled "Milk Experiment".</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please do not drink it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Sincerely,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Bob'''</span></span><br><span class="line">spam.split(<span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">#out：['Dear Alice,', 'How have you been? I am fine.', 'There is a container in the #fridge', 'that is labeled "Milk Experiment".', '', 'Please do not drink it.', </span></span><br><span class="line"><span class="comment">#'Sincerely,', 'Bob']</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="rjust-、ljust-和-center"><a href="#rjust-、ljust-和-center" class="headerlink" title="rjust()、ljust()和 center()"></a>rjust()、ljust()和 center()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">10</span>)</span><br><span class="line"><span class="comment">#out:'          Hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:'                    Hello' </span></span><br><span class="line"><span class="string">'Hello World'</span>.rjust(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:'          Hello World' </span></span><br><span class="line"><span class="string">'Hello'</span>.ljust(<span class="number">10</span>)</span><br><span class="line"><span class="comment">#out:'Hello          '</span></span><br></pre></td></tr></table></figure>
+```&quot;
+双引号
 
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.rjust(<span class="number">20</span>, <span class="string">'\*'</span>)</span><br><span class="line"><span class="comment">#out:'***************Hello' </span></span><br><span class="line"><span class="string">'Hello'</span>.ljust(<span class="number">20</span>, <span class="string">'-'</span>)</span><br><span class="line"><span class="comment">#out:'Hello---------------'</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.center(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#out:' Hello ' </span></span><br><span class="line"><span class="string">'Hello'</span>.center(<span class="number">20</span>, <span class="string">'='</span>)</span><br><span class="line"><span class="comment">#out:'=======Hello========'</span></span><br></pre></td></tr></table></figure>
+\t
+制表符
 
 
+\n
+换行符
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printPicnic</span><span class="params">(itemsDict, leftWidth, rightWidth)</span>:</span> </span><br><span class="line">	print(<span class="string">'PICNIC ITEMS'</span>.center(leftWidth + rightWidth, <span class="string">'-'</span>)) </span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> itemsDict.items(): </span><br><span class="line">		print(k.ljust(leftWidth, <span class="string">'.'</span>) + str(v).rjust(rightWidth)) </span><br><span class="line"></span><br><span class="line">picnicItems = &#123;<span class="string">'sandwiches'</span>: <span class="number">4</span>, <span class="string">'apples'</span>: <span class="number">12</span>, <span class="string">'cups'</span>: <span class="number">4</span>, <span class="string">'cookies'</span>: <span class="number">8000</span>&#125; </span><br><span class="line">printPicnic(picnicItems, <span class="number">12</span>, <span class="number">5</span>) </span><br><span class="line">printPicnic(picnicItems, <span class="number">20</span>, <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<p>—PICNIC ITEMS– </p>
-<p>sandwiches.. 4 </p>
-<p>apples…… 12 </p>
-<p>cups…….. 4 </p>
-<p>cookies….. 8000 </p>
-<p>——-PICNIC ITEMS——- </p>
-<p>sandwiches………. 4 </p>
-<p>apples………….. 12 </p>
-<p>cups……………. 4 </p>
-<p>cookies…………. 8000</p>
-<h2 id="strip-、rstrip-和-lstrip-删除空白字符"><a href="#strip-、rstrip-和-lstrip-删除空白字符" class="headerlink" title="strip()、rstrip()和 lstrip()删除空白字符"></a>strip()、rstrip()和 lstrip()删除空白字符</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">' Hello World '</span></span><br><span class="line">spam.strip()</span><br><span class="line"><span class="comment">#out:'Hello World' </span></span><br><span class="line">spam.lstrip()</span><br><span class="line"><span class="comment">#out:'Hello World ' </span></span><br><span class="line">spam.rstrip()</span><br><span class="line"><span class="comment">#out:' Hello World'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam = <span class="string">'SpamSpamBaconSpamEggsSpamSpam'</span></span><br><span class="line">spam.strip(<span class="string">'ampS'</span>)</span><br><span class="line"><span class="comment">#out:'BaconSpamEggs'</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/27/python%E5%AD%A6%E4%B9%A06/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -572,33 +506,16 @@
       
         
           
-            <h1 id="逻辑学"><a href="#逻辑学" class="headerlink" title="逻辑学"></a>逻辑学</h1><h2 id="0-什么是逻辑？"><a href="#0-什么是逻辑？" class="headerlink" title="0.什么是逻辑？"></a>0.什么是逻辑？</h2><p>​    概念<br>​    模型<br>​    判断<br>​        已知——&gt;未知：推理<br>​        (概念-命题-论证)—&gt;逻辑</p>
-<h2 id="1-逻辑：已知-gt-未知"><a href="#1-逻辑：已知-gt-未知" class="headerlink" title="1.逻辑：已知-&gt;未知"></a>1.逻辑：已知-&gt;未知</h2><h3 id="1-演绎逻辑：大范围找小范围（必然有效）–机器思维"><a href="#1-演绎逻辑：大范围找小范围（必然有效）–机器思维" class="headerlink" title="1)演绎逻辑：大范围找小范围（必然有效）–机器思维"></a>1)演绎逻辑：大范围找小范围（必然有效）–机器思维</h3><p> <strong>经典逻辑学（亚里士多德：必然得出），形式逻辑</strong><br> <strong>形式：增加确定性:计算出结果</strong><br>    <strong>人类：类比</strong><br>    <strong>形式：公式得出——科技</strong></p>
-<p>AEIO（基本命题）<br>三段论（形式逻辑，词项逻辑）</p>
-<p><a href="https://imgchr.com/i/NsRWFS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/NsRWFS.th.jpg" alt="NsRWFS.th.jpg"></a>        </p>
-<p>三段式：一个一般性的原则（大前提），一个附属于前面大前提的特殊化陈述（小前提），以及由此引申出的特殊化陈述符合一般性原则的结论。</p>
-<p>​    三段论推理：思维时，大脑首先用一个人为定义的内容极为明确的、囊括的范围比较大的总的原则A（简称“大前提”），再通过科学实验寻找另外一个概念小前提B，B的概念的全部内涵能够一定被包含在大前提A内、并且用文字描述的B的概念的内容时，不能人为与大前提A的内容本质完全一样（B简称小前提），然后按照小前提B如果属于大前提A范围内，那么B的性质一定与大前提的性质一样，而得到可靠而正确的判断，此思维过程叫做正确的下结论C过程——科学术语叫做“三段论推理”。</p>
-<p>e.g.<br>    生物包括所有的动物和不吃肉的动物等等<br>    动物都属于生物<br>    只有一部分动物吃肉<br>    老虎属于吃肉动物（最小的的圈）<br>    “得出”老虎属于生物</p>
-<p>复合命题（包括连接词）<br>            而且（and）两者同真为真<br>            或者（or）两者有一为真即为真<br>            ……</p>
-<p><a href="https://imgchr.com/i/NsWOBt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/NsWOBt.th.jpg" alt="NsWOBt.th.jpg"></a></p>
-<h3 id="2）非形式逻辑，合情推理，或然性–人类思维"><a href="#2）非形式逻辑，合情推理，或然性–人类思维" class="headerlink" title="2）非形式逻辑，合情推理，或然性–人类思维"></a>2）非形式逻辑，合情推理，或然性–人类思维</h3><h4 id="①归纳逻辑：小范围找大范围（强度）"><a href="#①归纳逻辑：小范围找大范围（强度）" class="headerlink" title="①归纳逻辑：小范围找大范围（强度）"></a>①归纳逻辑：小范围找大范围（强度）</h4><p>A(已婚）-&gt;B-&gt;C（未婚）   是否有一个已婚人士盯着未婚人士？<br>    A.是<br>    B.不是<br>    C.不确定</p>
-<p> 人的正常思维：C（直觉）；           计算机思维：A（演绎全部可能性） </p>
-<p>​    处理有限经验可能性（关键变量）<br>​    对“特殊对象”有限观察，整理出“性质”，归纳推理出事务“类型”</p>
-<p><a href="https://imgchr.com/i/NsWz4S" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/NsWz4S.th.jpg" alt="NsWz4S.th.jpg"></a></p>
-<p>​    密尔五法之三：<br>​        求同法：两者同时发生(不知因果)<br>​        求异法：控制变量，找不同（无法找全所有变量）<br>​        共变法：定量（统计）<br>​            总体-样本-可统计变量-参数<br>​    相关性（函数）-因果关系<br>​        随机对照测试（增加样本数）<br>​    归纳-对象-因果关系-统计-庞大数据-变量-推理-从过去到未来（观测手段有局限性）</p>
-<p><a href="https://imgchr.com/i/NsfKgJ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/NsfKgJ.th.jpg" alt="NsfKgJ.th.jpg"></a></p>
-<p>e.g.烟与肺癌</p>
-<p><a href="https://imgchr.com/i/Nsf3Hx" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/Nsf3Hx.th.jpg" alt="Nsf3Hx.th.jpg"></a></p>
-<p>如果单看1960年前的数据，无法判断烟与肺癌的关系；但在呼吁人们减少吸烟后，肺癌减少可以证明。</p>
-<p>​    科学&amp;神学<br>​        科学：将已于处理的结构嵌入人的经验的手段更高明（更易被实证证明，更有效）</p>
-<h4 id="②类比逻辑：相似范围类比（可接受度）（认知语言学）老-新，心理内容-物理实体"><a href="#②类比逻辑：相似范围类比（可接受度）（认知语言学）老-新，心理内容-物理实体" class="headerlink" title="②类比逻辑：相似范围类比（可接受度）（认知语言学）老-新，心理内容-物理实体"></a>②类比逻辑：相似范围类比（可接受度）（认知语言学）老-新，心理内容-物理实体</h4><p>​    e.g.逝者如斯夫<br>​    属性类比（形容词）<br>​    关系类比（动词，介词）<br>​    结构类比（名词）</p>
-<p><a href="https://imgchr.com/i/NsfyUf" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/NsfyUf.th.jpg" alt="NsfyUf.th.jpg"></a>    </p>
-<p>原型Prototype：高效认知，限制想象力<br>        语言链-拓展（原型范畴论）<br>            家庭类比社会</p>
-<p><a href="https://imgchr.com/i/Nsf28g" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/26/Nsf28g.th.jpg" alt="Nsf28g.th.jpg"></a></p>
-<p>​        推己及人<br>​            认为别人对我们的评价=我们对别人的评价的翻版<br>​    马克思·韦伯：我们都是悬挂在自己意义之网上的动物<br>​        被牢笼束缚<br>​        避无可避-&gt;扩大牢笼</p>
-<h2 id="2-谬误"><a href="#2-谬误" class="headerlink" title="2.谬误"></a>2.谬误</h2><p>​    前提谬误<br>​    支持谬误<br>​    相干谬误</p>
-<h2 id="3-逻辑与口才"><a href="#3-逻辑与口才" class="headerlink" title="3.逻辑与口才"></a>3.逻辑与口才</h2>
-          
+          逻辑学0.什么是逻辑？​    概念​    模型​    判断​        已知——&gt;未知：推理​        (概念-命题-论证)—&gt;逻辑
+1.逻辑：已知-&gt;未知1)演绎逻辑：大范围找小范围（必然有效）–机器思维 经典逻辑学（亚里士多德：必然得出），形式逻辑 形式：增加确
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/26/%E7%B2%97%E8%AF%BB%E9%80%BB%E8%BE%91%E5%AD%A6logic/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -716,115 +633,18 @@
       
         
           
-            <h1 id="Python-dictionary"><a href="#Python-dictionary" class="headerlink" title="Python-dictionary"></a>Python-dictionary</h1><h2 id="dictionary-and-import"><a href="#dictionary-and-import" class="headerlink" title="dictionary and import"></a>dictionary and import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'name'</span>:<span class="string">'Zophie'</span>,<span class="string">'age'</span>:<span class="number">7</span>&#125;</span><br><span class="line">spam[<span class="string">'name'</span>]</span><br><span class="line"><span class="comment">#out:'Zophie'</span></span><br></pre></td></tr></table></figure>
+          Python-dictionarydictionary and import123spam=&#123;'name':'Zophie','age':7&#125;spam['name']#out:'Zophie'
 
-<p><code>values</code>&amp;<code>keys</code>&amp;<code>items</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> spam.values():</span><br><span class="line">    print(v)</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> spam.keys():</span><br><span class="line">    print(k)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> spam.items():</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<p>red </p>
-<p>42 </p>
-<p>color </p>
-<p>age </p>
-<p>(‘color’, ‘red’)</p>
-<p>(‘age’, ‘42’)</p>
-<h2 id="use-the-factor-in-dictionary-to-form-list"><a href="#use-the-factor-in-dictionary-to-form-list" class="headerlink" title="use the factor in dictionary to form list"></a>use the factor in dictionary to form list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line">list(spam.keys())</span><br><span class="line"><span class="comment">#out:['color', 'age']</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>use the factors in <code>items</code> at the same time</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="string">'42'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> spam.items():</span><br><span class="line">    print(<span class="string">'Key: '</span>+k+<span class="string">' Value: '</span>+str(v))</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<p>Key: color Value: red<br>Key: age Value: 42</p>
-<p>use the <code>keys</code> to find the <code>values</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">'one'</span>:<span class="number">1</span>,<span class="string">'two'</span>:<span class="number">2</span>,<span class="string">'three'</span>:<span class="number">3</span>&#125;</span><br><span class="line">print(numbers[<span class="string">'two'</span>])</span><br><span class="line"><span class="comment">#out:2</span></span><br></pre></td></tr></table></figure>
-
-<p>but <code>values</code> can’t be used to find <code>keys</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> (numbers[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---------------------------------------------------------------------------</span><br><span class="line">KeyError                                  Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-1-d797711df7b1&gt; in &lt;module&gt;</span><br><span class="line">      1 numbers&#x3D;&#123;&quot;one&quot;: 1, &quot;two&quot;: 2&#125;</span><br><span class="line">----&gt; 2 print (numbers[2])</span><br><span class="line"></span><br><span class="line">KeyError: 2</span><br></pre></td></tr></table></figure>
-
-<p>use with <code>sort</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: [<span class="number">4</span>, <span class="number">6</span>, <span class="number">3</span>], <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line">x = (numbers[<span class="string">"two"</span>])</span><br><span class="line">print(x)</span><br><span class="line">x.sort()</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<p>[4, 6, 3]<br>[3, 4, 6]</p>
-<p>use <code>pop</code> to delete items</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">numbers=&#123;<span class="number">1</span>: <span class="number">2</span>, <span class="number">3</span>:<span class="number">4</span>&#125;</span><br><span class="line">numbers.pop(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (numbers)</span><br><span class="line"><span class="comment">#out:&#123;1: 2&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>use <code>get</code> to get  values</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d=&#123;<span class="string">"uno"</span>:[<span class="string">"one"</span>,<span class="number">1</span>],<span class="string">"dos"</span>:[<span class="string">"two"</span>,<span class="number">2</span>]&#125;</span><br><span class="line">d.get(<span class="string">"uno"</span>)</span><br><span class="line"><span class="comment">#out:['one', 1]</span></span><br></pre></td></tr></table></figure>
-
-<p>if there is no key </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d=&#123;<span class="string">"uno"</span>:[<span class="string">"one"</span>,<span class="number">1</span>],<span class="string">"dos"</span>:[<span class="string">"two"</span>,<span class="number">2</span>]&#125;</span><br><span class="line"><span class="keyword">print</span> (d.get(<span class="number">3</span>,<span class="string">'cat'</span>))</span><br><span class="line"><span class="comment">#out:cat</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>example for dictionary</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">k=input()</span><br><span class="line">v1=int(input())</span><br><span class="line">v2=int(input())</span><br><span class="line">v3=int(input())</span><br><span class="line">d=&#123;k:(v1,v2,v3)&#125;</span><br><span class="line"><span class="keyword">if</span> v1&gt;=<span class="number">78</span> <span class="keyword">and</span> v2&gt;=<span class="number">78</span> <span class="keyword">and</span> v3&gt;=<span class="number">78</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> d.items():</span><br><span class="line">        print(i)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'not pass'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<table>
-<thead>
-<tr>
-<th>Jim</th>
-<th>Jim</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>78</td>
-<td>90</td>
-</tr>
-<tr>
-<td>76</td>
-<td>78</td>
-</tr>
-<tr>
-<td>90</td>
-<td>80</td>
-</tr>
-<tr>
-<td>not pass</td>
-<td>(‘Jim’, (90, 78, 80))</td>
-</tr>
-</tbody></table>
-<h2 id="use-setdefault-to-add-items-to-dictionary"><a href="#use-setdefault-to-add-items-to-dictionary" class="headerlink" title="use setdefault to add items to dictionary"></a>use <code>setdefault</code> to add items to dictionary</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam=&#123;<span class="string">'name'</span>:<span class="string">'Pooka'</span>,<span class="string">'age'</span>:<span class="number">5</span>&#125;</span><br><span class="line">spam.setdefault(<span class="string">'color'</span>,<span class="string">'black'</span>)</span><br><span class="line">spam</span><br><span class="line">spam.setdefault(<span class="string">'color'</span>,<span class="string">'white'</span>)</span><br><span class="line">spam</span><br></pre></td></tr></table></figure>
-
-<p>out: {‘name’: ‘Pooka’, ‘age’: 5, ‘color’: ‘black’}</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">message=<span class="string">'It was a bright cold day in April,and the clocks were striking thirtheen.'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> character <span class="keyword">in</span> message:</span><br><span class="line">    count.setdefault(character,<span class="number">0</span>)<span class="comment">#creat the items for counting the number</span></span><br><span class="line">    count[character]=count[character]+<span class="number">1</span><span class="comment">#add one more to count</span></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure>
-
-<p>out: {‘I’: 1, ‘t’: 6, ‘ ‘: 12, ‘w’: 2, ‘a’: 4, ‘s’: 3, ‘b’: 1, ‘r’: 5, ‘i’: 6, ‘g’: 2, ‘h’: 4, ‘c’: 3, ‘o’: 2, ‘l’: 3, ‘d’: 3, ‘y’: 1, ‘n’: 4, ‘A’: 1, ‘p’: 1, ‘,’: 1, ‘e’: 5, ‘k’: 2, ‘.’: 1}</p>
-<p>use of <code>pprint</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line">score=[<span class="number">90</span>,<span class="number">89</span>,<span class="number">80</span>,<span class="number">77</span>,<span class="number">89</span>,<span class="number">77</span>,<span class="number">90</span>,<span class="number">81</span>,<span class="number">82</span>,<span class="number">76</span>,<span class="number">89</span>]</span><br><span class="line">result=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> score:</span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">90</span>:</span><br><span class="line">        result.setdefault(<span class="string">'A*'</span>,<span class="number">0</span>) <span class="comment">#if there is no value, the value is 0</span></span><br><span class="line">        result[<span class="string">'A*'</span>]=result[<span class="string">'A*'</span>]+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">75</span> <span class="keyword">and</span> i&lt;<span class="number">90</span>:</span><br><span class="line">        result.setdefault(<span class="string">'A'</span>,<span class="number">0</span>)</span><br><span class="line">        result[<span class="string">'A'</span>]=result[<span class="string">'A'</span>]+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">60</span> <span class="keyword">and</span> i&lt;<span class="number">75</span>:</span><br><span class="line">        result.setdefault(<span class="string">'B'</span>,<span class="number">0</span>)</span><br><span class="line">        result[<span class="string">'B'</span>]=result[<span class="string">'B'</span>]+<span class="number">1</span></span><br><span class="line">pprint.pprint(result)</span><br></pre></td></tr></table></figure>
-
-<p>out:{‘A’: 9, ‘A*’: 2}</p>
-<h2 id="used-in-game"><a href="#used-in-game" class="headerlink" title="used in game:"></a>used in game:</h2><p>create background</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">theBoard = &#123;<span class="string">'top-L'</span>: <span class="string">' '</span>, <span class="string">'top-M'</span>: <span class="string">' '</span>, <span class="string">'top-R'</span>: <span class="string">' '</span>,</span><br><span class="line">            <span class="string">'mid-L'</span>: <span class="string">' '</span>, <span class="string">'mid-M'</span>: <span class="string">' '</span>, <span class="string">'mid-R'</span>: <span class="string">' '</span>,</span><br><span class="line">            <span class="string">'low-L'</span>: <span class="string">' '</span>, <span class="string">'low-M'</span>: <span class="string">' '</span>, <span class="string">'low-R'</span>: <span class="string">' '</span>&#125; <span class="comment">#create dictionary to record the value</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printBoard</span><span class="params">(board)</span>:</span></span><br><span class="line">    print(board[<span class="string">'top-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-R'</span>]) <span class="comment">#put the records in the background</span></span><br><span class="line">    print(<span class="string">'-+-+-'</span>) <span class="comment">#separate the rows</span></span><br><span class="line">    print(board[<span class="string">'mid-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'low-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-R'</span>])</span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
-
-<p> | |<br>-+-+-<br> | |<br>-+-+-<br> | | </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">theBoard = &#123;<span class="string">'top-L'</span>: <span class="string">'O'</span>, <span class="string">'top-M'</span>: <span class="string">'O'</span>, <span class="string">'top-R'</span>: <span class="string">'O'</span>, <span class="string">'mid-L'</span>: <span class="string">'X'</span>, <span class="string">'mid-M'</span>:</span><br><span class="line"><span class="string">'X'</span>, <span class="string">'mid-R'</span>: <span class="string">' '</span>, <span class="string">'low-L'</span>: <span class="string">' '</span>, <span class="string">'low-M'</span>: <span class="string">' '</span>, <span class="string">'low-R'</span>: <span class="string">'X'</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printBoard</span><span class="params">(board)</span>:</span> <span class="comment">#make the printing processes a function</span></span><br><span class="line">    print(board[<span class="string">'top-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'top-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'mid-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'mid-R'</span>])</span><br><span class="line">    print(<span class="string">'-+-+-'</span>)</span><br><span class="line">    print(board[<span class="string">'low-L'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-M'</span>] + <span class="string">'|'</span> + board[<span class="string">'low-R'</span>])</span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
-
-<p>O|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">turn = <span class="string">'X'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>):</span><br><span class="line">    printBoard(theBoard) <span class="comment">#the function</span></span><br><span class="line">    print(<span class="string">'Turn for '</span> + turn + <span class="string">'. Move on which space?'</span>)</span><br><span class="line">    move = input()</span><br><span class="line">    theBoard[move] = turn</span><br><span class="line">    <span class="keyword">if</span> turn == <span class="string">'X'</span>:</span><br><span class="line">        turn = <span class="string">'O'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        turn = <span class="string">'X'</span></span><br><span class="line">printBoard(theBoard)</span><br></pre></td></tr></table></figure>
-
-<p>O|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X<br>Turn for X. Move on which space?<br>top-L<br>X|O|O<br>-+-+-<br>X|X|<br>-+-+-<br> | |X</p>
-<p>… …</p>
-<p>another example to record the number:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">allGuests=&#123;<span class="string">'Alice'</span>:&#123;<span class="string">'apples'</span>:<span class="number">5</span>,<span class="string">'pretzels'</span>:<span class="number">12</span>&#125;,</span><br><span class="line">          <span class="string">'Bob'</span>:&#123;<span class="string">'ham sandwiches'</span>:<span class="number">3</span>,<span class="string">'apples'</span>:<span class="number">2</span>&#125;,</span><br><span class="line">          <span class="string">'Carol'</span>:&#123;<span class="string">'cups'</span>:<span class="number">3</span>,<span class="string">'apple pies'</span>:<span class="number">1</span>&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">totalBrought</span><span class="params">(guests,item)</span>:</span></span><br><span class="line">    numBrought=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> guests.items():</span><br><span class="line">        numBrought=numBrought+v.get(item,<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> numBrought</span><br><span class="line">print(<span class="string">'Number of things being brought:'</span>)</span><br><span class="line">print(<span class="string">' - Apples '</span> + str(totalBrought(allGuests, <span class="string">'apples'</span>)))</span><br><span class="line">print(<span class="string">' - Cups '</span> + str(totalBrought(allGuests, <span class="string">'cups'</span>)))</span><br><span class="line">print(<span class="string">' - Cakes '</span> + str(totalBrought(allGuests, <span class="string">'cakes'</span>)))</span><br><span class="line">print(<span class="string">' - Ham Sandwiches '</span> + str(totalBrought(allGuests, <span class="string">'ham sandwiches'</span>)))</span><br><span class="line">print(<span class="string">' - Apple Pies '</span> + str(totalBrought(allGuests, <span class="string">'apple pies'</span>)))</span><br></pre></td></tr></table></figure>
-
-<p>Number of things being brought:</p>
-<ul>
-<li>Apples 7</li>
-<li>Cups 3</li>
-<li>Cakes 0</li>
-<li>Ham Sandwiches 3</li>
-<li>Apple Pies 1</li>
-</ul>
-
-          
+values&amp;keys&amp;items
+1234567spam=&#12
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/26/python%E5%AD%A6%E4%B9%A05/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -964,21 +784,15 @@
       
         
           
-            <p>Welcome! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubles
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/19/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1096,28 +910,17 @@
       
         
           
-            <p>matplotlib   </p>
-<p>‘.scatter()’  ,   ‘.text()’  ,  ‘savefig()’</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ax.scatter(x, y,                              <span class="comment">#坐标</span></span><br><span class="line">           s=df_solar.moon_diameter_km/<span class="number">1.5</span>,   <span class="comment">#图形大小</span></span><br><span class="line">           facecolor=<span class="string">'w'</span>, edgecolor=<span class="string">'k'</span>, </span><br><span class="line">           marker=<span class="string">'o'</span>,                        <span class="comment">#形状                          </span></span><br><span class="line">           alpha=<span class="number">0.5</span>)                         <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax.text(x,y,                      <span class="comment">#坐标                       </span></span><br><span class="line">        <span class="string">'%s (%s)'</span> % (row.moon_name, row.planet_name[<span class="number">0</span>]), </span><br><span class="line">        ha=<span class="string">'center'</span>, va=<span class="string">'center'</span>) <span class="comment">#图形中位置</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.savefig(<span class="string">'x'</span>,                   <span class="comment">#文件名称</span></span><br><span class="line">        bbox_inches=<span class="string">'tight'</span>)     <span class="comment">#图片裁剪</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Seaborn：’sns.set()’</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sns.set(context=<span class="string">'notebook'</span>,                      </span><br><span class="line">        style=<span class="string">'whitegrid'</span>,    <span class="comment">#背景风格</span></span><br><span class="line">        palette=sns.color_palette(<span class="string">'Paired'</span>, <span class="number">12</span>))</span><br><span class="line"><span class="comment">#context 代表风格</span></span><br><span class="line"><span class="comment">#font_scale 为字体大小</span></span><br><span class="line"><span class="comment">#lines.linewidth 指定了线宽</span></span><br><span class="line"><span class="comment">#color_palette()能传入任何Matplotlib所支持的颜色</span></span><br><span class="line"><span class="comment">#color_palette()不写参数则默认颜色</span></span><br><span class="line"><span class="comment">#set_palette()设置所有图的颜色</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.drop_duplicates() <span class="comment">#去除重复项</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>sns.distplot</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df.groupby([<span class="string">'YEAR'</span>, <span class="string">'MONTH'</span>]).sum().PRCP, </span><br><span class="line">             color=<span class="string">'b'</span>, bins=<span class="number">50</span>,   <span class="comment">#50个柱形</span></span><br><span class="line">             hist=<span class="literal">True</span>,            <span class="comment">#开启直方图</span></span><br><span class="line">             rug=<span class="literal">True</span>, kde=<span class="literal">True</span>)   <span class="comment">#开启细线，曲线</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          matplotlib   
+‘.scatter()’  ,   ‘.text()’  ,  ‘savefig()’
+12345ax.scatter(x, y,                              #坐标           s=df_solar.moon_diameter_km
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/19/matplotlib%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1235,79 +1038,18 @@
       
         
           
-            <h1 id="Python-functions"><a href="#Python-functions" class="headerlink" title="Python-functions"></a>Python-functions</h1><h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><p>.upper()–capital the letters</p>
-<p>.lower()–lower the letters</p>
-<p>.islower()–check whether all the letters are lower</p>
-<p>.isupper()–check whether all the letters are capital</p>
-<p>.isalpha()–check wether all are string(includes letters and Chinese)</p>
-<p>.isalnum()–check whether all are string or numbers</p>
-<p>.startswith()–check whether the string starts with the context in the ()</p>
-<p>.endswith()–check whether the string ends with the context in the ()</p>
-<p>‘, ‘.join()–join the list with’,’</p>
-<p>.split()–split to form the list with ‘ ‘</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'MyabcnameabcisabcSimon'</span>.split(<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#out:['My', 'name', 'is', 'Simon']</span></span><br></pre></td></tr></table></figure>
-
-<p>.rjust(10)–add 10 spaces to the left of the string</p>
-<p>.ljust(10)–add 10 spaces to the right of the string</p>
-<p>.rjust(10,’*’)–add 10 stars to the left of the string</p>
-<p>.center(20,’*’)–put the string in the middle of 20 stars</p>
-<p>.strip(‘Spam’)–skip the Spam in the front and in the end</p>
-<h2 id="print-："><a href="#print-：" class="headerlink" title="print()："></a><strong>print()：</strong></h2><p>end:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Hello '</span>,end=<span class="string">''</span>)</span><br><span class="line">print(<span class="string">'World'</span>)</span><br><span class="line"><span class="comment">#out:Hello World</span></span><br></pre></td></tr></table></figure>
-
-<p>sep:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'cats'</span>,<span class="string">'dogs'</span>,<span class="string">'mice'</span>,sep=<span class="string">","</span>)</span><br><span class="line"><span class="comment">#out:cats,dogs,mice</span></span><br></pre></td></tr></table></figure>
-
-<p>print() will return ‘none’ value:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam = print(<span class="string">'Hello!'</span>)</span><br><span class="line"><span class="comment">#out:Hello! </span></span><br><span class="line"></span><br><span class="line"><span class="literal">None</span> == spam</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="def"><a href="#def" class="headerlink" title="def"></a>def</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(name)</span>:</span> </span><br><span class="line">    print(<span class="string">'Hello '</span> + name) </span><br><span class="line">hello(<span class="string">'Alice'</span>) </span><br><span class="line">hello(<span class="string">'Bob'</span>) </span><br><span class="line"><span class="comment">#out：Hello Alice</span></span><br><span class="line"><span class="comment">#    Hello Bob</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p>It will print a random answer.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAnswer</span><span class="params">(answerNumber)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> answerNumber == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'It is certain'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'It is decidedly so'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Yes'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Reply hazy try again'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Ask again later'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">6</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Concentrate and ask again'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">7</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'My reply is no'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Outlook not so good'</span></span><br><span class="line">    <span class="keyword">elif</span> answerNumber == <span class="number">9</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Very doubtful'</span></span><br><span class="line">r = random.randint(<span class="number">1</span>, <span class="number">9</span>)</span><br><span class="line">fortune = getAnswer(r)</span><br><span class="line">print(fortune)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="partial-and-overall"><a href="#partial-and-overall" class="headerlink" title="partial and overall"></a>partial and overall</h3><ol>
-<li>Variables in one part can’t be used in overall situation.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs = <span class="number">31337</span></span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NameError                                 Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-9-4fa03afe709c&gt; in &lt;module&gt;</span><br><span class="line">      2     eggs&#x3D;31337</span><br><span class="line">      3 </span><br><span class="line">----&gt; 4 print(eggs)</span><br><span class="line"></span><br><span class="line">NameError: name &#39;eggs&#39; is not defined</span><br></pre></td></tr></table></figure>
-
-<p>This is because the ‘eggs’ is only in the spam but not the overall situation.</p>
-<ol start="2">
-<li>Variables in one part can’t be used in another part.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="number">99</span></span><br><span class="line">    bacon()</span><br><span class="line">    eggs=bacon()</span><br><span class="line">    print(eggs)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bacon</span><span class="params">()</span>:</span></span><br><span class="line">    ham=<span class="number">101</span></span><br><span class="line">    eggs=<span class="number">0</span></span><br><span class="line">    print(<span class="string">'1'</span>)</span><br><span class="line">    <span class="keyword">return</span> eggs</span><br><span class="line">spam()</span><br><span class="line"><span class="comment">#out:1</span></span><br><span class="line"><span class="comment">#    1</span></span><br><span class="line"><span class="comment">#    0</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Variables in overall situation can be used in one part.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    print(eggs)</span><br><span class="line">eggs=<span class="number">42</span></span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br><span class="line"><span class="comment">#out:42</span></span><br><span class="line"><span class="comment">#    42</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>One part can be used in another part, and their name can be the same.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="string">'spam local'</span></span><br><span class="line">    print(eggs)<span class="comment">#prints 'spam local'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bacon</span><span class="params">()</span>:</span></span><br><span class="line">    eggs=<span class="string">'bacon local'</span></span><br><span class="line">    print(eggs)<span class="comment">#print 'bacon local'</span></span><br><span class="line">    spam()</span><br><span class="line">    print(eggs)<span class="comment">#print 'bacon local'</span></span><br><span class="line">eggs=<span class="string">'global'</span></span><br><span class="line">bacon()</span><br><span class="line">print(eggs)<span class="comment">#prints 'global'</span></span><br><span class="line"><span class="comment">#out:bacon local</span></span><br><span class="line"><span class="comment">#    spam local</span></span><br><span class="line"><span class="comment">#    bacon local</span></span><br><span class="line"><span class="comment">#    global</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="try"><a href="#try" class="headerlink" title="try"></a>try</h3><p>try, if the condition can’t be satisfied, move on to the except part:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">(divideBy)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">42</span> / divideBy</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        print(<span class="string">'Error :Invalid argument.'</span>)</span><br><span class="line"></span><br><span class="line">print(spam(<span class="number">2</span>))</span><br><span class="line">print(spam(<span class="number">12</span>))</span><br><span class="line">print(spam(<span class="number">0</span>))</span><br><span class="line">print(spam(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<p>21.0<br>3.5<br>Error :Invalid argument.<br>None<br>42.0</p>
-<h3 id="guess-the-number"><a href="#guess-the-number" class="headerlink" title="guess the number:"></a>guess the number:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#This is a guess the numer game</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">secretNumber=random.randint(<span class="number">1</span>,<span class="number">20</span>)</span><br><span class="line">print(<span class="string">'I am thinking of a number between 1 and 20.'</span>)</span><br><span class="line"><span class="comment">#Ask the player to guess 6 times</span></span><br><span class="line"><span class="keyword">for</span> guessesTaken <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">7</span>):</span><br><span class="line">    print(<span class="string">'Take a guess!'</span>)</span><br><span class="line">    guess=int(input())</span><br><span class="line">    <span class="keyword">if</span> guess&lt;secretNumber:</span><br><span class="line">        print(<span class="string">'Your guess is too low.'</span>)</span><br><span class="line">    <span class="keyword">elif</span> guess&gt;secretNumber:</span><br><span class="line">        print(<span class="string">'Your number is too high.'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">if</span> guess==secretNumber:</span><br><span class="line">    print(<span class="string">'Good job!You guessed my number in '</span>+str(guessesTaken)+<span class="string">' guesses!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Nope. The number I was thinking of was '</span>+str(secretNumber)+<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
-
-<p>out:</p>
-<p>I am thinking of a number between 1 and 20.<br>Take a guess!<br>1<br>Your guess is too low.<br>Take a guess!<br>4<br>Your guess is too low.<br>Take a guess!<br>6<br>Your guess is too low.<br>Take a guess!<br>9<br>Your guess is too low.<br>Take a guess!<br>15<br>Good job!You guessed my number in 5 guesses!</p>
-
-          
+          Python-functionsothers.upper()–capital the letters
+.lower()–lower the letters
+.islower()–check whether all the letters are lower
+.isupper()–check whet
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A04/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1425,16 +1167,16 @@
       
         
           
-            <h1 id="guess-numbers-game"><a href="#guess-numbers-game" class="headerlink" title="guess numbers game"></a>guess numbers game</h1><p>The computer will choose 4 numbers randomly and in a random order. You can input to guess the numbers and the order.</p>
-<p>If your numbers/number are/is included but not the same order, you will get “o”; if your numbers/number are/is the same order as the original one, you will get “△”‘</p>
-<p>Computer will record the times you guess.</p>
-<p>If you want to stop and know the answer, please input “0000”</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#instruction</span></span><br><span class="line">print(<span class="string">'The computer will choose 4 numbers randomly and in a random order. You can input to guess the numbers and the order.'</span></span><br><span class="line">      <span class="string">'If your numbers/number are/is included but not the same order, you will get "o"; if your numbers/number are/is the same order as the original one, you will get "△"'</span></span><br><span class="line">     <span class="string">'Computer will record the times you guess.'</span></span><br><span class="line">     <span class="string">'If you want to stop and know the answer, please input "0000"'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#create the number</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">a=str(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br><span class="line"></span><br><span class="line">b=str(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br><span class="line"><span class="keyword">while</span> a==b:</span><br><span class="line">    b=str(random.randint(<span class="number">0</span>,<span class="number">9</span>)) <span class="comment">#if the numbers are the same, change the number</span></span><br><span class="line">    </span><br><span class="line">c=str(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br><span class="line"><span class="keyword">while</span> a==c <span class="keyword">or</span> b==c:</span><br><span class="line">    c=str(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br><span class="line">    </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=str(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br><span class="line">    <span class="keyword">if</span>  a!=d <span class="keyword">and</span> b!=d <span class="keyword">and</span> c!=d:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="comment">#input the guessing number and start to record the times</span></span><br><span class="line">number=list(input())</span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#check whether the numbers are in or have the same order</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> number[<span class="number">0</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">1</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">2</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">3</span>] == <span class="string">'0'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> a == number[<span class="number">0</span>] <span class="keyword">and</span> b == number[<span class="number">1</span>] <span class="keyword">and</span> c == number[<span class="number">2</span>] <span class="keyword">and</span> d == number[<span class="number">3</span>]:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    triangle=<span class="number">0</span></span><br><span class="line">    circle=<span class="number">0</span>      <span class="comment">#if it is right, jump out of the loop</span></span><br><span class="line">    <span class="keyword">if</span> a <span class="keyword">in</span> number:</span><br><span class="line">        <span class="keyword">if</span> a == number[<span class="number">0</span>]:</span><br><span class="line">            triangle=triangle+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            circle=circle+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> b <span class="keyword">in</span> number:</span><br><span class="line">        <span class="keyword">if</span> b == number[<span class="number">1</span>]:</span><br><span class="line">            triangle=triangle+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            circle=circle+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> c <span class="keyword">in</span> number:</span><br><span class="line">        <span class="keyword">if</span> c == number[<span class="number">2</span>]:</span><br><span class="line">            triangle=triangle+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            circle=circle+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> d <span class="keyword">in</span> number:</span><br><span class="line">        <span class="keyword">if</span> d == number[<span class="number">3</span>]:</span><br><span class="line">            triangle=triangle+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            circle=circle+<span class="number">1</span></span><br><span class="line">    <span class="comment">#show the result and allow the user to input again        </span></span><br><span class="line">    print(<span class="string">'△：'</span>,triangle,<span class="string">'o：'</span>,circle)</span><br><span class="line">    number=list(input())</span><br><span class="line">    i=i+<span class="number">1</span></span><br><span class="line"><span class="comment">#show the right one and the times used</span></span><br><span class="line"><span class="keyword">if</span> number[<span class="number">0</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">1</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">2</span>] == <span class="string">'0'</span> <span class="keyword">and</span> number[<span class="number">3</span>] == <span class="string">'0'</span>:</span><br><span class="line">    print(<span class="string">'sorry, it is'</span>,a,b,c,d,<span class="string">', you used'</span>,i,<span class="string">'times.'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'you are right, it is'</span>,a,b,c,d,<span class="string">', you used'</span>,i,<span class="string">'times.'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>example:</p>
-<p>The computer will choose 4 numbers randomly and in a random order. You can input to guess the numbers and the order.If your numbers/number are/is included but not the same order, you will get “o”; if your numbers/number are/is the same order as the original one, you will get “△”Computer will record the times you guess.<br>1234<br>△： 0 o： 1<br>5678<br>△： 0 o： 3<br>6781<br>△： 0 o： 2<br>8762<br>△： 1 o： 2<br>2567<br>you are right, it is 2 5 6 7 , you used 5 times.</p>
-
-          
+          guess numbers gameThe computer will choose 4 numbers randomly and in a random order. You can input to guess the numbers and the order.
+If your numbers
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/07/guess-numbers/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1552,106 +1294,16 @@
       
         
           
-            <h1 id="Python-List"><a href="#Python-List" class="headerlink" title="Python-List"></a>Python-List</h1><h2 id="Obtain-the-value"><a href="#Obtain-the-value" class="headerlink" title="Obtain the value"></a>Obtain the value</h2><p>The value is obtained from ‘0’, which means ‘0’ is the first value.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['cat', 'bat', 'rat', 'elephant']</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spam[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#out:'cat'</span></span><br></pre></td></tr></table></figure>
-
-<p>We can also add it to a string:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'The '</span>+spam[<span class="number">1</span>]+<span class="string">' ate the '</span>+spam[<span class="number">0</span>]+<span class="string">'.'</span></span><br><span class="line"><span class="comment">#out:'The bat ate the cat.'</span></span><br></pre></td></tr></table></figure>
-
-<p>The list in the list:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>],[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line">spam[<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line"><span class="comment">#out:20</span></span><br></pre></td></tr></table></figure>
-
-<p>Use negative subscripts to get the value:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">-3</span>]</span><br><span class="line"><span class="comment">#out:'bat'</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Obtain-the-slice"><a href="#Obtain-the-slice" class="headerlink" title="Obtain the slice"></a>Obtain the slice</h2><p>Use range of subscripts (the range includes the former one, but doesn’t include the later one)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">0</span>:<span class="number">-2</span>]</span><br><span class="line"><span class="comment">#out:['cat','bat']</span></span><br></pre></td></tr></table></figure>
-
-<p>without one/both subscript(s) (from the beginning or/and the end)</p>
-<ul>
-<li>[:] means the  whole list</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[:<span class="number">2</span>]</span><br><span class="line"><span class="comment">#out:['cat', 'bat']</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h2><p>Length is the number of value it has.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'dog'</span>,<span class="string">'moose'</span>]</span><br><span class="line">len(spam)</span><br><span class="line"><span class="comment">#out: 3</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Changing-the-value-by-using-subscripts"><a href="#Changing-the-value-by-using-subscripts" class="headerlink" title="Changing the value by using subscripts"></a>Changing the value by using subscripts</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'cat'</span>,<span class="string">'bat'</span>,<span class="string">'rat'</span>,<span class="string">'elephant'</span>]</span><br><span class="line">spam[<span class="number">1</span>]=<span class="string">'aardvark'</span>  </span><br><span class="line">spam[<span class="number">2</span>]=spam[<span class="number">1</span>]</span><br><span class="line">spam[<span class="number">-1</span>]=<span class="number">12345</span></span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['cat', 'aardvark', 'aardvark', 12345]</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="The-combination-and-calculation-of-list"><a href="#The-combination-and-calculation-of-list" class="headerlink" title="The combination and calculation of list"></a>The combination and calculation of list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]+[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>]</span><br><span class="line"><span class="comment">#out:[1, 2, 3, 'A', 'B', 'C']</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]*<span class="number">3</span></span><br><span class="line"><span class="comment">#out:[1, 2, 3, 1, 2, 3, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
-
-<p>Delete by using del</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">del</span> spam[<span class="number">2</span>]</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 2, 4]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="one-usage-enter-the-cats’-name"><a href="#one-usage-enter-the-cats’-name" class="headerlink" title="one usage: enter the cats’ name:"></a>one usage: enter the cats’ name:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">catnames=[]</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Enter the name of cat '</span>+str(len(catnames)+<span class="number">1</span>)+<span class="string">'(Or enter nothing to stop.):'</span>)</span><br><span class="line">    name=input()</span><br><span class="line">    <span class="keyword">if</span> name ==<span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    catnames=catnames+[name]</span><br><span class="line">print(<span class="string">'The cat names are:'</span>)</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> catnames:</span><br><span class="line">    print(<span class="string">'  '</span>+name)</span><br></pre></td></tr></table></figure>
-
-<p><strong>The processing steps:</strong></p>
-<p>Enter the name of cat 1(Or enter nothing to stop.):<br>Alpha<br>Enter the name of cat 2(Or enter nothing to stop.):<br>Bravo<br>Enter the name of cat 3(Or enter nothing to stop.):<br>Cathy<br>Enter the name of cat 4(Or enter nothing to stop.):</p>
-<p><strong>The result:</strong></p>
-<p>The cat names are:<br>  Alpha<br>  Bravo<br>  Cathy</p>
-<h2 id="Use-list-in-loop"><a href="#Use-list-in-loop" class="headerlink" title="Use list in loop"></a>Use list in loop</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">supplies=[<span class="string">'pen'</span>,<span class="string">'staplers'</span>,<span class="string">'flame-throwers'</span>,<span class="string">'binders'</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(supplies)):</span><br><span class="line">    print(<span class="string">'Index '</span>+str(i)+<span class="string">' in supplies is: '</span>+supplies[i])</span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Index 0 in supplies is: pen</span></span><br><span class="line"><span class="comment">#Index 1 in supplies is: staplers</span></span><br><span class="line"><span class="comment">#Index 2 in supplies is: flame-throwers</span></span><br><span class="line"><span class="comment">#Index 3 in supplies is: binders</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="in-and-not-in"><a href="#in-and-not-in" class="headerlink" title="in and not in"></a><em>in</em> and <em>not in</em></h2><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'howdy'</span><span class="keyword">in</span>[<span class="string">'hello'</span>,<span class="string">'hi'</span>,<span class="string">'howdy'</span>]</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
-
-<p>usage:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mypet=[<span class="string">'Zophie'</span>,<span class="string">'Pooka'</span>,<span class="string">'Simon'</span>]</span><br><span class="line">print(<span class="string">'Enter a pet name:'</span>)</span><br><span class="line">name=input()</span><br><span class="line"><span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> mypet:</span><br><span class="line">    print(<span class="string">'I do not have a pet named '</span>+name)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(name+<span class="string">' is my pet.'</span>)</span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Enter a pet name:</span></span><br><span class="line"><span class="comment">#Simon</span></span><br><span class="line"><span class="comment">#Simon is my pet.</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>improve the former usage about the cats’ names:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">catnames=[]</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">'Enter the name of cat '</span>+str(len(catnames)+<span class="number">1</span>)+<span class="string">'(Or enter nothing to stop.):'</span>)</span><br><span class="line">    name=input()</span><br><span class="line">    <span class="keyword">if</span> name ==<span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> catnames:              <span class="comment">#added part    </span></span><br><span class="line">        print(<span class="string">'The name has existed'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        catnames=catnames+[name]</span><br><span class="line">print(<span class="string">'The cat names are:'</span>)</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> catnames:</span><br><span class="line">    print(<span class="string">'  '</span>+name)</span><br></pre></td></tr></table></figure>
-
-<p><strong>The processing steps:</strong></p>
-<p>Enter the name of cat 1(Or enter nothing to stop.):<br>Alpha<br>Enter the name of cat 2(Or enter nothing to stop.):<br>Bravo<br><strong><em>Enter the name of cat 3(Or enter nothing to stop.):</em></strong><br><strong><em>Alpha</em></strong><br><strong><em>The name has existed</em></strong><br>Enter the name of cat 3(Or enter nothing to stop.):<br>Cathy<br>Enter the name of cat 4(Or enter nothing to stop.):</p>
-<p><strong>The result:</strong></p>
-<p>The cat names are:<br>  Alpha<br>  Bravo<br>  Cathy</p>
-<h2 id="Mutiple-values"><a href="#Mutiple-values" class="headerlink" title="Mutiple values:"></a>Mutiple values:</h2><p>We can give the list other values.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat=[<span class="string">'fat'</span>,<span class="string">'black'</span>,<span class="string">'loud'</span>]</span><br><span class="line">size, color, dispostion=cat</span><br><span class="line">print(size)</span><br><span class="line"><span class="comment">#out:fat</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Other-instructions"><a href="#Other-instructions" class="headerlink" title="Other instructions"></a>Other instructions</h2><h3 id="append-add-a-new-value-to-the-list-in-the-end"><a href="#append-add-a-new-value-to-the-list-in-the-end" class="headerlink" title="append: add a new value to the list in the end"></a>append: add a new value to the list in the end</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.append(<span class="string">'mouse'</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 2, 3, 4, 'mouse']</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="insert-add-a-new-value-in-the-middle"><a href="#insert-add-a-new-value-in-the-middle" class="headerlink" title="insert: add a new value in the middle"></a>insert: add a new value in the middle</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.insert(<span class="number">1</span>,<span class="string">'chicken'</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[1, 'chicken', 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="index-show-the-position-of-the-value"><a href="#index-show-the-position-of-the-value" class="headerlink" title="index: show the position of the value"></a>index: show the position of the value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.index(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#out: 2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="remove-remove-the-value-from-the-list"><a href="#remove-remove-the-value-from-the-list" class="headerlink" title="remove:  remove the value from the list"></a>remove:  remove the value from the list</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">spam.remove(<span class="number">1</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="sort-put-the-value-in-order"><a href="#sort-put-the-value-in-order" class="headerlink" title="sort: put the value in order"></a>sort: put the value in order</h3><h4 id="numbers"><a href="#numbers" class="headerlink" title="numbers:"></a>numbers:</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="number">2</span>,<span class="number">5</span>,<span class="number">3.14</span>,<span class="number">1</span>,<span class="number">-7</span>]</span><br><span class="line">spam.sort()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:[-7, 1, 2, 3.14, 5]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="words-the-upper-letters-are-in-the-front"><a href="#words-the-upper-letters-are-in-the-front" class="headerlink" title="words: (the upper letters are in the front)"></a>words: (the upper letters are in the front)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'ants'</span>,<span class="string">'cats'</span>,<span class="string">'dogs'</span>,<span class="string">'badgers'</span>]</span><br><span class="line">spam.sort()</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['ants', 'badgers', 'cats', 'dogs']</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="reverse-reverse-the-order-of-the-value"><a href="#reverse-reverse-the-order-of-the-value" class="headerlink" title="reverse: reverse the order of the value"></a>reverse: reverse the order of the value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'ants'</span>, <span class="string">'badgers'</span>, <span class="string">'cats'</span>, <span class="string">'dogs'</span>]</span><br><span class="line">spam.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out:['dogs', 'cats', 'badgers', 'ants']</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="ignore-the-lower-or-upper-letters"><a href="#ignore-the-lower-or-upper-letters" class="headerlink" title="ignore the lower or upper letters:"></a>ignore the lower or upper letters:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spam=[<span class="string">'b'</span>,<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'z'</span>,<span class="string">'Z'</span>]</span><br><span class="line">spam.sort(key=str.lower)</span><br><span class="line">spam</span><br><span class="line"><span class="comment">#out: ['a', 'A', 'b', 'z', 'Z']</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="tuple-can-be-read-only"><a href="#tuple-can-be-read-only" class="headerlink" title="tuple: (can be read only)"></a>tuple: (can be read only)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="comment">#out:(1, 2, 3, 4)</span></span><br></pre></td></tr></table></figure>
-
-<p>*if turn dictionary to tuple, it will only show the key:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple(&#123;<span class="number">1</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">4</span>&#125;)</span><br><span class="line"><span class="comment">#out:(1, 3)</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          Python-ListObtain the valueThe value is obtained from ‘0’, which means ‘0’ is the first value.
+123spam=['cat','bat','rat','elephant']spam#out:['cat', 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/30/Python-%E5%AD%A6%E4%B9%A03/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1769,30 +1421,16 @@
       
         
           
-            <h1 id="List-of-certificates-and-other-activities"><a href="#List-of-certificates-and-other-activities" class="headerlink" title="List of certificates and other activities"></a>List of certificates and other activities</h1><h2 id="Academic-competition"><a href="#Academic-competition" class="headerlink" title="Academic competition"></a>Academic competition</h2><h3 id="1-ETS-critical-thinking"><a href="#1-ETS-critical-thinking" class="headerlink" title="1. ETS (critical thinking)"></a>1. ETS (critical thinking)</h3><p><img src="https://s1.ax1x.com/2020/05/30/tQpZND.jpg" alt="tQpZND.jpg"></p>
-<h3 id="2-CTB"><a href="#2-CTB" class="headerlink" title="2. CTB"></a>2. CTB</h3><p>Our research topic was about rubbish classification. Looking for details: <a href="https://arya-1017.github.io/2020/03/21/CTB%E5%8F%82%E8%B5%9B%E8%BF%87%E7%A8%8B/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/21/CTB%E5%8F%82%E8%B5%9B%E8%BF%87%E7%A8%8B/</a></p>
-<p><a href="https://imgchr.com/i/tQpJUS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/30/tQpJUS.jpg" alt="tQpJUS.jpg"></a></p>
-<h3 id="3-Haihua-AI-competition"><a href="#3-Haihua-AI-competition" class="headerlink" title="3. Haihua AI competition"></a>3. Haihua AI competition</h3><p>Using machine learning to achieve the automatic rubbish classification. Looking for details:</p>
-<p>1: <a href="https://arya-1017.github.io/2020/02/25/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B1/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/02/25/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B1/</a></p>
-<p>2: <a href="https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B2/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B2/</a></p>
-<p>3: <a href="https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B3/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B3/</a></p>
-<p>4: <a href="https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B4/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B4/</a></p>
-<p>5: <a href="https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B5/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/23/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B5/</a></p>
-<p>6: <a href="https://arya-1017.github.io/2020/03/31/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B6/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/03/31/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9B6/</a></p>
-<p>thoughts: <a href="https://arya-1017.github.io/2020/04/18/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9Bthought/" target="_blank" rel="noopener">https://arya-1017.github.io/2020/04/18/%E6%9C%89%E5%85%B3%E6%B5%B7%E5%8D%8EAI%E6%AF%94%E8%B5%9Bthought/</a></p>
-<h3 id="4-UKMT"><a href="#4-UKMT" class="headerlink" title="4.  UKMT"></a>4.  UKMT</h3><p><img src="https://s1.ax1x.com/2020/05/30/tQCyp4.jpg" alt="tQCyp4.jpg"></p>
-<h2 id="Other-activities"><a href="#Other-activities" class="headerlink" title="Other activities"></a>Other activities</h2><h3 id="1-Dragon-boat-race"><a href="#1-Dragon-boat-race" class="headerlink" title="1. Dragon boat race"></a>1. Dragon boat race</h3><p>‘Shuimuqinhuai cup’ the 13th Nanjing dragon boat race in 2019</p>
-<p>the first prize</p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQCZSH.png" alt="tQCZSH.png"></p>
-<p>photos:</p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQF1k6.png" alt="tQF1k6.png"></p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQAQJK.png" alt="tQAQJK.png"></p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQA8Qe.png" alt="tQA8Qe.png"></p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQAJLd.jpg" alt="tQAJLd.jpg"></p>
-<h3 id="2-horse-riding"><a href="#2-horse-riding" class="headerlink" title="2. horse riding"></a>2. horse riding</h3><p><img src="https://s1.ax1x.com/2020/05/30/tQAoy4.jpg" alt="tQAoy4.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/05/30/tQES6e.jpg" alt="tQES6e.jpg"></p>
-
-          
+          List of certificates and other activitiesAcademic competition1. ETS (critical thinking)
+2. CTBOur research topic was about rubbish classification. Loo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/30/certificate/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1932,13 +1570,17 @@
       
         
           
-            <p>列举所有六角星，使每条线上的数字和为26，数字取1-12，不可重复使用。</p>
-<p> Enumerate all hexagon stars, make the sum of the Numbers on each line 26. Irreusable numbers are from 1-12. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">        <span class="keyword">if</span> a!=b:</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                <span class="keyword">if</span> a!=c <span class="keyword">and</span> b!=c:</span><br><span class="line">                    <span class="keyword">for</span> d <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                        <span class="keyword">if</span> a!=d <span class="keyword">and</span> b!=d <span class="keyword">and</span> c!=d:</span><br><span class="line">                            <span class="keyword">for</span> e <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                <span class="keyword">if</span> a!=e <span class="keyword">and</span> b!=e <span class="keyword">and</span> c!=e <span class="keyword">and</span> d!=e:</span><br><span class="line">                                    <span class="keyword">for</span> f <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                        <span class="keyword">if</span> a!=f <span class="keyword">and</span> b!= f <span class="keyword">and</span> c!=f <span class="keyword">and</span> d!=f <span class="keyword">and</span> e!=f:</span><br><span class="line">                                            <span class="keyword">for</span> g <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                <span class="keyword">if</span> a!=g <span class="keyword">and</span> b!= g <span class="keyword">and</span> c!=g <span class="keyword">and</span> d!=g <span class="keyword">and</span> e!=g <span class="keyword">and</span> f!=g:</span><br><span class="line">                                                    <span class="keyword">for</span> h <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                        <span class="keyword">if</span> a!=h <span class="keyword">and</span> b!=h <span class="keyword">and</span> c!=h <span class="keyword">and</span> d!=h <span class="keyword">and</span> e!=h <span class="keyword">and</span> f!=h <span class="keyword">and</span> g!=h:</span><br><span class="line">                                                            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                                 <span class="keyword">if</span> a!=i <span class="keyword">and</span> b!=i <span class="keyword">and</span> c!=i <span class="keyword">and</span> d!=i <span class="keyword">and</span> e!=i <span class="keyword">and</span> f!=i <span class="keyword">and</span> g!=i <span class="keyword">and</span> h!=i:</span><br><span class="line">                                                                        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                                             <span class="keyword">if</span> a!=j <span class="keyword">and</span> b!=j <span class="keyword">and</span> c!=j <span class="keyword">and</span> d!=j <span class="keyword">and</span> e!=j <span class="keyword">and</span> f!=j <span class="keyword">and</span> g!=j <span class="keyword">and</span> h!=j <span class="keyword">and</span> i!=j:</span><br><span class="line">                                                                                    <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                                                        <span class="keyword">if</span> a!=k <span class="keyword">and</span> b!=k <span class="keyword">and</span> c!=k <span class="keyword">and</span> d!=k <span class="keyword">and</span> e!=k <span class="keyword">and</span> f!=k <span class="keyword">and</span> g!=k <span class="keyword">and</span> h!=k <span class="keyword">and</span> i!=k <span class="keyword">and</span> j!=k:</span><br><span class="line">                                                                                            <span class="keyword">for</span> l <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">13</span>):</span><br><span class="line">                                                                                                <span class="keyword">if</span> a!=l <span class="keyword">and</span> b!=l <span class="keyword">and</span> c!=l <span class="keyword">and</span> d!=l <span class="keyword">and</span> e!=l <span class="keyword">and</span> f!=l <span class="keyword">and</span> g!=l <span class="keyword">and</span> h!=l <span class="keyword">and</span> i!=l <span class="keyword">and</span> j!=k <span class="keyword">and</span> k!=l:</span><br><span class="line">                                                                                                    <span class="keyword">if</span> a+c+f+h==<span class="number">26</span> <span class="keyword">and</span> a+d+g+k==<span class="number">26</span> <span class="keyword">and</span> h+i+j+k==<span class="number">26</span> <span class="keyword">and</span> b+c+d+e==<span class="number">26</span> <span class="keyword">and</span> b+f+i+l==<span class="number">26</span> <span class="keyword">and</span> e+g+j+l==<span class="number">26</span>:</span><br><span class="line">                                                                                                        print(<span class="string">'    '</span>,a)</span><br><span class="line">                                                                                                        print(b,<span class="string">''</span>,c,<span class="string">''</span>,d,<span class="string">''</span>,e)</span><br><span class="line">                                                                                                        print(<span class="string">' '</span>,f,<span class="string">'  '</span>,g)</span><br><span class="line">                                                                                                        print(h,<span class="string">''</span>,i,<span class="string">''</span>,j,<span class="string">''</span>,k)</span><br><span class="line">                                                                                                        print(<span class="string">'    '</span>,l)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/05/05/YkVNfH.png" alt="YkVNfH.png"></p>
-
-          
+          列举所有六角星，使每条线上的数字和为26，数字取1-12，不可重复使用。
+ Enumerate all hexagon stars, make the sum of the Numbers on each line 26. Irreusable numbers are from 1-12. 
+123
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/05/%E2%80%98star%E2%80%99/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2109,6 +1751,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src=“https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js”></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -2253,6 +1915,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

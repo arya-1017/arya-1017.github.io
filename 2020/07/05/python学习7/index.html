@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python-Import filesEvery file has own path to access. e.g.  C:\Users\asweigart\Documents\project.docx When comes to OS X and Linux, we use &#x2F; to separate. 在 OS X 上，它们表示为新的文件夹，在&#x2F;Volumes 文件夹下。在 Linux 上，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习7">
+<meta property="og:url" content="http://yoursite.com/2020/07/05/python%E5%AD%A6%E4%B9%A07/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Python-Import filesEvery file has own path to access. e.g.  C:\Users\asweigart\Documents\project.docx When comes to OS X and Linux, we use &#x2F; to separate. 在 OS X 上，它们表示为新的文件夹，在&#x2F;Volumes 文件夹下。在 Linux 上，它">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/05/UpDp6K.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/05/UpyNct.png">
+<meta property="article:published_time" content="2020-07-05T09:12:16.000Z">
+<meta property="article:modified_time" content="2020-07-05T12:45:08.176Z">
+<meta property="article:author" content="Arya Yang">
+<meta property="article:tag" content="-python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/05/UpDp6K.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/05/python学习7/"/>
+
+
+
+
+
+  <title>python学习7 | Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Learning diary of Arya Yang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/05/python%E5%AD%A6%E4%B9%A07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python学习7</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T17:12:16+08:00">
+                2020-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/05/python%E5%AD%A6%E4%B9%A07/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/05/python%E5%AD%A6%E4%B9%A07/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Python-Import-files"><a href="#Python-Import-files" class="headerlink" title="Python-Import files"></a>Python-Import files</h1><p>Every file has own path to access.</p>
+<p>e.g.</p>
+<p><img src="https://s1.ax1x.com/2020/07/05/UpDp6K.png" alt="UpDp6K.png"></p>
+<p>C:\Users\asweigart\Documents\project.docx</p>
+<p>When comes to OS X and Linux, we use / to separate.</p>
+<p><em>在 OS X 上，它们表示为新的文件夹，在/Volumes 文件夹下。在 Linux 上，它们表示为新的</em> </p>
+<p><em>文件夹，在/mnt（”mount”）文件夹下。同时也要注意，虽然文件夹名称和文件名在</em> </p>
+<p><em>Windows 和 OS X 上是不区分大小写的，但在 Linux 上是区分大小写的。</em></p>
+<h2 id="import-files"><a href="#import-files" class="headerlink" title="import files"></a>import files</h2><h3 id="os-path-join"><a href="#os-path-join" class="headerlink" title="os.path.join()"></a>os.path.join()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.path.join(<span class="string">'usr'</span>, <span class="string">'bin'</span>, <span class="string">'spam'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:'usr\\bin\\spam'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myFiles = [<span class="string">'accounts.txt'</span>, <span class="string">'details.csv'</span>, <span class="string">'invite.docx'</span>]</span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> myFiles: <span class="comment">#add diferent filename after the same route as they are in the same folder</span></span><br><span class="line">	print(os.path.join(<span class="string">'C:\\Users\\asweigart'</span>, filename)) </span><br><span class="line"></span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#C:\Users\asweigart\accounts.txt </span></span><br><span class="line"><span class="comment">#C:\Users\asweigart\details.csv </span></span><br><span class="line"><span class="comment">#C:\Users\asweigart\invite.docx</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="current-folder"><a href="#current-folder" class="headerlink" title="current folder:"></a>current folder:</h3><p>getcwd() : check which folder is the process in</p>
+<p>chdir() :change the current folder (the folder must exist)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.getcwd()</span><br><span class="line"><span class="comment">#out:'C:\\Python34' </span></span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">'C:\\Windows\\System32'</span>)</span><br><span class="line">os.getcwd()</span><br><span class="line"><span class="comment">#out:'C:\\Windows\\System32'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="create-new-folder-os-makedirs"><a href="#create-new-folder-os-makedirs" class="headerlink" title="create new folder:os.makedirs()"></a>create new folder:os.makedirs()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="string">'C:\\delicious\\walnut\\waffles'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="AP-absolute-path-and-relative-path"><a href="#AP-absolute-path-and-relative-path" class="headerlink" title="AP(absolute path)  and relative path"></a>AP(absolute path)  and relative path</h3><p><img src="https://s1.ax1x.com/2020/07/05/UpyNct.png" alt="UpyNct.png"></p>
+<h3 id="processing-with-absolute-path-and-relative-path"><a href="#processing-with-absolute-path-and-relative-path" class="headerlink" title="processing with absolute path  and relative path"></a>processing with absolute path  and relative path</h3><p>os.path.abspath():show the absolute path(if something in the blanket,add it to the end of the absolute path, which means to open one folder or file in the original folder)</p>
+<p>os.path.isabs():check wether it is absolute path</p>
+<p>os.path.relpath(path,start):find the relative path from the start</p>
+<p>os.path.dirname(path):return the string after the last \</p>
+<p>os.path.split():separate the dirname and the basename by the last \</p>
+<p>split() can also be used</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">os.path.abspath(<span class="string">'.'</span>)</span><br><span class="line"><span class="comment">#out:'C:\\Python34' </span></span><br><span class="line"></span><br><span class="line">os.path.abspath(<span class="string">'.\\Scripts'</span>)</span><br><span class="line"><span class="comment">#out:'C:\\Python34\\Scripts' </span></span><br><span class="line"></span><br><span class="line">os.path.isabs(<span class="string">'.'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"></span><br><span class="line">os.path.isabs(os.path.abspath(<span class="string">'.'</span>))</span><br><span class="line"><span class="comment">#out:True</span></span><br><span class="line"></span><br><span class="line">os.path.relpath(<span class="string">'C:\\Windows'</span>, <span class="string">'C:\\'</span>)</span><br><span class="line"><span class="comment">#out:'Windows'</span></span><br><span class="line"></span><br><span class="line">path = <span class="string">'C:\\Windows\\System32\\calc.exe'</span></span><br><span class="line">os.path.basename(path)</span><br><span class="line"><span class="comment">#out:'calc.exe'</span></span><br><span class="line"></span><br><span class="line">calcFilePath = <span class="string">'C:\\Windows\\System32\\calc.exe'</span></span><br><span class="line">os.path.split(calcFilePath)</span><br><span class="line"><span class="comment">#out:('C:\\Windows\\System32', 'calc.exe')</span></span><br><span class="line"></span><br><span class="line">(os.path.dirname(calcFilePath), os.path.basename(calcFilePath))</span><br><span class="line"><span class="comment">#out:('C:\\Windows\\System32', 'calc.exe')</span></span><br><span class="line"></span><br><span class="line">calcFilePath.split(os.path.sep)</span><br><span class="line"><span class="comment">#out:['C:', 'Windows', 'System32', 'calc.exe']</span></span><br><span class="line"></span><br><span class="line"><span class="string">'/usr/bin'</span>.split(os.path.sep)</span><br><span class="line"><span class="comment">#out:['', 'usr', 'bin']</span></span><br></pre></td></tr></table></figure>
+
+<p>others:</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">os.path.abspath(path)</td>
+<td align="left">返回绝对路径</td>
+</tr>
+<tr>
+<td align="left">os.path.basename(path)</td>
+<td align="left">返回文件名</td>
+</tr>
+<tr>
+<td align="left">os.path.commonprefix(list)</td>
+<td align="left">返回list(多个路径)中，所有path共有的最长的路径</td>
+</tr>
+<tr>
+<td align="left">os.path.dirname(path)</td>
+<td align="left">返回文件路径</td>
+</tr>
+<tr>
+<td align="left">os.path.exists(path)</td>
+<td align="left">如果路径 path 存在，返回 True；如果路径 path 不存在，返回 False。</td>
+</tr>
+<tr>
+<td align="left">os.path.lexists</td>
+<td align="left">路径存在则返回True,路径损坏也返回True</td>
+</tr>
+<tr>
+<td align="left">os.path.expanduser(path)</td>
+<td align="left">把path中包含的”<del>“和”</del>user”转换成用户目录</td>
+</tr>
+<tr>
+<td align="left">os.path.expandvars(path)</td>
+<td align="left">根据环境变量的值替换path中包含的”$name”和”${name}”</td>
+</tr>
+<tr>
+<td align="left">os.path.getatime(path)</td>
+<td align="left">返回最近访问时间（浮点型秒数）</td>
+</tr>
+<tr>
+<td align="left">os.path.getmtime(path)</td>
+<td align="left">返回最近文件修改时间</td>
+</tr>
+<tr>
+<td align="left">os.path.getctime(path)</td>
+<td align="left">返回文件 path 创建时间</td>
+</tr>
+<tr>
+<td align="left">os.path.getsize(path)</td>
+<td align="left">返回文件大小，如果文件不存在就返回错误</td>
+</tr>
+<tr>
+<td align="left">os.path.isabs(path)</td>
+<td align="left">判断是否为绝对路径</td>
+</tr>
+<tr>
+<td align="left">os.path.isfile(path)</td>
+<td align="left">判断路径是否为文件</td>
+</tr>
+<tr>
+<td align="left">os.path.isdir(path)</td>
+<td align="left">判断路径是否为目录</td>
+</tr>
+<tr>
+<td align="left">os.path.islink(path)</td>
+<td align="left">判断路径是否为链接</td>
+</tr>
+<tr>
+<td align="left">os.path.ismount(path)</td>
+<td align="left">判断路径是否为挂载点</td>
+</tr>
+<tr>
+<td align="left">os.path.join(path1[, path2[, …]])</td>
+<td align="left">把目录和文件名合成一个路径</td>
+</tr>
+<tr>
+<td align="left">os.path.normcase(path)</td>
+<td align="left">转换path的大小写和斜杠</td>
+</tr>
+<tr>
+<td align="left">os.path.normpath(path)</td>
+<td align="left">规范path字符串形式</td>
+</tr>
+<tr>
+<td align="left">os.path.realpath(path)</td>
+<td align="left">返回path的真实路径</td>
+</tr>
+<tr>
+<td align="left">os.path.relpath(path[, start])</td>
+<td align="left">从start开始计算相对路径</td>
+</tr>
+<tr>
+<td align="left">os.path.samefile(path1, path2)</td>
+<td align="left">判断目录或文件是否相同</td>
+</tr>
+<tr>
+<td align="left">os.path.sameopenfile(fp1, fp2)</td>
+<td align="left">判断fp1和fp2是否指向同一文件</td>
+</tr>
+<tr>
+<td align="left">os.path.samestat(stat1, stat2)</td>
+<td align="left">判断stat tuple stat1和stat2是否指向同一个文件</td>
+</tr>
+<tr>
+<td align="left">os.path.split(path)</td>
+<td align="left">把路径分割成 dirname 和 basename，返回一个元组</td>
+</tr>
+<tr>
+<td align="left">os.path.splitdrive(path)</td>
+<td align="left">一般用在 windows 下，返回驱动器名和路径组成的元组</td>
+</tr>
+<tr>
+<td align="left">os.path.splitext(path)</td>
+<td align="left">分割路径，返回路径名和文件扩展名的元组</td>
+</tr>
+<tr>
+<td align="left">os.path.splitunc(path)</td>
+<td align="left">把路径分割为加载点与文件</td>
+</tr>
+<tr>
+<td align="left">os.path.walk(path, visit, arg)</td>
+<td align="left">遍历path，进入每个目录都调用visit函数，visit函数必须有3个参数(arg, dirname, names)，dirname表示当前目录的目录名，names代表当前目录下的所有文件名，args则为walk的第三个参数</td>
+</tr>
+<tr>
+<td align="left">os.path.supports_unicode_filenames</td>
+<td align="left">设置是否支持unicode路径名</td>
+</tr>
+</tbody></table>
+<h3 id="check-the-size-and-name"><a href="#check-the-size-and-name" class="headerlink" title="check the size and name"></a>check the size and name</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">os.path.getsize(<span class="string">'C:\\Windows\\System32\\calc.exe'</span>)</span><br><span class="line"><span class="comment">#out:776192</span></span><br><span class="line"></span><br><span class="line">os.listdir(<span class="string">'C:\\Windows\\System32'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:['0409', '12520437.cpx', '12520850.cpx', '5U877.ax', 'aaclient.dll', 'xwtpdui.dll', 'xwtpw32.dll', 'zh-CN', 'zh-HK', 'zh-TW', 'zipfldr.dll']</span></span><br><span class="line"></span><br><span class="line">totalSize = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(<span class="string">'C:\\Windows\\System32'</span>):</span><br><span class="line">totalSize = totalSize + os.path.getsize(os.path.join(<span class="string">'C:\\Windows\\System32'</span>, filename))</span><br><span class="line">print(totalSize)</span><br><span class="line"><span class="comment">#out:1117846456</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>os.path.exists(path): check whether it exists</p>
+<p>os.path.isfile(path): check whether it is a file</p>
+<p>os.path.isdir(path): check whether it is a folder</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">os.path.exists(<span class="string">'C:\\Windows'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"></span><br><span class="line">os.path.exists(<span class="string">'C:\\some_made_up_folder'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"></span><br><span class="line">os.path.isdir(<span class="string">'C:\\Windows\\System32'</span>)</span><br><span class="line"><span class="comment">#out:True </span></span><br><span class="line"></span><br><span class="line">os.path.isfile(<span class="string">'C:\\Windows\\System32'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"></span><br><span class="line">os.path.isdir(<span class="string">'C:\\Windows\\System32\\calc.exe'</span>)</span><br><span class="line"><span class="comment">#out:False </span></span><br><span class="line"></span><br><span class="line">os.path.isfile(<span class="string">'C:\\Windows\\System32\\calc.exe'</span>)</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="read-the-file"><a href="#read-the-file" class="headerlink" title="read the file"></a>read the file</h2><h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><p>windows:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helloFile = open(<span class="string">'C:\\Users\\your_home_folder\\hello.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>OS X</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helloFile = open(<span class="string">'/Users/your_home_folder/hello.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">helloContent = helloFile.read()</span><br><span class="line">helloContent</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:'Hello world!'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>When, in disgrace with fortune and men’s eyes, </p>
+<p>I all alone beweep my outcast state,</p>
+<p>And trouble deaf heaven with my bootless cries, </p>
+<p>And look upon myself and curse my fate,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sonnetFile = open(<span class="string">'sonnet29.txt'</span>)</span><br><span class="line">sonnetFile.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#[When, in disgrace with fortune and men's eyes,\n', ' I all alone beweep my outcast #state,\n', And trouble deaf heaven with my bootless cries,\n', And look upon myself and #curse my fate,']</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="write"><a href="#write" class="headerlink" title="write()"></a>write()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">baconFile = open(<span class="string">'bacon.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">baconFile.write(<span class="string">'Hello world!\n'</span>)</span><br><span class="line"><span class="comment">#out:13 </span></span><br><span class="line"></span><br><span class="line">baconFile.close()</span><br><span class="line">baconFile = open(<span class="string">'bacon.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">baconFile.write(<span class="string">'Bacon is not a vegetable.'</span>)</span><br><span class="line"><span class="comment">#out:25 </span></span><br><span class="line"></span><br><span class="line">baconFile.close()</span><br><span class="line">baconFile = open(<span class="string">'bacon.txt'</span>)</span><br><span class="line">content = baconFile.read()</span><br><span class="line">baconFile.close()</span><br><span class="line">print(content)</span><br><span class="line"></span><br><span class="line"><span class="comment">#out:</span></span><br><span class="line"><span class="comment">#Hello world! </span></span><br><span class="line"><span class="comment">#Bacon is not a vegetable.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="shelve"><a href="#shelve" class="headerlink" title="shelve"></a>shelve</h2><p>在交互环境下 under interactive environment</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shelve</span><br><span class="line">shelfFile = shelve.open(<span class="string">'mydata'</span>)</span><br><span class="line">cats = [<span class="string">'Zophie'</span>, <span class="string">'Pooka'</span>, <span class="string">'Simon'</span>]</span><br><span class="line">shelfFile[<span class="string">'cats'</span>] = cats</span><br><span class="line">shelfFile.close()<span class="comment">#don't forget to close the file</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shelfFile = shelve.open(<span class="string">'mydata'</span>)</span><br><span class="line">type(shelfFile)</span><br><span class="line"><span class="comment">#out:&lt;class 'shelve.DbfilenameShelf'&gt; </span></span><br><span class="line"></span><br><span class="line">shelfFile[<span class="string">'cats'</span>]</span><br><span class="line"><span class="comment">#out:['Zophie', 'Pooka', 'Simon'] </span></span><br><span class="line"></span><br><span class="line">shelfFile.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shelfFile = shelve.open(<span class="string">'mydata'</span>)</span><br><span class="line">list(shelfFile.keys())</span><br><span class="line"><span class="comment">#out:['cats'] </span></span><br><span class="line"></span><br><span class="line">list(shelfFile.values())</span><br><span class="line"><span class="comment">#out:[['Zophie', 'Pooka', 'Simon']] </span></span><br><span class="line"></span><br><span class="line">shelfFile.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="pprint-pformat"><a href="#pprint-pformat" class="headerlink" title="pprint.pformat()"></a>pprint.pformat()</h2><p>to show the content but not print</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line">cats = [&#123;<span class="string">'name'</span>: <span class="string">'Zophie'</span>, <span class="string">'desc'</span>: <span class="string">'chubby'</span>&#125;, &#123;<span class="string">'name'</span>: <span class="string">'Pooka'</span>, <span class="string">'desc'</span>: <span class="string">'fluffy'</span>&#125;]</span><br><span class="line">pprint.pformat(cats)</span><br><span class="line"><span class="comment">#out:"[&#123;'desc': 'chubby', 'name': 'Zophie'&#125;, &#123;'desc': 'fluffy', 'name': 'Pooka'&#125;]" </span></span><br><span class="line"></span><br><span class="line">fileObj = open(<span class="string">'myCats.py'</span>, <span class="string">'w'</span>)</span><br><span class="line">fileObj.write(<span class="string">'cats = '</span> + pprint.pformat(cats) + <span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">#out:83 </span></span><br><span class="line"></span><br><span class="line">fileObj.close()</span><br></pre></td></tr></table></figure>
+
+<p>import can be used toimport files</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> myCats</span><br><span class="line">myCats.cats</span><br><span class="line"><span class="comment">#out:[&#123;'name': 'Zophie', 'desc': 'chubby'&#125;, &#123;'name': 'Pooka', 'desc': 'fluffy'&#125;] </span></span><br><span class="line"></span><br><span class="line">myCats.cats[<span class="number">0</span>]</span><br><span class="line">&#123;<span class="string">'name'</span>: <span class="string">'Zophie'</span>, <span class="string">'desc'</span>: <span class="string">'chubby'</span>&#125; </span><br><span class="line">myCats.cats[<span class="number">0</span>][<span class="string">'name'</span>]</span><br><span class="line"><span class="comment">#out:'Zophie'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>You want to create 35 different quiz files for 35 students tocheck their knowledge about sates and their capitals in America. Every quiz should include 50 multiple choice questions, and they should be in different order.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! python3</span></span><br><span class="line"><span class="comment"># randomQuizGenerator.py - Creates quizzes with questions and answers in</span></span><br><span class="line"><span class="comment"># random order, along with the answer key.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># The quiz data. Keys are states and values are their capitals.</span></span><br><span class="line"></span><br><span class="line">capitals = &#123;<span class="string">'Alabama'</span>: <span class="string">'Montgomery'</span>, <span class="string">'Alaska'</span>: <span class="string">'Juneau'</span>, <span class="string">'Arizona'</span>: <span class="string">'Phoenix'</span>,</span><br><span class="line"><span class="string">'Arkansas'</span>: <span class="string">'Little Rock'</span>, <span class="string">'California'</span>: <span class="string">'Sacramento'</span>, <span class="string">'Colorado'</span>: <span class="string">'Denver'</span>,</span><br><span class="line"><span class="string">'Connecticut'</span>: <span class="string">'Hartford'</span>, <span class="string">'Delaware'</span>: <span class="string">'Dover'</span>, <span class="string">'Florida'</span>: <span class="string">'Tallahassee'</span>,</span><br><span class="line"><span class="string">'Georgia'</span>: <span class="string">'Atlanta'</span>, <span class="string">'Hawaii'</span>: <span class="string">'Honolulu'</span>, <span class="string">'Idaho'</span>: <span class="string">'Boise'</span>, <span class="string">'Illinois'</span>:</span><br><span class="line"><span class="string">'Springfield'</span>, <span class="string">'Indiana'</span>: <span class="string">'Indianapolis'</span>, <span class="string">'Iowa'</span>: <span class="string">'Des Moines'</span>, <span class="string">'Kansas'</span>:</span><br><span class="line"><span class="string">'Topeka'</span>, <span class="string">'Kentucky'</span>: <span class="string">'Frankfort'</span>, <span class="string">'Louisiana'</span>: <span class="string">'Baton Rouge'</span>, <span class="string">'Maine'</span>:</span><br><span class="line"><span class="string">'Augusta'</span>, <span class="string">'Maryland'</span>: <span class="string">'Annapolis'</span>, <span class="string">'Massachusetts'</span>: <span class="string">'Boston'</span>, <span class="string">'Michigan'</span>:</span><br><span class="line"><span class="string">'Lansing'</span>, <span class="string">'Minnesota'</span>: <span class="string">'Saint Paul'</span>, <span class="string">'Mississippi'</span>: <span class="string">'Jackson'</span>, <span class="string">'Missouri'</span>:</span><br><span class="line"><span class="string">'Jefferson City'</span>, <span class="string">'Montana'</span>: <span class="string">'Helena'</span>, <span class="string">'Nebraska'</span>: <span class="string">'Lincoln'</span>, <span class="string">'Nevada'</span>:</span><br><span class="line"><span class="string">'Carson City'</span>, <span class="string">'New Hampshire'</span>: <span class="string">'Concord'</span>, <span class="string">'New Jersey'</span>: <span class="string">'Trenton'</span>, </span><br><span class="line"><span class="string">'New Mexico'</span>: <span class="string">'Santa Fe'</span>, <span class="string">'New York'</span>: <span class="string">'Albany'</span>, <span class="string">'North Carolina'</span>: <span class="string">'Raleigh'</span>,</span><br><span class="line"><span class="string">'North Dakota'</span>: <span class="string">'Bismarck'</span>, <span class="string">'Ohio'</span>: <span class="string">'Columbus'</span>, <span class="string">'Oklahoma'</span>: <span class="string">'Oklahoma City'</span>,</span><br><span class="line"><span class="string">'Oregon'</span>: <span class="string">'Salem'</span>, <span class="string">'Pennsylvania'</span>: <span class="string">'Harrisburg'</span>, <span class="string">'Rhode Island'</span>: <span class="string">'Providence'</span>,</span><br><span class="line"><span class="string">'South Carolina'</span>: <span class="string">'Columbia'</span>, <span class="string">'South Dakota'</span>: <span class="string">'Pierre'</span>, <span class="string">'Tennessee'</span>:</span><br><span class="line"><span class="string">'Nashville'</span>, <span class="string">'Texas'</span>: <span class="string">'Austin'</span>, <span class="string">'Utah'</span>: <span class="string">'Salt Lake City'</span>, <span class="string">'Vermont'</span>:</span><br><span class="line"><span class="string">'Montpelier'</span>, <span class="string">'Virginia'</span>: <span class="string">'Richmond'</span>, <span class="string">'Washington'</span>: <span class="string">'Olympia'</span>, </span><br><span class="line"><span class="string">'West Virginia'</span>: <span class="string">'Charleston'</span>, <span class="string">'Wisconsin'</span>: <span class="string">'Madison'</span>, <span class="string">'Wyoming'</span>: <span class="string">'Cheyenne'</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate 35 quiz files.</span></span><br><span class="line"><span class="keyword">for</span> quizNum <span class="keyword">in</span> range(<span class="number">35</span>):</span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Create the quiz and answer key files.</span></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Write out the header for the quiz.</span></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Shuffle the order of the states.</span></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Loop through all 50 states, making a question for each.</span></span><br><span class="line"><span class="comment"># Create the quiz and answer key files.</span></span><br><span class="line"></span><br><span class="line">    quizFile = open(<span class="string">'capitalsquiz%s.txt'</span> % (quizNum + <span class="number">1</span>), <span class="string">'w'</span>)</span><br><span class="line">    answerKeyFile = open(<span class="string">'capitalsquiz_answers%s.txt'</span> % (quizNum + <span class="number">1</span>), <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write out the header for the quiz.</span></span><br><span class="line"></span><br><span class="line">    quizFile.write(<span class="string">'Name:\n\nDate:\n\nPeriod:\n\n'</span>)</span><br><span class="line">    quizFile.write((<span class="string">' '</span> * <span class="number">20</span>) + <span class="string">'State Capitals Quiz (Form %s)'</span> % (quizNum + <span class="number">1</span>))</span><br><span class="line">    quizFile.write(<span class="string">'\n\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Shuffle the order of the states.</span></span><br><span class="line"></span><br><span class="line">    states = list(capitals.keys())</span><br><span class="line">    random.shuffle(states)<span class="comment">#change the order of the list in random</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Loop through all 50 states, making a question for each.</span></span><br><span class="line"><span class="comment"># Loop through all 50 states, making a question for each.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> questionNum <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get right and wrong answers.</span></span><br><span class="line"></span><br><span class="line">        correctAnswer = capitals[states[questionNum]]</span><br><span class="line">        wrongAnswers = list(capitals.values())</span><br><span class="line">        <span class="keyword">del</span> wrongAnswers[wrongAnswers.index(correctAnswer)] <span class="comment">#delete the correct answer</span></span><br><span class="line">        wrongAnswers = random.sample(wrongAnswers, <span class="number">3</span>) <span class="comment">#get three of them randomly</span></span><br><span class="line">        answerOptions = wrongAnswers + [correctAnswer]</span><br><span class="line">        random.shuffle(answerOptions) <span class="comment">#change the order of the options randomly</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Write the question and answer options to the quiz file.</span></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> Write the answer key to a file.</span></span><br><span class="line"><span class="comment"># Loop through all 50 states, making a question for each.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> questionNum <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write the question and the answer options to the quiz file.</span></span><br><span class="line"></span><br><span class="line">        quizFile.write(<span class="string">'%s. What is the capital of %s?\n'</span> % (questionNum + <span class="number">1</span>,states[questionNum]))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            quizFile.write(<span class="string">' %s. %s\n'</span> % (<span class="string">'ABCD'</span>[i], answerOptions[i]))</span><br><span class="line">        quizFile.write(<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write the answer key to a file.</span></span><br><span class="line"></span><br><span class="line">        answerKeyFile.write(<span class="string">'%s. %s\n'</span> % (questionNum + <span class="number">1</span>, <span class="string">'ABCD'</span>[answerOptions.index(correctAnswer)]))</span><br><span class="line">    quizFile.close()</span><br><span class="line">    answerKeyFile.close()</span><br></pre></td></tr></table></figure>
+
+<p>Name: </p>
+<p>Date: </p>
+<p>Period: </p>
+<p>​                    State Capitals Quiz (Form 1) </p>
+<ol>
+<li>What is the capital of West Virginia? </li>
+</ol>
+<p>A. Hartford </p>
+<p>B. Santa Fe </p>
+<p>C. Harrisburg </p>
+<p>D. Charleston </p>
+<ol start="2">
+<li>What is the capital of Colorado? </li>
+</ol>
+<p>A. Raleigh </p>
+<p>B. Harrisburg </p>
+<p>C. Denver </p>
+<p>D. Lincoln</p>
+<p>… …</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># -python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/27/python%E5%AD%A6%E4%B9%A06/" rel="next" title="python学习6">
+                <i class="fa fa-chevron-left"></i> python学习6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/1.png"
+                alt="Arya Yang" />
+            
+              <p class="site-author-name" itemprop="name">Arya Yang</p>
+              <p class="site-description motion-element" itemprop="description">Including learning records and other activities</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Import-files"><span class="nav-number">1.</span> <span class="nav-text">Python-Import files</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#import-files"><span class="nav-number">1.1.</span> <span class="nav-text">import files</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#os-path-join"><span class="nav-number">1.1.1.</span> <span class="nav-text">os.path.join()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#current-folder"><span class="nav-number">1.1.2.</span> <span class="nav-text">current folder:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-new-folder-os-makedirs"><span class="nav-number">1.1.3.</span> <span class="nav-text">create new folder:os.makedirs()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AP-absolute-path-and-relative-path"><span class="nav-number">1.1.4.</span> <span class="nav-text">AP(absolute path)  and relative path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#processing-with-absolute-path-and-relative-path"><span class="nav-number">1.1.5.</span> <span class="nav-text">processing with absolute path  and relative path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-the-size-and-name"><span class="nav-number">1.1.6.</span> <span class="nav-text">check the size and name</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-the-file"><span class="nav-number">1.2.</span> <span class="nav-text">read the file</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">1.2.1.</span> <span class="nav-text">open()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.2.2.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write"><span class="nav-number">1.2.3.</span> <span class="nav-text">write()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shelve"><span class="nav-number">1.3.</span> <span class="nav-text">shelve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pprint-pformat"><span class="nav-number">1.4.</span> <span class="nav-text">pprint.pformat()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">1.5.</span> <span class="nav-text">example</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arya Yang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'nNzbOeqV1V5k3oCOWMDTgBy8-gzGzoHsz',
+        appKey: 'QciTO7F2uuB6zvMHCyV4GsVt',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

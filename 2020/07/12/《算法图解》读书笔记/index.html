@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-reading seminar," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="《算法图解》Grokking Algorithms第一章 算法简介二分法 dichotomydefinition：输入为有序的元素列表，若要找的元素存在，则返回其位置，否则返回null  e.g. 1~100中找数字问题：猜测后会说大了，小了。 简单法查询：从1开始往上猜（至多99次） 二分法查询：50（小了，即可排除一般的数据），75（大了），… … (至多7次) ——大大缩短时间  当数据量加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《算法图解》读书笔记">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/%E3%80%8A%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="《算法图解》Grokking Algorithms第一章 算法简介二分法 dichotomydefinition：输入为有序的元素列表，若要找的元素存在，则返回其位置，否则返回null  e.g. 1~100中找数字问题：猜测后会说大了，小了。 简单法查询：从1开始往上猜（至多99次） 二分法查询：50（小了，即可排除一般的数据），75（大了），… … (至多7次) ——大大缩短时间  当数据量加">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U89gnU.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8ClbF.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8CxZF.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8nNu9.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8Khp8.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8KTmj.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8Q2z8.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8lEOe.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U83jOS.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U88ew4.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U8wynI.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U80CHx.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U80Yvj.jpg">
+<meta property="article:published_time" content="2020-07-12T03:24:33.000Z">
+<meta property="article:modified_time" content="2020-07-12T12:39:17.162Z">
+<meta property="article:author" content="Arya Yang">
+<meta property="article:tag" content="-reading seminar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/12/U89gnU.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/12/《算法图解》读书笔记/"/>
+
+
+
+
+
+  <title>《算法图解》读书笔记 | Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Learning diary of Arya Yang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/%E3%80%8A%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《算法图解》读书笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-12T11:24:33+08:00">
+                2020-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/12/%E3%80%8A%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/12/%E3%80%8A%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="《算法图解》Grokking-Algorithms"><a href="#《算法图解》Grokking-Algorithms" class="headerlink" title="《算法图解》Grokking Algorithms"></a>《算法图解》Grokking Algorithms</h1><h2 id="第一章-算法简介"><a href="#第一章-算法简介" class="headerlink" title="第一章 算法简介"></a>第一章 算法简介</h2><h3 id="二分法-dichotomy"><a href="#二分法-dichotomy" class="headerlink" title="二分法 dichotomy"></a>二分法 dichotomy</h3><p>definition：输入为<strong>有序</strong>的元素列表，若要找的元素存在，则返回其位置，否则返回null</p>
+<blockquote>
+<p>e.g. 1~100中找数字问题：猜测后会说大了，小了。</p>
+<p>简单法查询：从1开始往上猜（至多99次）</p>
+<p>二分法查询：50（小了，即可排除一般的数据），75（大了），… … (至多7次)</p>
+<p>——大大缩短时间</p>
+</blockquote>
+<p>当数据量加大：</p>
+<p>简单法：至多240k步</p>
+<p>简单法：</p>
+<p>240k—120k—60k—30k—15k—7.5k—3750—1875—937—468—234—117—58—29—14—7—3—1==&gt;17步</p>
+<p>结论：对于n项：简单法：至多n步</p>
+<p>​                             二分法：至多log2n步</p>
+<p>查询代码：(python)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(list,item)</span>:</span></span><br><span class="line">    low=<span class="number">0</span></span><br><span class="line">    high=len(list)<span class="number">-1</span> <span class="comment">#the last value in the list</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> low&lt;=high:</span><br><span class="line">        mid=(low+high)/<span class="number">2</span> <span class="comment">#the middle of the whole list</span></span><br><span class="line">        guess=list(mid)  <span class="comment">#check whether the value is correct</span></span><br><span class="line">        <span class="keyword">if</span> guess==item:  <span class="comment">#find the item</span></span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">if</span> guess&gt;item:   <span class="comment">#find again with deleting the other half of the list</span></span><br><span class="line">            high=mid<span class="number">-1</span></span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            low=mid<span class="number">-1</span></span><br><span class="line">     <span class="keyword">return</span> <span class="literal">None</span>         <span class="comment">#item is not in list</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="大O表示法"><a href="#大O表示法" class="headerlink" title="大O表示法"></a>大O表示法</h3><p>O 用来表达运算速度，但不是时间</p>
+<p>如：简单法的O = O(n)</p>
+<p>二分法的O = O(log2n)</p>
+<p>O后所跟的数据为最糟糕的情况</p>
+<h4 id="算法运行时间以不同速度增加："><a href="#算法运行时间以不同速度增加：" class="headerlink" title="算法运行时间以不同速度增加："></a>算法运行时间以不同速度增加：</h4><p>假设一个运算要在10秒内完成，检查一个元素要1毫秒。</p>
+<p>如果有100个元素要检查：简单法（100毫秒），二分法（检查7个元素，即7毫秒）</p>
+<p>此时简单法是二分法的约15倍</p>
+<p>实际有10亿个元素需要检查，二分法需要30毫秒（log2 1 000 000 000），简单法需要二分法的15倍即450毫秒？在10秒之内，可以选择？</p>
+<p>不是。简单法需要10亿毫秒，相当于11天</p>
+<h4 id="理解不同O的运算时间"><a href="#理解不同O的运算时间" class="headerlink" title="理解不同O的运算时间"></a>理解不同O的运算时间</h4><p>在纸上画16个格子：简单法：画16个格子——16步</p>
+<p>​                                   二分法：将纸对折——4次</p>
+<h4 id="常见的大O运行时间"><a href="#常见的大O运行时间" class="headerlink" title="常见的大O运行时间"></a>常见的大O运行时间</h4><p>O(log n)    二分法，对数时间</p>
+<p>O(n)   简单法，线性时间</p>
+<p>O(n*log n)     （第4章讲解，较为快速）</p>
+<p>O(n^2)      （第二章讲解，比较慢）</p>
+<p>O(n!)       旅行商问题：非常慢</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U89gnU.jpg" alt="U89gnU.jpg"></p>
+<h3 id="旅行商问题"><a href="#旅行商问题" class="headerlink" title="旅行商问题"></a>旅行商问题</h3><p>O(n！) : 运行时间如此长，意义何在？</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8ClbF.jpg" alt="U8ClbF.jpg"></p>
+<p>5个城市就有5！=120种方法，6个有720种，7个有5040种… …</p>
+<p>尚未有简便算法（可取近似值，详见第10章）</p>
+<hr>
+<hr>
+<h2 id="第二章-选择排序"><a href="#第二章-选择排序" class="headerlink" title="第二章 选择排序"></a>第二章 选择排序</h2><p>内存工作原理：许多可以装数据的小抽屉的集合，每个小抽屉都有地址</p>
+<h3 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h3><p>储存代办事件：数组or链表？</p>
+<p>数组更为简单：</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8CxZF.jpg" alt="U8CxZF.jpg"></p>
+<p>但当多一位需要加入（如和朋友看电影，周围坐满了，但又来了一个朋友，你们需要换一个地方），全部转移到另一个地方，重新分配，时间较长。</p>
+<p>解决方法：预留位置/重新分配位置</p>
+<p>缺点：预留位置可能没有数据，浪费；重新分配所花时间较长</p>
+<p>于是：</p>
+<h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p><img src="https://s1.ax1x.com/2020/07/12/U8nNu9.jpg" alt="U8nNu9.jpg"></p>
+<p>每个元素储存下一个元素的地址</p>
+<p>相互分离，但又有联系</p>
+<p>不需要移动</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>一个用于增加网站浏览量的方法：排行榜从10到1，需要多看九页</p>
+<p>优点：知道每一个数据的地址，直接访问（链表需要知道第一个然后慢慢推）</p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><table>
+<thead>
+<tr>
+<th>value</th>
+<th>10</th>
+<th>20</th>
+<th>30</th>
+<th>40</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>remember : index stars from 0</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>数组</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>output</td>
+<td>O(1)（常量时间）</td>
+<td>O(n)（线性时间）</td>
+</tr>
+<tr>
+<td>input</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<h3 id="插入删除数据"><a href="#插入删除数据" class="headerlink" title="插入删除数据"></a>插入删除数据</h3><p>链表：</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8Khp8.jpg" alt="U8Khp8.jpg"></p>
+<p>数组：</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8KTmj.jpg" alt="U8KTmj.jpg"></p>
+<p>删除同理</p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>将歌曲按播放量排序：</p>
+<p>依次找出最多播放量的歌，移入另一个列表</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8Q2z8.jpg" alt="U8Q2z8.jpg"></p>
+<p>每一次都要运行n次（n指每一个循环的数量而非总数，n在减少）</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U8lEOe.jpg" alt="U8lEOe.jpg"></p>
+<p>总共有n个数据，则每次需要运行：n-1,n-2,n-3… …2,1</p>
+<p>和：(n-1+1)<em>n\</em>1/2=1/2n^2</p>
+<p>而大O写法省略1/2（详见第4章）</p>
+<p>示例代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findSmallest</span><span class="params">(arr)</span>:</span> <span class="comment">#arr=array</span></span><br><span class="line">    smallest=arr(<span class="number">0</span>)  <span class="comment">#储存最小值（如果第一项即为最小值）</span></span><br><span class="line">    smallest_index=<span class="number">0</span> <span class="comment">#最小值位置</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i]&lt;smallest:</span><br><span class="line">            smallest=arr[i]  <span class="comment">#如果这一项比之前的最小值小，就更换最小值</span></span><br><span class="line">            smallest_index=i</span><br><span class="line">        <span class="keyword">return</span> smalest_index</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectionSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    newArr=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">        smallest=findSmallest(arr)     <span class="comment">#找到最小值</span></span><br><span class="line">        newArr.append(arr.pop(smallest))  <span class="comment">#将最小值放入新列表，删除此最小值</span></span><br><span class="line">    <span class="keyword">return</span> newArr</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> selection([<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<hr>
+<h2 id="第三章-递归"><a href="#第三章-递归" class="headerlink" title="第三章 递归"></a>第三章 递归</h2><p>理解递归：</p>
+<p>在一个盒子里找钥匙，盒子里还有其他盒子,钥匙可能在盒子里的盒子里</p>
+<p>有两种思路：</p>
+<p>1.while循环：只要盒子不空、没找到钥匙就继续取</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U83jOS.jpg" alt="U83jOS.jpg"></p>
+<blockquote>
+<ol>
+<li>创建盒子堆</li>
+<li>在大盒子里取出一个小盒子</li>
+<li>如果没有，放入盒子堆</li>
+<li>如果有钥匙，结束</li>
+<li>不是回到第二步</li>
+</ol>
+</blockquote>
+<p>2.for循环：找到钥匙即结束</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U88ew4.jpg" alt="U88ew4.jpg"></p>
+<blockquote>
+<ol>
+<li>检查每个物品</li>
+<li>如果是盒子回到第一步</li>
+<li>如果是钥匙结束</li>
+</ol>
+</blockquote>
+<p>伪代码：</p>
+<p>def look_for_key(box):</p>
+<p>​    for item in box:</p>
+<p>​        if item.is_a_box():</p>
+<p>​            look_for_key(item) ——&gt;递归，用了自己本身的函数</p>
+<p>​        elif item.is_a_key():</p>
+<p>​            print(“Find the key!”)</p>
+<p>第二种更清晰</p>
+<h2 id="基线条件和递归条件"><a href="#基线条件和递归条件" class="headerlink" title="基线条件和递归条件"></a>基线条件和递归条件</h2><p>递归容易出现死循环：</p>
+<p>编写倒计时，如3…2…1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span> <span class="title">down</span><span class="params">(i)</span>:</span></span><br><span class="line">    print(i)</span><br><span class="line">    count down(i<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>但结果为3…2…1…0…-1…-2…</p>
+<p>(Ctrl+C 可停止)</p>
+<p>所以要加基线条件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span> <span class="title">down</span><span class="params">(i)</span>:</span></span><br><span class="line">    print(i)</span><br><span class="line">    <span class="keyword">if</span> i&lt;=<span class="number">1</span>:  <span class="comment">#基线条件，到1即停</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:     <span class="comment">#递归条件</span></span><br><span class="line">        count down(i<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>调用栈（call stack）</p>
+<p>一叠便签记录所要做的事，在最上面添加代办事项；阅读并删除最上面的代办事项</p>
+<h4 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet2</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">"how are you,"</span>+name+<span class="string">"?"</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bye</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"ok bye!"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"hello,"</span>+name+<span class="string">"!"</span>)</span><br><span class="line">	greet2(name)</span><br><span class="line">    print(<span class="string">"getting ready to say bye..."</span>)</span><br><span class="line">    bye()</span><br></pre></td></tr></table></figure>
+
+<p>假设name=”maggie”，即调用greet(“maggie”)，该函数被分配一个区域</p>
+<p>name被设置为maggie并存进去，运行greet(“maggie”)</p>
+<p>然后调用greet2(“maggie”)，同上此时第2个函数在第一个上面，当打印完“how are you，maggie？”后从函数返回，此时栈顶的内存被弹出。</p>
+<p>此时返回到了greet函数层（调用另一个函数时，当前函数暂停并处于未完成状态），函数值还在内存中，继续运行bye函数。</p>
+<p>greet函数用于储存多个函数的变量，被称为调用栈。</p>
+<h4 id="递归调用栈"><a href="#递归调用栈" class="headerlink" title="递归调用栈"></a>递归调用栈</h4><p>阶乘：fact为调用栈</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> x*fact(x<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/07/12/U8wynI.jpg" alt="U8wynI.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U80CHx.jpg" alt="U80CHx.jpg"></p>
+<p>回到开始的盒子找钥匙问题</p>
+<p>第一种循环有盒子堆，就始终知道哪些盒子要查</p>
+<p>那递归法的盒子堆呢？</p>
+<p><img src="https://s1.ax1x.com/2020/07/12/U80Yvj.jpg" alt="U80Yvj.jpg"></p>
+<p>虽然栈很方便，但需要大量的内存</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/reading-seminar/" rel="tag"># -reading seminar</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/11/numpy3/" rel="next" title="numpy3">
+                <i class="fa fa-chevron-left"></i> numpy3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/1.png"
+                alt="Arya Yang" />
+            
+              <p class="site-author-name" itemprop="name">Arya Yang</p>
+              <p class="site-description motion-element" itemprop="description">Including learning records and other activities</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《算法图解》Grokking-Algorithms"><span class="nav-number">1.</span> <span class="nav-text">《算法图解》Grokking Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-算法简介"><span class="nav-number">1.1.</span> <span class="nav-text">第一章 算法简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二分法-dichotomy"><span class="nav-number">1.1.1.</span> <span class="nav-text">二分法 dichotomy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大O表示法"><span class="nav-number">1.1.2.</span> <span class="nav-text">大O表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法运行时间以不同速度增加："><span class="nav-number">1.1.2.1.</span> <span class="nav-text">算法运行时间以不同速度增加：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#理解不同O的运算时间"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">理解不同O的运算时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的大O运行时间"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">常见的大O运行时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旅行商问题"><span class="nav-number">1.1.3.</span> <span class="nav-text">旅行商问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-选择排序"><span class="nav-number">1.2.</span> <span class="nav-text">第二章 选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组和链表"><span class="nav-number">1.2.1.</span> <span class="nav-text">数组和链表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链表"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#术语"><span class="nav-number">1.2.2.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入删除数据"><span class="nav-number">1.2.3.</span> <span class="nav-text">插入删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序"><span class="nav-number">1.2.4.</span> <span class="nav-text">选择排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-递归"><span class="nav-number">1.3.</span> <span class="nav-text">第三章 递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基线条件和递归条件"><span class="nav-number">1.4.</span> <span class="nav-text">基线条件和递归条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">1.4.1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用栈"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">调用栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归调用栈"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">递归调用栈</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arya Yang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'nNzbOeqV1V5k3oCOWMDTgBy8-gzGzoHsz',
+        appKey: 'QciTO7F2uuB6zvMHCyV4GsVt',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

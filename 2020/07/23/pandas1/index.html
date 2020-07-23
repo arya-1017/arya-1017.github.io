@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-Pandas," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Pandas Introduction 3Seriesfirst import pandas: 12345import pandas pandas.__version__ #Out: &#39;0.18.1&#39;import pandas as pd  create series:  pd.Series(data, index&#x3D;index)  12data &#x3D; pd.Series([0.25, 0.5, 0.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas1">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/pandas1/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Pandas Introduction 3Seriesfirst import pandas: 12345import pandas pandas.__version__ #Out: &#39;0.18.1&#39;import pandas as pd  create series:  pd.Series(data, index&#x3D;index)  12data &#x3D; pd.Series([0.25, 0.5, 0.">
+<meta property="article:published_time" content="2020-07-23T10:04:44.000Z">
+<meta property="article:modified_time" content="2020-07-23T12:10:53.645Z">
+<meta property="article:author" content="Arya Yang">
+<meta property="article:tag" content="-Pandas">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/23/pandas1/"/>
+
+
+
+
+
+  <title>pandas1 | Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Learning diary of Arya Yang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/pandas1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arya Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">pandas1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T18:04:44+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/23/pandas1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/23/pandas1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Pandas-Introduction-3"><a href="#Pandas-Introduction-3" class="headerlink" title="Pandas Introduction 3"></a>Pandas Introduction 3</h1><h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>first import pandas:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas </span><br><span class="line">pandas.__version__ </span><br><span class="line"><span class="comment">#Out: '0.18.1'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+<h3 id="create-series"><a href="#create-series" class="headerlink" title="create series:"></a><strong>create series:</strong></h3><blockquote>
+<p> pd.Series(data, index=index)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = pd.Series([<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>, <span class="number">1.0</span>]) </span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<p> 0   0.25 </p>
+<p> 1   0.50 </p>
+<p> 2   0.75 </p>
+<p> 3   1.00 </p>
+<p> dtype: float64</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Series(<span class="number">5</span>, index=[<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>])</span><br></pre></td></tr></table></figure>
+
+<p>100   5 </p>
+<p>200   5 </p>
+<p>300   5 </p>
+<p> dtype: int64</p>
+<p><strong>it can also be dictionary, and it will sort as the index</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Series(&#123;<span class="number">2</span>:<span class="string">'a'</span>, <span class="number">1</span>:<span class="string">'b'</span>, <span class="number">3</span>:<span class="string">'c'</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>1 b </p>
+<p>2 a </p>
+<p>3 c </p>
+<p> dtype: object</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Series(&#123;<span class="number">2</span>:<span class="string">'a'</span>, <span class="number">1</span>:<span class="string">'b'</span>, <span class="number">3</span>:<span class="string">'c'</span>&#125;, index=[<span class="number">3</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<p> 3 c </p>
+<p> 2 a </p>
+<p> dtype: object</p>
+<h3 id="index"><a href="#index" class="headerlink" title="index"></a>index</h3><p>we can check the value(similar to numpy) and index:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data.values </span><br><span class="line"><span class="comment">#Out: array([ 0.25, 0.5 , 0.75, 1. ])</span></span><br><span class="line"></span><br><span class="line">data.index </span><br><span class="line"><span class="comment">#Out: RangeIndex(start=0, stop=4, step=1)</span></span><br></pre></td></tr></table></figure>
+
+<p>it can also be get as python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="number">1</span>] </span><br><span class="line"><span class="comment">#Out: 0.5 </span></span><br><span class="line"></span><br><span class="line">data[<span class="number">1</span>:<span class="number">3</span>] </span><br><span class="line"><span class="comment">#Out: 1 0.50 </span></span><br><span class="line"><span class="comment"># 	  2 0.75 </span></span><br><span class="line"><span class="comment"># 	  dtype: float64</span></span><br></pre></td></tr></table></figure>
+
+<p>we can change the index:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data = pd.Series([<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>, <span class="number">1.0</span>], </span><br><span class="line">                 index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]) </span><br><span class="line">data </span><br><span class="line"></span><br><span class="line"><span class="comment">#Out: a 0.25 </span></span><br><span class="line"><span class="comment">#	  b 0.50 </span></span><br><span class="line"><span class="comment">#	  c 0.75 </span></span><br><span class="line"><span class="comment">#	  d 1.00 </span></span><br><span class="line"><span class="comment">#	  dtype: float64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#can be got like before</span></span><br><span class="line">data[<span class="string">'b'</span>] </span><br><span class="line"><span class="comment">#Out: 0.5</span></span><br></pre></td></tr></table></figure>
+
+<p>the index can be whatever you like:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data = pd.Series([<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>, <span class="number">1.0</span>], </span><br><span class="line">                 index=[<span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">7</span>]) </span><br><span class="line">data </span><br><span class="line"><span class="comment">#Out: 2 0.25 </span></span><br><span class="line"><span class="comment">#	  5 0.50 </span></span><br><span class="line"><span class="comment">#	  3 0.75 </span></span><br><span class="line"><span class="comment">#	  7 1.00 </span></span><br><span class="line"><span class="comment">#	  dtype: float64 </span></span><br><span class="line"></span><br><span class="line">data[<span class="number">5</span>] </span><br><span class="line"><span class="comment">#Out: 0.5</span></span><br></pre></td></tr></table></figure>
+
+<p>it can be considered as a kind of dictionary:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">population_dict = &#123;<span class="string">'California'</span>: <span class="number">38332521</span>, </span><br><span class="line">                   <span class="string">'Texas'</span>: <span class="number">26448193</span>, </span><br><span class="line">                   <span class="string">'New York'</span>: <span class="number">19651127</span>, </span><br><span class="line">                   <span class="string">'Florida'</span>: <span class="number">19552860</span>, </span><br><span class="line">                   <span class="string">'Illinois'</span>: <span class="number">12882135</span>&#125; </span><br><span class="line">population = pd.Series(population_dict) </span><br><span class="line">population</span><br></pre></td></tr></table></figure>
+
+<p>California   38332521 </p>
+<p> Florida       19552860 </p>
+<p> Illinois        12882135 </p>
+<p> New York  19651127 </p>
+<p> Texas         26448193 </p>
+<p> dtype: int64</p>
+<p>it can also be selected:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">population[<span class="string">'California'</span>] </span><br><span class="line"><span class="comment">#Out: 38332521</span></span><br><span class="line"></span><br><span class="line">population[<span class="string">'California'</span>:<span class="string">'Illinois'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>California  38332521<br>Florida      19552860<br>Illinois       12882135<br>dtype: int64</p>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">area_dict = &#123;<span class="string">'California'</span>: <span class="number">423967</span>, <span class="string">'Texas'</span>: <span class="number">695662</span>, <span class="string">'New York'</span>: <span class="number">141297</span>, </span><br><span class="line">             <span class="string">'Florida'</span>: <span class="number">170312</span>, <span class="string">'Illinois'</span>: <span class="number">149995</span>&#125; </span><br><span class="line">area = pd.Series(area_dict) </span><br><span class="line">area</span><br></pre></td></tr></table></figure>
+
+<p>California 423967 </p>
+<p>Florida 170312 </p>
+<p>Illinois 149995 </p>
+<p>New York 141297 </p>
+<p>Texas 695662 </p>
+<p>dtype: int64</p>
+<p>combine it with the former one:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">states = pd.DataFrame(&#123;<span class="string">'population'</span>: population, </span><br><span class="line">                       <span class="string">'area'</span>: area&#125;) </span><br><span class="line">states</span><br></pre></td></tr></table></figure>
+
+<p>​                       area      population<br>California   423967    38332521<br>Florida       170312    19552860<br>Illinois        149995    12882135<br>New York  141297    19651127<br>Texas         695662    26448193</p>
+<h3 id="index-and-column"><a href="#index-and-column" class="headerlink" title="index and column"></a>index and column</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">states.index </span><br><span class="line"><span class="comment">#Out: Index(['California', 'Florida', 'Illinois', 'New York', 'Texas'], dtype='object')</span></span><br><span class="line"></span><br><span class="line">states.columns </span><br><span class="line"><span class="comment">#Out: Index(['area', 'population'], dtype='object')</span></span><br></pre></td></tr></table></figure>
+
+<p> it can also be considered as dictionary:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">states[<span class="string">'area'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>California   423967<br>Florida        170312<br>Illinois         149995<br>New York   141297<br>Texas          695662<br>Name: area, dtype: int64</p>
+<h3 id="create-DataFrame"><a href="#create-DataFrame" class="headerlink" title="create DataFrame:"></a>create DataFrame:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(population, columns=[<span class="string">'population'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>​                       population<br> California     38332521<br> Florida         19552860<br> Illinois          12882135<br> New York    19651127<br> Texas           26448193</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = [&#123;<span class="string">'a'</span>: i, <span class="string">'b'</span>: <span class="number">2</span> * i&#125; </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)] </span><br><span class="line">pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+
+<p>​    a b </p>
+<p> 0 0 0 </p>
+<p> 1 1 2 </p>
+<p> 2 2 4</p>
+<p>when combine two column, if some values doesn’t exist, it will show NaN</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;, &#123;<span class="string">'b'</span>: <span class="number">3</span>, <span class="string">'c'</span>: <span class="number">4</span>&#125;])</span><br></pre></td></tr></table></figure>
+
+<p>​      a       b     c </p>
+<p>0 1.0      2     NaN<br>1 NaN    3     4.0</p>
+<p>it can also be made up of series:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(&#123;<span class="string">'population'</span>: population, <span class="string">'area'</span>: area&#125;)</span><br></pre></td></tr></table></figure>
+
+<pre><code>area      population </code></pre><p>​                       area      population </p>
+<p>California   423967    38332521<br>Florida       170312    19552860<br>Illinois        149995    12882135<br>New York  141297    19651127<br>Texas         695662    26448193</p>
+<p>if there is a two dimension array, it can also be made to DataFrame</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(np.random.rand(<span class="number">3</span>, <span class="number">2</span>), </span><br><span class="line">             columns=[<span class="string">'foo'</span>, <span class="string">'bar'</span>], </span><br><span class="line">             index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>​        foo         bar<br> a 0.865257     0.213169<br> b 0.442759     0.108267<br> c 0.047110     0.905718</p>
+<h3 id="Index函数"><a href="#Index函数" class="headerlink" title="Index函数"></a>Index函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">ind = pd.Index([<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>]) </span><br><span class="line">ind </span><br><span class="line"><span class="comment">#Out: Int64Index([2, 3, 5, 7, 11], dtype='int64')</span></span><br><span class="line"></span><br><span class="line">ind[<span class="number">1</span>] </span><br><span class="line"><span class="comment">#Out: 3 </span></span><br><span class="line"></span><br><span class="line">ind[::<span class="number">2</span>] </span><br><span class="line"><span class="comment">#Out: Int64Index([2, 5, 11], dtype='int64')</span></span><br><span class="line"></span><br><span class="line">print(ind.size, ind.shape, ind.ndim, ind.dtype) </span><br><span class="line"><span class="comment">#out:5 (5,) 1 int64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#but it can't be change</span></span><br><span class="line">ind[<span class="number">1</span>] = <span class="number">0</span> </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">--------------------------------------------------------------------------- </span></span><br><span class="line"><span class="string">TypeError Traceback (most recent call last) </span></span><br><span class="line"><span class="string">&lt;ipython-input-34-40e631c82e8a&gt; in &lt;module&gt;() </span></span><br><span class="line"><span class="string">----&gt; 1 ind[1] = 0 </span></span><br><span class="line"><span class="string">/Users/jakevdp/anaconda/lib/python3.5/site-packages/pandas/indexes/base.py ... </span></span><br><span class="line"><span class="string"> 1243 </span></span><br><span class="line"><span class="string"> 1244 def __setitem__(self, key, value): </span></span><br><span class="line"><span class="string">-&gt; 1245 raise TypeError("Index does not support mutable operations") </span></span><br><span class="line"><span class="string"> 1246 </span></span><br><span class="line"><span class="string"> 1247 def __getitem__(self, key): </span></span><br><span class="line"><span class="string">TypeError: Index does not support mutable operations</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="join-two-DataFrame"><a href="#join-two-DataFrame" class="headerlink" title="join two DataFrame"></a>join two DataFrame</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">indA = pd.Index([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]) </span><br><span class="line">indB = pd.Index([<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>]) </span><br><span class="line">indA &amp; indB <span class="comment"># 交集 and</span></span><br><span class="line"><span class="comment">#Out: Int64Index([3, 5, 7], dtype='int64') </span></span><br><span class="line"></span><br><span class="line">indA | indB <span class="comment"># 并集 or</span></span><br><span class="line"><span class="comment">#Out: Int64Index([1, 2, 3, 5, 7, 9, 11], dtype='int64') </span></span><br><span class="line"></span><br><span class="line">indA ^ indB <span class="comment"># 异或 nor</span></span><br><span class="line"><span class="comment">#Out: Int64Index([1, 2, 9, 11], dtype='int64')</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><h3 id="series"><a href="#series" class="headerlink" title="series"></a>series</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">data = pd.Series([<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">0.75</span>, <span class="number">1.0</span>], </span><br><span class="line">                 index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]) </span><br><span class="line">data </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"> a 0.25 </span></span><br><span class="line"><span class="string"> b 0.50 </span></span><br><span class="line"><span class="string"> c 0.75 </span></span><br><span class="line"><span class="string"> d 1.00 </span></span><br><span class="line"><span class="string"> dtype: float64 </span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">'b'</span>] </span><br><span class="line"><span class="comment">#Out: 0.5</span></span><br><span class="line"></span><br><span class="line"><span class="string">'a'</span> <span class="keyword">in</span> data </span><br><span class="line"><span class="comment">#Out: True </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#it can be selected as the way of dictionary</span></span><br><span class="line">data.keys() </span><br><span class="line"><span class="comment">#Out: Index(['a', 'b', 'c', 'd'], dtype='object') </span></span><br><span class="line"></span><br><span class="line">list(data.items()) </span><br><span class="line"><span class="comment">#Out: [('a', 0.25), ('b', 0.5), ('c', 0.75), ('d', 1.0)]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#add items to series(the same as dictionary)</span></span><br><span class="line">data[<span class="string">'e'</span>] = <span class="number">1.25</span> </span><br><span class="line"> data </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"> a 0.25 </span></span><br><span class="line"><span class="string"> b 0.50 </span></span><br><span class="line"><span class="string"> c 0.75 </span></span><br><span class="line"><span class="string"> d 1.00 </span></span><br><span class="line"><span class="string"> e 1.25 </span></span><br><span class="line"><span class="string"> dtype: float64</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>use series the same as array:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将显式索引作为切片</span></span><br><span class="line">data[<span class="string">'a'</span>:<span class="string">'c'</span>] </span><br><span class="line"><span class="comment">#Out: a 0.25 </span></span><br><span class="line"><span class="comment">#     b 0.50 </span></span><br><span class="line"><span class="comment">#	  c 0.75 </span></span><br><span class="line"><span class="comment">#	  dtype: float64 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将隐式整数索引作为切片</span></span><br><span class="line">data[<span class="number">0</span>:<span class="number">2</span>] </span><br><span class="line"><span class="comment">#Out: a 0.25 </span></span><br><span class="line"><span class="comment">#	  b 0.50 </span></span><br><span class="line"><span class="comment">#	  dtype: float64 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 掩码</span></span><br><span class="line">data[(data &gt; <span class="number">0.3</span>) &amp; (data &lt; <span class="number">0.8</span>)] </span><br><span class="line"><span class="comment">#Out: b 0.50 </span></span><br><span class="line"><span class="comment">#	  c 0.75 </span></span><br><span class="line"><span class="comment">#	  dtype: float64 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 花哨的索引</span></span><br><span class="line">data[[<span class="string">'a'</span>, <span class="string">'e'</span>]] </span><br><span class="line"><span class="comment">#Out: a 0.25 </span></span><br><span class="line"><span class="comment">#	  e 1.25 </span></span><br><span class="line"><span class="comment">#	  dtype: float64</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="loc、iloc-and-ix"><a href="#loc、iloc-and-ix" class="headerlink" title="loc、iloc and ix"></a><code>loc</code>、<code>iloc</code> and <code>ix</code></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">data = pd.Series([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], index=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]) </span><br><span class="line">data </span><br><span class="line"><span class="comment">#Out: 1 a </span></span><br><span class="line"><span class="comment">#     3 b </span></span><br><span class="line"><span class="comment">#	  5 c </span></span><br><span class="line"><span class="comment">#	  dtype: object</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#we can get the value through the index we set</span></span><br><span class="line"><span class="comment"># 取值操作是显式索引</span></span><br><span class="line">data[<span class="number">1</span>] </span><br><span class="line"><span class="comment">#Out: 'a'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#we can select several items through the index it has oraginally</span></span><br><span class="line"><span class="comment"># 切片操作是隐式索引</span></span><br><span class="line">data[<span class="number">1</span>:<span class="number">3</span>] </span><br><span class="line"><span class="comment">#Out: 3 b </span></span><br><span class="line"><span class="comment">#	  5 c </span></span><br><span class="line"><span class="comment">#	  dtype: object</span></span><br></pre></td></tr></table></figure>
+
+<p>it is difficult to remember, so we use loc:</p>
+<p>it can be used to select through the index you set.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data.loc[<span class="number">1</span>] </span><br><span class="line"><span class="comment">#Out: 'a' </span></span><br><span class="line"></span><br><span class="line">data.loc[<span class="number">1</span>:<span class="number">3</span>] </span><br><span class="line"><span class="comment">#Out: 1 a </span></span><br><span class="line"><span class="comment">#	  3 b </span></span><br><span class="line"><span class="comment">#	  dtype: object</span></span><br></pre></td></tr></table></figure>
+
+<p>in the contrast, iloc can be used to select through the index it has originally.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[<span class="number">1</span>] </span><br><span class="line"><span class="comment">#Out: 'b' </span></span><br><span class="line"></span><br><span class="line">data.iloc[<span class="number">1</span>:<span class="number">3</span>] </span><br><span class="line"><span class="comment">#Out: 3 b </span></span><br><span class="line"><span class="comment">#	  5 c </span></span><br><span class="line"><span class="comment">#	  dtype: object</span></span><br></pre></td></tr></table></figure>
+
+<p>ix is the combination of the two, it will be mentioned later.</p>
+<h3 id="DataFrame-1"><a href="#DataFrame-1" class="headerlink" title="DataFrame"></a>DataFrame</h3><p><strong>considered as dictionary</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">area = pd.Series(&#123;<span class="string">'California'</span>: <span class="number">423967</span>, <span class="string">'Texas'</span>: <span class="number">695662</span>, </span><br><span class="line">                  <span class="string">'New York'</span>: <span class="number">141297</span>, <span class="string">'Florida'</span>: <span class="number">170312</span>, </span><br><span class="line">                  <span class="string">'Illinois'</span>: <span class="number">149995</span>&#125;) </span><br><span class="line">pop = pd.Series(&#123;<span class="string">'California'</span>: <span class="number">38332521</span>, <span class="string">'Texas'</span>: <span class="number">26448193</span>, </span><br><span class="line">                 <span class="string">'New York'</span>: <span class="number">19651127</span>, <span class="string">'Florida'</span>: <span class="number">19552860</span>, </span><br><span class="line">                 <span class="string">'Illinois'</span>: <span class="number">12882135</span>&#125;) </span><br><span class="line">data = pd.DataFrame(&#123;<span class="string">'area'</span>:area, <span class="string">'pop'</span>:pop&#125;) </span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<p>​                       area      population </p>
+<p>California   423967    38332521<br>Florida       170312    19552860<br>Illinois        149995    12882135<br>New York  141297    19651127<br>Texas         695662    26448193</p>
+<p><strong>attribute-style</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">'area'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                    area</p>
+<p>California   423967<br>Florida        170312<br>Illinois         149995<br>New York   141297<br>Texas          695662<br>Name: area, dtype: int64</p>
+<p><strong>they are the same:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data.area <span class="keyword">is</span> data[<span class="string">'area'</span>] </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<p>but, data.area, this form can’t be used in some condition: if it can’t be a valuable’s name</p>
+<h4 id="calculate-as-dictionary"><a href="#calculate-as-dictionary" class="headerlink" title="calculate as dictionary"></a>calculate as dictionary</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">'density'</span>] = data[<span class="string">'pop'</span>] / data[<span class="string">'area'</span>] </span><br><span class="line">data </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:              area  pop     density </span></span><br><span class="line"><span class="string">	 California 423967 38332521 90.413926 </span></span><br><span class="line"><span class="string">	 Florida    170312 19552860 114.806121 </span></span><br><span class="line"><span class="string">	 Illinois   149995 12882135 85.883763 </span></span><br><span class="line"><span class="string">	 New York   141297 19651127 139.076746 </span></span><br><span class="line"><span class="string">	 Texas      695662 26448193 38.018740</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">data.values </span><br><span class="line"><span class="comment">#Out: array([[ 4.23967000e+05, 3.83325210e+07, 9.04139261e+01], </span></span><br><span class="line"><span class="comment"># 			 [ 1.70312000e+05, 1.95528600e+07, 1.14806121e+02], </span></span><br><span class="line"><span class="comment"># 			 [ 1.49995000e+05, 1.28821350e+07, 8.58837628e+01], </span></span><br><span class="line"><span class="comment"># 			 [ 1.41297000e+05, 1.96511270e+07, 1.39076746e+02], </span></span><br><span class="line"><span class="comment"># 			 [ 6.95662000e+05, 2.64481930e+07, 3.80187404e+01]])</span></span><br></pre></td></tr></table></figure>
+
+<p>reshape</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.T</span><br></pre></td></tr></table></figure>
+
+<p>​                California             Florida             Illinois                 New York         Texas<br>area        4.239670e+05 1.703120e+05 1.499950e+05 1.412970e+05 6.956620e+05<br>pop         3.833252e+07 1.955286e+07 1.288214e+07 1.965113e+07 2.644819e+07<br>density   9.041393e+01 1.148061e+02 8.588376e+01 1.390767e+02 3.801874e+01</p>
+<p>get the whole index or column：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data.values[<span class="number">0</span>] </span><br><span class="line"><span class="comment">#Out: array([ 4.23967000e+05, 3.83325210e+07, 9.04139261e+01])</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">'area'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                    area</p>
+<p>California   423967<br>Florida        170312<br>Illinois         149995<br>New York   141297<br>Texas          695662<br>Name: area, dtype: int64</p>
+<p>loc、iloc and ix</p>
+<p>the same as series</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[:<span class="number">3</span>, :<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                        area             pop<br> California     423967     38332521<br> Florida         170312     19552860<br> Illinois         149995      12882135 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[:<span class="string">'Illinois'</span>, :<span class="string">'pop'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                         area         pop<br> California     423967     38332521<br> Florida         170312     19552860<br> Illinois          149995     12882135</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ix can mix them,but readers may not distiguish</span></span><br><span class="line">data.ix[:<span class="number">3</span>, :<span class="string">'pop'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                         area         pop<br> California     423967     38332521<br> Florida         170312     19552860<br> Illinois         149995      12882135</p>
+<p>advanced way</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[data.density &gt; <span class="number">100</span>, [<span class="string">'pop'</span>, <span class="string">'density'</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>​                         pop             density<br> Florida          19552860     114.806121<br> New York     19651127     139.076746</p>
+<p>change the value</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[<span class="number">0</span>, <span class="number">2</span>] = <span class="number">90</span> </span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<p>​                            area  pop     density<br>​     California 423967 38332521 <strong>90.000000</strong><br>​     Florida      170312 19552860 114.806121<br>​     Illinois       149995 12882135 85.883763<br>​     New York 141297 19651127 139.076746<br>​     Texas        695662 26448193 38.018740</p>
+<h4 id="other-ways"><a href="#other-ways" class="headerlink" title="other ways"></a>other ways</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#slice</span></span><br><span class="line">data[<span class="string">'Florida'</span>:<span class="string">'Illinois'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                   area   pop          density<br> Florida 170312 19552860 114.806121<br> Illinois  149995 12882135 85.883763</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#use the index</span></span><br><span class="line">data[<span class="number">1</span>:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<pre><code>area     pop             density </code></pre><p> Florida 170312 19552860 114.806121<br> Illinois  149995 12882135 85.883763</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mask</span></span><br><span class="line">data[data.density &gt; <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+
+<p>​                     area         pop         density<br> Florida      170312 19552860 114.806121<br> New York 141297 19651127 139.076746</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Pandas/" rel="tag"># -Pandas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/22/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A03/" rel="next" title="C语言学习3">
+                <i class="fa fa-chevron-left"></i> C语言学习3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/1.png"
+                alt="Arya Yang" />
+            
+              <p class="site-author-name" itemprop="name">Arya Yang</p>
+              <p class="site-description motion-element" itemprop="description">Including learning records and other activities</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-3"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-series"><span class="nav-number">1.1.1.</span> <span class="nav-text">create series:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index"><span class="nav-number">1.1.2.</span> <span class="nav-text">index</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">1.2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index-and-column"><span class="nav-number">1.2.1.</span> <span class="nav-text">index and column</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-DataFrame"><span class="nav-number">1.2.2.</span> <span class="nav-text">create DataFrame:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Index函数"><span class="nav-number">1.2.3.</span> <span class="nav-text">Index函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-two-DataFrame"><span class="nav-number">1.2.4.</span> <span class="nav-text">join two DataFrame</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-number">1.3.</span> <span class="nav-text">select</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#series"><span class="nav-number">1.3.1.</span> <span class="nav-text">series</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#loc、iloc-and-ix"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">loc、iloc and ix</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataFrame-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#calculate-as-dictionary"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">calculate as dictionary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#other-ways"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">other ways</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arya Yang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'nNzbOeqV1V5k3oCOWMDTgBy8-gzGzoHsz',
+        appKey: 'QciTO7F2uuB6zvMHCyV4GsVt',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

@@ -98,8 +98,23 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/13/UYrFf0.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/13/UYrApV.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/13/UYrElT.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYt2id.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aY5x6x.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYo5ZT.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYHUz9.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYqCHP.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYqE9g.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYqB4O.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYOLNV.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/aYXlUP.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atZ8w6.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atetH0.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atmsJS.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atux2D.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atKKqs.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/02/atlldA.jpg">
 <meta property="article:published_time" content="2020-07-13T07:54:47.000Z">
-<meta property="article:modified_time" content="2020-07-13T11:54:41.826Z">
+<meta property="article:modified_time" content="2020-08-02T12:27:48.719Z">
 <meta property="article:author" content="Arya Yang">
 <meta property="article:tag" content="-reading seminar">
 <meta name="twitter:card" content="summary">
@@ -454,6 +469,125 @@
 <p><img src="https://s1.ax1x.com/2020/07/13/UYrFf0.jpg" alt="UYrFf0.jpg"></p>
 <p><img src="https://s1.ax1x.com/2020/07/13/UYrApV.jpg" alt="UYrApV.jpg"></p>
 <p><a href="https://imgchr.com/i/UYrElT" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/07/13/UYrElT.jpg" alt="UYrElT.jpg"></a></p>
+<h2 id="第五章-散列表"><a href="#第五章-散列表" class="headerlink" title="第五章 散列表"></a>第五章 散列表</h2><h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>在商店的价目表查询商品价格：</p>
+<p>无序价目表：简单法（第一章）O=O(n)</p>
+<p>按字母顺序排：二分法（第一章） O=O(log2n)</p>
+<p>但是店员却能背下价目表，在提及商品时瞬间找到价格：</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aYt2id.jpg" alt="aYt2id.jpg"></p>
+<p>实现这一点需要散数列</p>
+<p>散数列：将输入映射到数字</p>
+<p>满足要求：必须一致：当输入一样时输出也必须一样</p>
+<p>​                    不同的输入映射到不同的数字：输入不同时输出也不同</p>
+<p>==&gt;one to one 函数</p>
+<p><strong>步骤:</strong></p>
+<p>创建空数组</p>
+<p>填写数组：将apple设置为3，则3的元素填写苹果的价格（以此类推）</p>
+<p><strong>有用原因：</strong></p>
+<p>1.相同输入映射相同索引</p>
+<p>2.不同输入映射不同索引</p>
+<p>3.散数列知道数组有多大，只映射有效值</p>
+<p>可以用字典实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">book=dict()</span><br><span class="line">book[<span class="string">"apple"</span>]=<span class="number">0.6</span></span><br><span class="line">book[<span class="string">"milk"</span>]=<span class="number">1.49</span></span><br><span class="line">book[<span class="string">"avocado"</span>]=<span class="number">1.49</span></span><br><span class="line">print(book)</span><br><span class="line"><span class="comment">#out:&#123;'avocado':1.49,'apple':0.67,'milk':1.49&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a><strong>实际应用</strong></h3><p>电话簿查询</p>
+<p>网址查询（转为IP地址）：Google.com-&gt;74.125.239.133（DNS resolution）</p>
+<h4 id="防止重复"><a href="#防止重复" class="headerlink" title="防止重复"></a>防止重复</h4><p>在投票时，判断这个人是否已经投过票</p>
+<p>设置一个字典，将投过票的人放入字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">voted=&#123;&#125;</span><br><span class="line"><span class="comment">#加入投票者姓名</span></span><br><span class="line">value=voted.get(<span class="string">"tom"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果tom投过票就会出现在这个字典中。返回值为true，否则为false</p>
+<p>如果为false（不在列表里）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">voted=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_voted</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> voted.get(name): <span class="comment">#有名字，即为true，所以此if会执行</span></span><br><span class="line">        print(<span class="string">"had voted"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        voted[name]=<span class="literal">True</span> <span class="comment">#将投票者加入这个dict</span></span><br><span class="line">        print(<span class="string">"let them vote"</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="将散列表用作缓存"><a href="#将散列表用作缓存" class="headerlink" title="将散列表用作缓存"></a>将散列表用作缓存</h4><p>网站的缓存</p>
+<p>访问网页：（拿百度举例）</p>
+<ol>
+<li>向百度服务器发出请求</li>
+<li>服务器处理，生成网页发给你</li>
+<li>你获得网页</li>
+</ol>
+<p>推荐功能：</p>
+<p>获取你最近的足迹，推荐你可能感兴趣的内容，即在第二步进行一些运算</p>
+<p>但这个过程可能需要几秒，并且它的用户千千万，所花费时间较长。</p>
+<p>于是你觉得加载慢，于是你会觉得百度慢、百度这个软件不好</p>
+<p>解决：</p>
+<p>比如家里一个孩子很喜欢星球，总问你火星离地球多远？月球呢？… …</p>
+<p>每次你又要上网搜，在说出答案，这需要花时间，就跟之前网站服务器在第二步运算的时间一样</p>
+<p>但问多了你就能记住，月球离地球238,900英里这个答案</p>
+<p>下次他再问你你就不需要查</p>
+<p>好处：</p>
+<p>时间短</p>
+<p>网页服务器工作量少</p>
+<p>这些缓存就存在散列表中（如主页，about等）（历史记录或者网站缓存里）</p>
+<p>实现代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cache=&#123;&#125; <span class="comment">#h缓存的散列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> cache.get(url):</span><br><span class="line">        <span class="keyword">return</span> cache[url] <span class="comment">#如果有缓存，返回缓存数据，瞬间完成</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        data=get_data_from_serve(url)</span><br><span class="line">        cache[url]=data <span class="comment">#将数据保存到缓存里</span></span><br><span class="line">        <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+
+<p>这样也可以解释为什么我们第一次访问一个网站的时候要花几秒，但我们访问常用的较大的网站，如百度主页，就会瞬间完成</p>
+<h3 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h3><p>散列表要做到不同输入映射到数组的不同位置几乎是无法完成的</p>
+<p>比如：</p>
+<p>将价目表按字母顺序放进散列表：</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aY5x6x.jpg" alt="aY5x6x.jpg"></p>
+<p>apple放进第一个，banana放进第二个，但遇到avocado的时候，发现它的首字母也是a</p>
+<p>这个时候，覆盖apple，下次查询apple的价格时查到的是avocado（因为这个是数组而不是链表，无法直接在中间加值）</p>
+<p>解决方法：在a的位置储存一个链表，将a开头的都放进链表里，但这将使速度减慢</p>
+<p>但是，假设这个商店只销售a开头的商品，数组的第一位将特别长，但后面25位将被浪费</p>
+<p>需要合理安排散列函数，均匀分配</p>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>平均情况：均匀分配列表，获得数组的查找效率和链表的插入删除效率</p>
+<p>最糟情况：出现严重冲突，获得数组和链表的缺点</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aYo5ZT.jpg" alt="aYo5ZT.jpg"></p>
+<p>获得平均情况：较低的填装因子，良好的散列函数</p>
+<h4 id="填装因子"><a href="#填装因子" class="headerlink" title="填装因子"></a>填装因子</h4><p>填装因子=列表包含元素量÷位置总数</p>
+<p>如果元素量大于总位数（即需要链表），填装因子大于1，就需要增加数列长度（创建一个新的数列，用hash函数将旧数列的元素装到新数列里），一般填装因子超过0.7就需要调整数列。</p>
+<h4 id="良好的散列函数"><a href="#良好的散列函数" class="headerlink" title="良好的散列函数"></a>良好的散列函数</h4><p>即均匀排布</p>
+<p><a href="https://imgchr.com/i/aYHUz9" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/08/02/aYHUz9.jpg" alt="aYHUz9.jpg"></a></p>
+<h2 id="第六章-广度优先搜索"><a href="#第六章-广度优先搜索" class="headerlink" title="第六章 广度优先搜索"></a>第六章 广度优先搜索</h2><p>即找出两样东西之间的最短距离（不一定是指长度上的距离）</p>
+<h3 id="图简介"><a href="#图简介" class="headerlink" title="图简介"></a>图简介</h3><p>从双子峰做公交去金门大桥：</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aYqCHP.jpg" alt="aYqCHP.jpg"><br><img src="https://s1.ax1x.com/2020/08/02/aYqE9g.jpg" alt="aYqE9g.jpg"></p>
+<p>各种地图软件就是这么实现的</p>
+<h3 id="图是什么"><a href="#图是什么" class="headerlink" title="图是什么"></a>图是什么</h3><p><img src="https://s1.ax1x.com/2020/08/02/aYqB4O.jpg" alt="aYqB4O.jpg"></p>
+<p>即关系网</p>
+<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><p>可解决问题：</p>
+<ol>
+<li>从A出发有前往B的路径吗？</li>
+<li>从A出发前往B哪条路最短？</li>
+</ol>
+<p>从双子峰去金门大桥的问题即第二个问题</p>
+<p>第一个问题：</p>
+<p>你有一个农场，你需要一个销售商将商品售卖到市场上</p>
+<p>你需要在你的朋友中找有没有销售商</p>
+<p>创建朋友名单，再依次检查是否有销售商</p>
+<p>但如果你的朋友中没有销售商，你需要在朋友的朋友中找销售商检查每个人时，要将他的朋友加入名单</p>
+<p>搜遍你的人际圈直到找到销售商就是广度优先搜索</p>
+<h4 id="查找最短路径"><a href="#查找最短路径" class="headerlink" title="查找最短路径"></a>查找最短路径</h4><p>第二个问题：谁是关系最近的销售商</p>
+<p>第一层关系肯定大于第二层，第二层肯定大于第三层… …</p>
+<p>广度优先搜索：先检查第一层关系，全部检查完再检查第二层关系</p>
+<p>所以，这不仅是找到路径，还是找到最短路径</p>
+<p>这样查找时必须按顺序排名单</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aYOLNV.jpg" alt="aYOLNV.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/08/02/aYXlUP.jpg" alt="aYXlUP.jpg"></p>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><p>入列和出列</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/atZ8w6.jpg" alt="atZ8w6.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/08/02/atetH0.jpg" alt="atetH0.jpg"></p>
+<h3 id="实现图"><a href="#实现图" class="headerlink" title="实现图"></a>实现图</h3><p><img src="https://s1.ax1x.com/2020/08/02/atmsJS.jpg" alt="atmsJS.jpg"></p>
+<p>此关系可表示为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph=&#123;&#125;</span><br><span class="line">graph[<span class="string">"you"</span>]=[<span class="string">"alice"</span>,<span class="string">"bob"</span>,<span class="string">"claire"</span>]</span><br><span class="line">graph[<span class="string">"bob"</span>]=[<span class="string">"anuj"</span>,<span class="string">"peggy"</span>]</span><br><span class="line">graph[<span class="string">"alice"</span>]=[<span class="string">"peggy"</span>]</span><br><span class="line">graph[<span class="string">"claire"</span>]=[<span class="string">"thom"</span>,<span class="string">"jonny"</span>]</span><br><span class="line">graph[<span class="string">"anuj"</span>]=[]</span><br><span class="line">graph[<span class="string">"peggy"</span>]=[]</span><br><span class="line">graph[<span class="string">"thom"</span>]=[]</span><br><span class="line">graph[<span class="string">"jonny"</span>]=[]</span><br></pre></td></tr></table></figure>
+
+<p>其中代码顺序变化是无所谓的，因为散列表是无序的</p>
+<p>这幅图中出现了有向图与无向图：</p>
+<p><img src="https://s1.ax1x.com/2020/08/02/atux2D.jpg" alt="atux2D.jpg"></p>
+<p>这两个是等价的</p>
+<h3 id="实现算法"><a href="#实现算法" class="headerlink" title="实现算法"></a>实现算法</h3><p><img src="https://s1.ax1x.com/2020/08/02/atKKqs.jpg" alt="atKKqs.jpg"></p>
+<p>代码：利用deque函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">search_queue = deque()</span><br><span class="line">search_queue+=graph[<span class="string">"you"</span>]<span class="comment">#将你的邻居都加入到这个搜索列表</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> search_queue:</span><br><span class="line">    person = search_queue.popleft() <span class="comment">#从中取出一个人</span></span><br><span class="line">    <span class="keyword">if</span> person_is_seller(person): <span class="comment">#检查是否是销售商</span></span><br><span class="line">        print(person+<span class="string">" is a seller!"</span>) <span class="comment">#是销售商</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        search_queue+=graph[person] <span class="comment">#不是销售商，把他的朋友都加入列表</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">False</span> <span class="comment">#没有销售商</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person_is_seller</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> name[<span class="number">-1</span>] ==<span class="string">'s'</span> <span class="comment">#这个人是销售商</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/02/atlldA.jpg" alt="atlldA.jpg"></p>
+<p>防止死循环出现：</p>
+<p>当检查 you这个列表，找到peggy，peggy不是销售商，列出peggy的朋友，peggy的朋友是你，又检查you这个列表… …</p>
+<p>所以我们需要加上：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(name)</span>:</span></span><br><span class="line">    search_queue=deque()</span><br><span class="line">    search_queue+=graph[name]</span><br><span class="line">    searched=[] <span class="comment">#记录检查过的人</span></span><br><span class="line">    <span class="keyword">while</span> search_queue:</span><br><span class="line">    	person = search_queue.popleft() <span class="comment">#从中取出一个人</span></span><br><span class="line">        <span class="keyword">if</span> person <span class="keyword">not</span> <span class="keyword">in</span> searched:</span><br><span class="line">    		<span class="keyword">if</span> person_is_seller(person): <span class="comment">#检查是否是销售商</span></span><br><span class="line">        		print(person+<span class="string">" is a seller!"</span>) <span class="comment">#是销售商</span></span><br><span class="line">        		<span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    		<span class="keyword">else</span>:</span><br><span class="line">        		search_queue+=graph[person] <span class="comment">#不是销售商，把他的朋友都加入列表</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">False</span> <span class="comment">#没有销售商</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person_is_seller</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> name[<span class="number">-1</span>] ==<span class="string">'s'</span> <span class="comment">#这个人是销售商</span></span><br><span class="line"></span><br><span class="line">search(<span class="string">"you"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>运行时间</p>
+<p>O=O(人数+边数) （可写为O(V+E))</p>
 
       
     </div>
@@ -635,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《算法图解》Grokking-Algorithms-（2）"><span class="nav-number">1.</span> <span class="nav-text">《算法图解》Grokking Algorithms （2）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-快速排序"><span class="nav-number">1.1.</span> <span class="nav-text">第四章 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#divide-and-conquer-D-amp-C-算法"><span class="nav-number">1.1.1.</span> <span class="nav-text">divide and conquer(D&amp;C)算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大O表示法"><span class="nav-number">1.1.3.</span> <span class="nav-text">大O表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较合并排序与快速排序"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">比较合并排序与快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平均情况和最糟情况"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">平均情况和最糟情况</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《算法图解》Grokking-Algorithms-（2）"><span class="nav-number">1.</span> <span class="nav-text">《算法图解》Grokking Algorithms （2）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-快速排序"><span class="nav-number">1.1.</span> <span class="nav-text">第四章 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#divide-and-conquer-D-amp-C-算法"><span class="nav-number">1.1.1.</span> <span class="nav-text">divide and conquer(D&amp;C)算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大O表示法"><span class="nav-number">1.1.3.</span> <span class="nav-text">大O表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较合并排序与快速排序"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">比较合并排序与快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平均情况和最糟情况"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">平均情况和最糟情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-散列表"><span class="nav-number">1.2.</span> <span class="nav-text">第五章 散列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是什么"><span class="nav-number">1.2.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际应用"><span class="nav-number">1.2.2.</span> <span class="nav-text">实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#防止重复"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">防止重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将散列表用作缓存"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">将散列表用作缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冲突"><span class="nav-number">1.2.3.</span> <span class="nav-text">冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-number">1.2.4.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#填装因子"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">填装因子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#良好的散列函数"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">良好的散列函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-广度优先搜索"><span class="nav-number">1.3.</span> <span class="nav-text">第六章 广度优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图简介"><span class="nav-number">1.3.1.</span> <span class="nav-text">图简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图是什么"><span class="nav-number">1.3.2.</span> <span class="nav-text">图是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先搜索"><span class="nav-number">1.3.3.</span> <span class="nav-text">广度优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找最短路径"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">查找最短路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现图"><span class="nav-number">1.3.4.</span> <span class="nav-text">实现图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现算法"><span class="nav-number">1.3.5.</span> <span class="nav-text">实现算法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

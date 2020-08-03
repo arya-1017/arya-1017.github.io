@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Pandas Introduction 3Concat and Append12import pandas as pd import numpy as np  123456789101112def make_df(cols, ind):  &quot;&quot;&quot;一个简单的DataFrame&quot;&quot;&quot; 	data &#x3D; &amp;#123;c: [str(c) + str(i) for i in ind]">
 <meta property="article:published_time" content="2020-07-27T11:42:21.000Z">
-<meta property="article:modified_time" content="2020-08-01T02:59:55.036Z">
+<meta property="article:modified_time" content="2020-08-03T11:37:04.914Z">
 <meta property="article:author" content="Arya Yang">
 <meta property="article:tag" content="-Pandas">
 <meta name="twitter:card" content="summary">
@@ -454,47 +454,6 @@
 <p>suffixes: the column names are repeated</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">df8 = pd.DataFrame(&#123;<span class="string">'name'</span>: [<span class="string">'Bob'</span>, <span class="string">'Jake'</span>, <span class="string">'Lisa'</span>, <span class="string">'Sue'</span>], </span><br><span class="line">                    <span class="string">'rank'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]&#125;) </span><br><span class="line">df9 = pd.DataFrame(&#123;<span class="string">'name'</span>: [<span class="string">'Bob'</span>, <span class="string">'Jake'</span>, <span class="string">'Lisa'</span>, <span class="string">'Sue'</span>], </span><br><span class="line">                    <span class="string">'rank'</span>: [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>]&#125;) </span><br><span class="line">print(df8); print(df9); print(pd.merge(df8, df9, on=<span class="string">"name"</span>)) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">    df8        df9       pd.merge(df8, df9, on="name") </span></span><br><span class="line"><span class="string">  name rank   name rank  name rank_x rank_y </span></span><br><span class="line"><span class="string">0 Bob  1    0 Bob   3   0 Bob  1     3 </span></span><br><span class="line"><span class="string">1 Jake 2    1 Jake  1   1 Jake 2     1 </span></span><br><span class="line"><span class="string">2 Lisa 3    2 Lisa  4   2 Lisa 3     4 </span></span><br><span class="line"><span class="string">3 Sue  4    3 Sue   2   3 Sue  4     2</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">print(df8); print(df9); </span><br><span class="line">print(pd.merge(df8, df9, on=<span class="string">"name"</span>, suffixes=[<span class="string">"_L"</span>, <span class="string">"_R"</span>])) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">    df8        df9       pd.merge(df8, df9, on="name", suffixes=["_L", "_R"])</span></span><br><span class="line"><span class="string">  name rank   name rank  name rank_L rank_R</span></span><br><span class="line"><span class="string">0 Bob  1    0 Bob   3   0 Bob  1     3 </span></span><br><span class="line"><span class="string">1 Jake 2    1 Jake  1   1 Jake 2     1 </span></span><br><span class="line"><span class="string">2 Lisa 3    2 Lisa  4   2 Lisa 3     4 </span></span><br><span class="line"><span class="string">3 Sue  4    3 Sue   2   3 Sue  4     2</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="accumulation"><a href="#accumulation" class="headerlink" title="accumulation"></a>accumulation</h2><table>
-<thead>
-<tr>
-<th>count()</th>
-<th>计数项</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>first()、last()</td>
-<td>第一项与最后一项</td>
-</tr>
-<tr>
-<td>mean()、median()</td>
-<td>均值与中位数</td>
-</tr>
-<tr>
-<td>min()、max()</td>
-<td>最小值与最大值</td>
-</tr>
-<tr>
-<td>std()、var()</td>
-<td>标准差与方差</td>
-</tr>
-<tr>
-<td>mad()</td>
-<td>均值绝对偏差（mean absolute deviation）</td>
-</tr>
-<tr>
-<td>prod()</td>
-<td>所有项乘积</td>
-</tr>
-<tr>
-<td>sum()</td>
-<td>所有项求和</td>
-</tr>
-<tr>
-<td>describe()</td>
-<td>分析数据的所有特征（如最大值）</td>
-</tr>
-</tbody></table>
-<p>​     </p>
 
       
     </div>
@@ -621,7 +580,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-3"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concat-and-Append"><span class="nav-number">1.1.</span> <span class="nav-text">Concat and Append</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-concat-to-combine"><span class="nav-number">1.1.1.</span> <span class="nav-text">use .concat to combine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">1.2.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#accumulation"><span class="nav-number">1.3.</span> <span class="nav-text">accumulation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-3"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concat-and-Append"><span class="nav-number">1.1.</span> <span class="nav-text">Concat and Append</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-concat-to-combine"><span class="nav-number">1.1.1.</span> <span class="nav-text">use .concat to combine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">1.2.</span> <span class="nav-text">merge</span></a></li></ol></li></ol></div>
             
 
           </div>

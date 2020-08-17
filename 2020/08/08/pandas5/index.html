@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="Pandas Introduction 5">
+<meta name="description" content="Pandas Introduction 5vectorized string operationcapitalizeIt needs for loop to realize the capitalization. 123import numpy as np data &#x3D; [&#39;peter&#39;, &#39;Paul&#39;, &#39;MARY&#39;, &#39;gUIDO&#39;] [s.capitalize() for s in data">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pandas5">
 <meta property="og:url" content="http://yoursite.com/2020/08/08/pandas5/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Pandas Introduction 5">
+<meta property="og:description" content="Pandas Introduction 5vectorized string operationcapitalizeIt needs for loop to realize the capitalization. 123import numpy as np data &#x3D; [&#39;peter&#39;, &#39;Paul&#39;, &#39;MARY&#39;, &#39;gUIDO&#39;] [s.capitalize() for s in data">
 <meta property="article:published_time" content="2020-08-08T07:32:34.000Z">
-<meta property="article:modified_time" content="2020-08-08T09:05:52.220Z">
+<meta property="article:modified_time" content="2020-08-17T05:06:07.354Z">
 <meta property="article:author" content="Arya Yang">
 <meta property="article:tag" content="-Pandas">
 <meta name="twitter:card" content="summary">
@@ -397,7 +397,118 @@
       
 
       
-        <h1 id="Pandas-Introduction-5"><a href="#Pandas-Introduction-5" class="headerlink" title="Pandas Introduction 5"></a>Pandas Introduction 5</h1>
+        <h1 id="Pandas-Introduction-5"><a href="#Pandas-Introduction-5" class="headerlink" title="Pandas Introduction 5"></a>Pandas Introduction 5</h1><h2 id="vectorized-string-operation"><a href="#vectorized-string-operation" class="headerlink" title="vectorized string operation"></a>vectorized string operation</h2><h3 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a>capitalize</h3><p>It needs for loop to realize the capitalization.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line">data = [<span class="string">'peter'</span>, <span class="string">'Paul'</span>, <span class="string">'MARY'</span>, <span class="string">'gUIDO'</span>] [s.capitalize() <span class="keyword">for</span> s <span class="keyword">in</span> data] </span><br><span class="line"><span class="comment">#Out: ['Peter', 'Paul', 'Mary', 'Guido']</span></span><br></pre></td></tr></table></figure>
+
+<p>but it can’t be used with None types:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">data = [<span class="string">'peter'</span>, <span class="string">'Paul'</span>, <span class="literal">None</span>, <span class="string">'MARY'</span>, <span class="string">'gUIDO'</span>] [s.capitalize() <span class="keyword">for</span> s <span class="keyword">in</span> data] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">--------------------------------------------------------------------------- </span></span><br><span class="line"><span class="string">--------------------------------------------------------------------------- </span></span><br><span class="line"><span class="string">AttributeError Traceback (most recent call last) </span></span><br><span class="line"><span class="string">&lt;ipython-input-3-fc1d891ab539&gt; in &lt;module&gt;() </span></span><br><span class="line"><span class="string"> 1 data = ['peter', 'Paul', None, 'MARY', 'gUIDO'] </span></span><br><span class="line"><span class="string">----&gt; 2 [s.capitalize() for s in data] </span></span><br><span class="line"><span class="string">&lt;ipython-input-3-fc1d891ab539&gt; in &lt;listcomp&gt;(.0) </span></span><br><span class="line"><span class="string"> 1 data = ['peter', 'Paul', None, 'MARY', 'gUIDO'] </span></span><br><span class="line"><span class="string">----&gt; 2 [s.capitalize() for s in data] </span></span><br><span class="line"><span class="string">AttributeError: 'NoneType' object has no attribute 'capitalize' </span></span><br><span class="line"><span class="string">---------------------------------------------------------------------------</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>another way:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#make the array to DataFrame</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line">names = pd.Series(data) </span><br><span class="line">names </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:</span></span><br><span class="line"><span class="string"> 0 peter </span></span><br><span class="line"><span class="string"> 1 Paul </span></span><br><span class="line"><span class="string"> 2 None </span></span><br><span class="line"><span class="string"> 3 MARY </span></span><br><span class="line"><span class="string"> 4 gUIDO </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">names.str.capitalize() </span><br><span class="line">Out: </span><br><span class="line"> <span class="number">0</span> Peter </span><br><span class="line"> <span class="number">1</span> Paul </span><br><span class="line"> <span class="number">2</span> <span class="literal">None</span> </span><br><span class="line"> <span class="number">3</span> Mary </span><br><span class="line"> <span class="number">4</span> Guido </span><br><span class="line"> dtype: object</span><br></pre></td></tr></table></figure>
+
+<h3 id="other-functions-in-pandas-str"><a href="#other-functions-in-pandas-str" class="headerlink" title="other functions in pandas.str:"></a>other functions in pandas.str:</h3><p>len() lower() translate() islower()</p>
+<p>ljust() upper() startswith() isupper()</p>
+<p>rjust() find() endswith() isnumeric()</p>
+<p>center() rfifind() isalnum() isdecimal()</p>
+<p>zfifill() index() isalpha() split()</p>
+<p>strip() rindex() isdigit() rsplit()</p>
+<p>rstrip() capitalize() isspace() partition()</p>
+<p>lstrip() swapcase() istitle() rpartition()</p>
+<p>they are similar to those in python</p>
+<h4 id="comparison"><a href="#comparison" class="headerlink" title="comparison"></a>comparison</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>match()</td>
+<td>对每个元素调用 re.match()，返回布尔类型值</td>
+</tr>
+<tr>
+<td>extract()</td>
+<td>对每个元素调用 re.match()，返回匹配的字符串组（groups）</td>
+</tr>
+<tr>
+<td>findall()</td>
+<td>对每个元素调用 re.findall()</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>用正则模式替换字符串</td>
+</tr>
+<tr>
+<td>contains()</td>
+<td>对每个元素调用 re.search()，返回布尔类型值</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>计算符合正则模式的字符串的数量</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>等价于 str.split()，支持正则表达式</td>
+</tr>
+<tr>
+<td>rsplit()</td>
+<td>等价于 str.rsplit()，支持正则表达式</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">monte = pd.Series([<span class="string">'Graham Chapman'</span>, <span class="string">'John Cleese'</span>, <span class="string">'Terry Gilliam'</span>, </span><br><span class="line">                   <span class="string">'Eric Idle'</span>, <span class="string">'Terry Jones'</span>, <span class="string">'Michael Palin'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#get the continuous letters in the front of every object (first name)</span></span><br><span class="line">monte.str.extract(<span class="string">'([A-Za-z]+)'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:</span></span><br><span class="line"><span class="string"> 0 Graham </span></span><br><span class="line"><span class="string"> 1 John </span></span><br><span class="line"><span class="string"> 2 Terry </span></span><br><span class="line"><span class="string"> 3 Eric </span></span><br><span class="line"><span class="string"> 4 Terry </span></span><br><span class="line"><span class="string"> 5 Michael </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">monte.str.findall(<span class="string">r'^[^AEIOU].*[^aeiou]$'</span>) </span><br><span class="line">Out: </span><br><span class="line"> <span class="number">0</span> [Graham Chapman] </span><br><span class="line"> <span class="number">1</span> [] </span><br><span class="line"> <span class="number">2</span> [Terry Gilliam] </span><br><span class="line"> <span class="number">3</span> [] </span><br><span class="line"> <span class="number">4</span> [Terry Jones] </span><br><span class="line"> <span class="number">5</span> [Michael Palin] </span><br><span class="line"> dtype: object</span><br></pre></td></tr></table></figure>
+
+<h4 id="others"><a href="#others" class="headerlink" title="others:"></a>others:</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>get()</td>
+<td>获取元素索引位置上的值，索引从 0 开始</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>对元素进行切片取值</td>
+</tr>
+<tr>
+<td>slice_replace()</td>
+<td>对元素进行切片替换</td>
+</tr>
+<tr>
+<td>cat()</td>
+<td>连接字符串（此功能比较复杂，建议阅读文档）</td>
+</tr>
+<tr>
+<td>repeat()</td>
+<td>重复元素</td>
+</tr>
+<tr>
+<td>normalize()</td>
+<td>将字符串转换为 Unicode 规范形式</td>
+</tr>
+<tr>
+<td>pad()</td>
+<td>在字符串的左边、右边或两边增加空格</td>
+</tr>
+<tr>
+<td>wrap()</td>
+<td>将字符串按照指定的宽度换行</td>
+</tr>
+<tr>
+<td>join()</td>
+<td>用分隔符连接 Series 的每个元素</td>
+</tr>
+<tr>
+<td>get_dummies()</td>
+<td>按照分隔符提取每个元素的 dummy 变量，转换为独热（one-hot）编码的 DataFrame</td>
+</tr>
+</tbody></table>
+<p>df.str.slice(0, 3) = df.str[0:3]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">monte.str[<span class="number">0</span>:<span class="number">3</span>] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: 0 Gra </span></span><br><span class="line"><span class="string"> 1 Joh </span></span><br><span class="line"><span class="string"> 2 Ter </span></span><br><span class="line"><span class="string"> 3 Eri </span></span><br><span class="line"><span class="string"> 4 Ter </span></span><br><span class="line"><span class="string"> 5 Mic </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -523,7 +634,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -578,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-5"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 5</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-5"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vectorized-string-operation"><span class="nav-number">1.1.</span> <span class="nav-text">vectorized string operation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#capitalize"><span class="nav-number">1.1.1.</span> <span class="nav-text">capitalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-functions-in-pandas-str"><span class="nav-number">1.1.2.</span> <span class="nav-text">other functions in pandas.str:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#comparison"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">comparison</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">others:</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -92,11 +92,16 @@
 <meta property="og:url" content="http://yoursite.com/2020/08/08/pandas5/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Pandas Introduction 5vectorized string operationcapitalizeIt needs for loop to realize the capitalization. 123import numpy as np data &#x3D; [&#39;peter&#39;, &#39;Paul&#39;, &#39;MARY&#39;, &#39;gUIDO&#39;] [s.capitalize() for s in data">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/17/dmvc8g.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/17/dmvo5T.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/17/dmxUiT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/17/dmx4QH.png">
 <meta property="article:published_time" content="2020-08-08T07:32:34.000Z">
-<meta property="article:modified_time" content="2020-08-17T05:06:07.354Z">
+<meta property="article:modified_time" content="2020-08-17T13:12:03.132Z">
 <meta property="article:author" content="Arya Yang">
 <meta property="article:tag" content="-Pandas">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/08/17/dmvc8g.png">
 
 
 
@@ -455,7 +460,7 @@
 <td>等价于 str.rsplit()，支持正则表达式</td>
 </tr>
 </tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">monte = pd.Series([<span class="string">'Graham Chapman'</span>, <span class="string">'John Cleese'</span>, <span class="string">'Terry Gilliam'</span>, </span><br><span class="line">                   <span class="string">'Eric Idle'</span>, <span class="string">'Terry Jones'</span>, <span class="string">'Michael Palin'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#get the continuous letters in the front of every object (first name)</span></span><br><span class="line">monte.str.extract(<span class="string">'([A-Za-z]+)'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:</span></span><br><span class="line"><span class="string"> 0 Graham </span></span><br><span class="line"><span class="string"> 1 John </span></span><br><span class="line"><span class="string"> 2 Terry </span></span><br><span class="line"><span class="string"> 3 Eric </span></span><br><span class="line"><span class="string"> 4 Terry </span></span><br><span class="line"><span class="string"> 5 Michael </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">monte.str.findall(<span class="string">r'^[^AEIOU].*[^aeiou]$'</span>) </span><br><span class="line">Out: </span><br><span class="line"> <span class="number">0</span> [Graham Chapman] </span><br><span class="line"> <span class="number">1</span> [] </span><br><span class="line"> <span class="number">2</span> [Terry Gilliam] </span><br><span class="line"> <span class="number">3</span> [] </span><br><span class="line"> <span class="number">4</span> [Terry Jones] </span><br><span class="line"> <span class="number">5</span> [Michael Palin] </span><br><span class="line"> dtype: object</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">monte = pd.Series([<span class="string">'Graham Chapman'</span>, <span class="string">'John Cleese'</span>, <span class="string">'Terry Gilliam'</span>, </span><br><span class="line">                   <span class="string">'Eric Idle'</span>, <span class="string">'Terry Jones'</span>, <span class="string">'Michael Palin'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#get the continuous letters in the front of every object (first name)</span></span><br><span class="line">monte.str.extract(<span class="string">'([A-Za-z]+)'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:</span></span><br><span class="line"><span class="string"> 0 Graham </span></span><br><span class="line"><span class="string"> 1 John </span></span><br><span class="line"><span class="string"> 2 Terry </span></span><br><span class="line"><span class="string"> 3 Eric </span></span><br><span class="line"><span class="string"> 4 Terry </span></span><br><span class="line"><span class="string"> 5 Michael </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#choose names star and finish with consonant </span></span><br><span class="line">monte.str.findall(<span class="string">r'^[^AEIOU].*[^aeiou]$'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string"> 0 [Graham Chapman] </span></span><br><span class="line"><span class="string"> 1 [] </span></span><br><span class="line"><span class="string"> 2 [Terry Gilliam] </span></span><br><span class="line"><span class="string"> 3 [] </span></span><br><span class="line"><span class="string"> 4 [Terry Jones] </span></span><br><span class="line"><span class="string"> 5 [Michael Palin] </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="others"><a href="#others" class="headerlink" title="others:"></a>others:</h4><table>
 <thead>
@@ -506,7 +511,156 @@
 </tr>
 </tbody></table>
 <p>df.str.slice(0, 3) = df.str[0:3]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">monte.str[<span class="number">0</span>:<span class="number">3</span>] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: 0 Gra </span></span><br><span class="line"><span class="string"> 1 Joh </span></span><br><span class="line"><span class="string"> 2 Ter </span></span><br><span class="line"><span class="string"> 3 Eri </span></span><br><span class="line"><span class="string"> 4 Ter </span></span><br><span class="line"><span class="string"> 5 Mic </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">monte.str[<span class="number">0</span>:<span class="number">3</span>] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: 0 Gra </span></span><br><span class="line"><span class="string"> 1 Joh </span></span><br><span class="line"><span class="string"> 2 Ter </span></span><br><span class="line"><span class="string"> 3 Eri </span></span><br><span class="line"><span class="string"> 4 Ter </span></span><br><span class="line"><span class="string"> 5 Mic </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">monte.str.split().str.get(<span class="number">-1</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string"> 0 Chapman </span></span><br><span class="line"><span class="string"> 1 Cleese </span></span><br><span class="line"><span class="string"> 2 Gilliam </span></span><br><span class="line"><span class="string"> 3 Idle </span></span><br><span class="line"><span class="string"> 4 Jones </span></span><br><span class="line"><span class="string"> 5 Palin </span></span><br><span class="line"><span class="string"> dtype: object</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>get_dummies()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">full_monte = pd.DataFrame(&#123;<span class="string">'name'</span>: monte, </span><br><span class="line">                           <span class="string">'info'</span>: [<span class="string">'B|C|D'</span>, <span class="string">'B|D'</span>, <span class="string">'A|C'</span>, <span class="string">'B|D'</span>, <span class="string">'B|C'</span>, <span class="string">'B|C|D'</span>]&#125;) </span><br><span class="line">full_monte </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string">   info  name </span></span><br><span class="line"><span class="string"> 0 B|C|D Graham Chapman </span></span><br><span class="line"><span class="string"> 1 B|D   John Cleese </span></span><br><span class="line"><span class="string"> 2 A|C   Terry Gilliam </span></span><br><span class="line"><span class="string"> 3 B|D   Eric Idle </span></span><br><span class="line"><span class="string"> 4 B|C   Terry Jones </span></span><br><span class="line"><span class="string"> 5 B|C|D Michael Palin</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">full_monte[<span class="string">'info'</span>].str.get_dummies(<span class="string">'|'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out:</span></span><br><span class="line"><span class="string">   A B C D </span></span><br><span class="line"><span class="string"> 0 0 1 1 1 </span></span><br><span class="line"><span class="string"> 1 0 1 0 1 </span></span><br><span class="line"><span class="string"> 2 1 0 1 0 </span></span><br><span class="line"><span class="string"> 3 0 1 0 1 </span></span><br><span class="line"><span class="string"> 4 0 1 1 0 </span></span><br><span class="line"><span class="string"> 5 0 1 1 1</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="time"><a href="#time" class="headerlink" title="time"></a>time</h2><p>the format of time</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime </span><br><span class="line">datetime(year=<span class="number">2015</span>, month=<span class="number">7</span>, day=<span class="number">4</span>) </span><br><span class="line"><span class="comment">#Out: datetime.datetime(2015, 7, 4, 0, 0)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> dateutil <span class="keyword">import</span> parser </span><br><span class="line">date = parser.parse(<span class="string">"4th of July, 2015"</span>) </span><br><span class="line">date </span><br><span class="line"><span class="comment">#Out: datetime.datetime(2015, 7, 4, 0, 0)</span></span><br></pre></td></tr></table></figure>
+
+<p>show what day is today</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date.strftime(<span class="string">'%A'</span>) <span class="comment">#%A is the special code for this function</span></span><br><span class="line"><span class="comment">#Out: 'Saturday'</span></span><br></pre></td></tr></table></figure>
+
+<p>calculate with numpy:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line">date = np.array(<span class="string">'2015-07-04'</span>, dtype=np.datetime64) </span><br><span class="line">date </span><br><span class="line"><span class="comment">#Out: array(datetime.date(2015, 7, 4), dtype='datetime64[D]')</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">date + np.arange(<span class="number">12</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string">array(['2015-07-04', '2015-07-05', '2015-07-06', '2015-07-07', </span></span><br><span class="line"><span class="string"> '2015-07-08', '2015-07-09', '2015-07-10', '2015-07-11', </span></span><br><span class="line"><span class="string"> '2015-07-12', '2015-07-13', '2015-07-14', '2015-07-15'], </span></span><br><span class="line"><span class="string"> dtype='datetime64[D]')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>when it comes to minute:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.datetime64(<span class="string">'2015-07-04 12:00'</span>) </span><br><span class="line"><span class="comment">#Out: numpy.datetime64('2015-07-04T12:00')</span></span><br></pre></td></tr></table></figure>
+
+<p>the last digit can be changed:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.datetime64(<span class="string">'2015-07-04 12:59:59.50'</span>, <span class="string">'ns'</span>) </span><br><span class="line"><span class="comment">#Out: numpy.datetime64('2015-07-04T12:59:59.500000000')</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+<th>时间跨度 (相对)</th>
+<th>时间跨度 (绝对)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Y</td>
+<td>年（year）</td>
+<td>± 9.2e18 年</td>
+<td>[9.2e18 BC, 9.2e18 AD]</td>
+</tr>
+<tr>
+<td>M</td>
+<td>月（month）</td>
+<td>7.6e17 年</td>
+<td>±[7.6e17 BC, 7.6e17 AD]</td>
+</tr>
+<tr>
+<td>W</td>
+<td>周（week）</td>
+<td>± 1.7e17 年</td>
+<td>[1.7e17 BC, 1.7e17 AD]</td>
+</tr>
+<tr>
+<td>D</td>
+<td>日（day）</td>
+<td>± 2.5e16 年</td>
+<td>[2.5e16 BC, 2.5e16 AD]</td>
+</tr>
+<tr>
+<td>h</td>
+<td>时（hour）</td>
+<td>± 1.0e15 年</td>
+<td>[1.0e15 BC, 1.0e15 AD]</td>
+</tr>
+<tr>
+<td>m</td>
+<td>分（minute）</td>
+<td>± 1.7e13 年</td>
+<td>[1.7e13 BC, 1.7e13 AD]</td>
+</tr>
+<tr>
+<td>s</td>
+<td>秒（second）</td>
+<td>± 2.9e12 年</td>
+<td>[ 2.9e9 BC, 2.9e9 AD]</td>
+</tr>
+<tr>
+<td>ms</td>
+<td>毫秒（millisecond）</td>
+<td>± 2.9e9 年</td>
+<td>[ 2.9e6 BC, 2.9e6 AD]</td>
+</tr>
+<tr>
+<td>us</td>
+<td>微秒（microsecond）</td>
+<td>± 2.9e6 年</td>
+<td>[290301 BC, 294241 AD]</td>
+</tr>
+<tr>
+<td>ns</td>
+<td>纳秒（nanosecond）</td>
+<td>± 292 年</td>
+<td>[ 1678 AD, 2262 AD]</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>皮秒（picosecond）</td>
+<td>± 106 天</td>
+<td>[ 1969 AD, 1970 AD]</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>飞秒（femtosecond）</td>
+<td>± 2.6 小时</td>
+<td>[ 1969 AD, 1970 AD]</td>
+</tr>
+<tr>
+<td>as</td>
+<td>原秒（attosecond）</td>
+<td>± 9.2 秒</td>
+<td>[ 1969 AD, 1970 AD]</td>
+</tr>
+</tbody></table>
+<h3 id="use-time-as-index"><a href="#use-time-as-index" class="headerlink" title="use time as index"></a>use time as index</h3><h4 id="timestamp"><a href="#timestamp" class="headerlink" title="timestamp"></a>timestamp</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">index = pd.DatetimeIndex([<span class="string">'2014-07-04'</span>, <span class="string">'2014-08-04'</span>, <span class="string">'2015-07-04'</span>, <span class="string">'2015-08-04'</span>]) </span><br><span class="line">data = pd.Series([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=index) </span><br><span class="line">data </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: 2014-07-04 0 </span></span><br><span class="line"><span class="string"> 2014-08-04 1 </span></span><br><span class="line"><span class="string"> 2015-07-04 2 </span></span><br><span class="line"><span class="string"> 2015-08-04 3 </span></span><br><span class="line"><span class="string"> dtype: int64</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">'2015'</span>] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string"> 2015-07-04 2 </span></span><br><span class="line"><span class="string"> 2015-08-04 3 </span></span><br><span class="line"><span class="string"> dtype: int64</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>pd.datetime() can change different format of time into one:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dates = pd.to_datetime([datetime(<span class="number">2015</span>, <span class="number">7</span>, <span class="number">3</span>), <span class="string">'4th of July, 2015'</span>, </span><br><span class="line">                        <span class="string">'2015-Jul-6'</span>, <span class="string">'07-07-2015'</span>, <span class="string">'20150708'</span>]) </span><br><span class="line">dates </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: DatetimeIndex(['2015-07-03', '2015-07-04', '2015-07-06', '2015-07-07', '2015-07-08'],</span></span><br><span class="line"><span class="string">dtype='datetime64[ns]', freq=None)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="period"><a href="#period" class="headerlink" title="period"></a>period</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dates.to_period(<span class="string">'D'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: PeriodIndex(['2015-07-03', '2015-07-04', '2015-07-06', '2015-07-07', '2015-07-08'], </span></span><br><span class="line"><span class="string">dtype='int64', freq='D')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="delta"><a href="#delta" class="headerlink" title="delta"></a>delta</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dates - dates[<span class="number">0</span>] </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: </span></span><br><span class="line"><span class="string">TimedeltaIndex(['0 days', '1 days', '3 days', '4 days', '5 days'], </span></span><br><span class="line"><span class="string">dtype='timedelta64[ns]', freq=None)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>pd.date_range(): show the time in order</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pd.date_range(<span class="string">'2015-07-03'</span>, <span class="string">'2015-07-10'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: DatetimeIndex(['2015-07-03', '2015-07-04', '2015-07-05', '2015-07-06', </span></span><br><span class="line"><span class="string">                    '2015-07-07', '2015-07-08', '2015-07-09', '2015-07-10'], </span></span><br><span class="line"><span class="string">                   dtype='datetime64[ns]', freq='D'</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">pd.date_range(<span class="string">'2015-07-03'</span>, periods=<span class="number">8</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: DatetimeIndex(['2015-07-03', '2015-07-04', '2015-07-05', '2015-07-06', </span></span><br><span class="line"><span class="string">                    '2015-07-07', '2015-07-08', '2015-07-09', '2015-07-10'], </span></span><br><span class="line"><span class="string">                   dtype='datetime64[ns]', freq='D')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>use freq to change the difference between time points</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pd.date_range(<span class="string">'2015-07-03'</span>, periods=<span class="number">8</span>, freq=<span class="string">'H'</span>) </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Out: DatetimeIndex(['2015-07-03 00:00:00', '2015-07-03 01:00:00', </span></span><br><span class="line"><span class="string">                    '2015-07-03 02:00:00', '2015-07-03 03:00:00', </span></span><br><span class="line"><span class="string">                    '2015-07-03 04:00:00', '2015-07-03 05:00:00', </span></span><br><span class="line"><span class="string">                    '2015-07-03 06:00:00', '2015-07-03 07:00:00'], </span></span><br><span class="line"><span class="string">                   dtype='datetime64[ns]', freq='H')</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/17/dmvc8g.png" alt="dmvc8g.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dmvo5T.png" alt="dmvo5T.png"></p>
+<h3 id="resample"><a href="#resample" class="headerlink" title="resample"></a>resample</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">goog.plot(alpha=<span class="number">0.5</span>, style=<span class="string">'-'</span>) </span><br><span class="line">goog.resample(<span class="string">'BA'</span>).mean().plot(style=<span class="string">':'</span>) </span><br><span class="line">goog.asfreq(<span class="string">'BA'</span>).plot(style=<span class="string">'--'</span>); </span><br><span class="line">plt.legend([<span class="string">'input'</span>, <span class="string">'resample'</span>, <span class="string">'asfreq'</span>], loc=<span class="string">'upper left'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/17/dmxUiT.png" alt="dmxUiT.png"></p>
+<h3 id="shift-and-tshift"><a href="#shift-and-tshift" class="headerlink" title="shift() and tshift()"></a>shift() and tshift()</h3><p>make the value shift 900 days:</p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dmx4QH.png" alt="dmx4QH.png"></p>
+<h2 id="pandas-eval"><a href="#pandas-eval" class="headerlink" title="pandas.eval()"></a>pandas.eval()</h2><p>faster to calculate</p>
+<p>(1) 算术运算符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = -df1 * df2 / (df3 + df4) - df5 </span><br><span class="line">result2 = pd.eval(<span class="string">'-df1 * df2 / (df3 + df4) - df5'</span>) </span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<p>(2) 比较运算符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = (df1 &lt; df2) &amp; (df2 &lt;= df3) &amp; (df3 != df4) </span><br><span class="line">result2 = pd.eval(<span class="string">'df1 &lt; df2 &lt;= df3 != df4'</span>) </span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<p>(3) 位运算符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = (df1 &lt; <span class="number">0.5</span>) &amp; (df2 &lt; <span class="number">0.5</span>) | (df3 &lt; df4) </span><br><span class="line">result2 = pd.eval(<span class="string">'(df1 &lt; 0.5) &amp; (df2 &lt; 0.5) | (df3 &lt; df4)'</span>) </span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result3 = pd.eval(<span class="string">'(df1 &lt; 0.5) and (df2 &lt; 0.5) or (df3 &lt; df4)'</span>) </span><br><span class="line">np.allclose(result1, result3) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<p>(4) 对象属性与索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = df2.T[<span class="number">0</span>] + df3.iloc[<span class="number">1</span>] </span><br><span class="line">result2 = pd.eval(<span class="string">'df2.T[0] + df3.iloc[1]'</span>) </span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="query"><a href="#query" class="headerlink" title="query:"></a>query:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = df[(df.A &lt; <span class="number">0.5</span>) &amp; (df.B &lt; <span class="number">0.5</span>)] </span><br><span class="line">result2 = df.query(<span class="string">'A &lt; 0.5 and B &lt; 0.5'</span>) </span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Cmean = df[<span class="string">'C'</span>].mean() </span><br><span class="line">result1 = df[(df.A &lt; Cmean) &amp; (df.B &lt; Cmean)] </span><br><span class="line">result2 = df.query(<span class="string">'A &lt; @Cmean and B &lt; @Cmean'</span>)</span><br><span class="line">np.allclose(result1, result2) </span><br><span class="line"><span class="comment">#Out: True</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -634,7 +788,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +810,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -689,7 +843,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-5"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vectorized-string-operation"><span class="nav-number">1.1.</span> <span class="nav-text">vectorized string operation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#capitalize"><span class="nav-number">1.1.1.</span> <span class="nav-text">capitalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-functions-in-pandas-str"><span class="nav-number">1.1.2.</span> <span class="nav-text">other functions in pandas.str:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#comparison"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">comparison</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">others:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-Introduction-5"><span class="nav-number">1.</span> <span class="nav-text">Pandas Introduction 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vectorized-string-operation"><span class="nav-number">1.1.</span> <span class="nav-text">vectorized string operation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#capitalize"><span class="nav-number">1.1.1.</span> <span class="nav-text">capitalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-functions-in-pandas-str"><span class="nav-number">1.1.2.</span> <span class="nav-text">other functions in pandas.str:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#comparison"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">comparison</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">others:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">1.2.</span> <span class="nav-text">time</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-time-as-index"><span class="nav-number">1.2.1.</span> <span class="nav-text">use time as index</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#timestamp"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">timestamp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#period"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">period</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delta"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">delta</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resample"><span class="nav-number">1.2.2.</span> <span class="nav-text">resample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift-and-tshift"><span class="nav-number">1.2.3.</span> <span class="nav-text">shift() and tshift()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-eval"><span class="nav-number">1.3.</span> <span class="nav-text">pandas.eval()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#query"><span class="nav-number">1.4.</span> <span class="nav-text">query:</span></a></li></ol></li></ol></div>
             
 
           </div>

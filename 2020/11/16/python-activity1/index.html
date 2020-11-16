@@ -86,22 +86,17 @@
 
 
 
-<meta name="description" content="Analyze the social network of movie starsSocial network analysis is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal p">
+<meta name="description" content="Use Twitter Messages to analyze people’s emotionsIntroduction and my thoughtsAutomatic analysis of the emotions people express in their blogs seems to be a distant topic, which involves not only progr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python activity">
-<meta property="og:url" content="http://yoursite.com/2020/11/14/python-activity/index.html">
+<meta property="og:title" content="python activity1">
+<meta property="og:url" content="http://yoursite.com/2020/11/16/python-activity1/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Analyze the social network of movie starsSocial network analysis is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal p">
-<meta property="og:image" content="https://s3.ax1x.com/2020/11/14/DP68yR.png">
-<meta property="og:image" content="https://s3.ax1x.com/2020/11/14/DP6ffg.png">
-<meta property="og:image" content="https://s3.ax1x.com/2020/11/14/DP6OtU.png">
-<meta property="og:image" content="https://s3.ax1x.com/2020/11/16/DEkes0.png">
-<meta property="article:published_time" content="2020-11-14T12:26:46.000Z">
-<meta property="article:modified_time" content="2020-11-16T13:36:24.215Z">
+<meta property="og:description" content="Use Twitter Messages to analyze people’s emotionsIntroduction and my thoughtsAutomatic analysis of the emotions people express in their blogs seems to be a distant topic, which involves not only progr">
+<meta property="article:published_time" content="2020-11-16T13:39:55.000Z">
+<meta property="article:modified_time" content="2020-11-16T14:02:33.799Z">
 <meta property="article:author" content="Arya Yang">
 <meta property="article:tag" content="-python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.ax1x.com/2020/11/14/DP68yR.png">
 
 
 
@@ -131,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/11/14/python-activity/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/11/16/python-activity1/"/>
 
 
 
 
 
-  <title>python activity | Blog</title>
+  <title>python activity1 | Blog</title>
   
 
 
@@ -298,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/python-activity/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/16/python-activity1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Arya Yang">
@@ -315,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python activity</h1>
+          <h1 class="post-title" itemprop="name headline">python activity1</h1>
         
 
         <div class="post-meta">
@@ -327,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-14T20:26:46+08:00">
-                2020-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-16T21:39:55+08:00">
+                2020-11-16
               </time>
             
 
@@ -368,8 +363,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/11/14/python-activity/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/python-activity/" itemprop="commentCount"></span>
+                <a href="/2020/11/16/python-activity1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/16/python-activity1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,60 +397,22 @@
       
 
       
-        <h1 id="Analyze-the-social-network-of-movie-stars"><a href="#Analyze-the-social-network-of-movie-stars" class="headerlink" title="Analyze the social network of movie stars"></a>Analyze the social network of movie stars</h1><p><strong>Social network analysis</strong> is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences, aid the understanding of how ideas spread, and even help to model the spread of diseases.</p>
-<p>A social network is made up of a set of nodes (usually people) that have links, or edges between them that describe their relationships. In this article we analyse the social network formed by movie actors. Each actor in this network is represented as a node. Pairs of actors are then joined by an edge if they are known to have appeared in a movie together. This information is taken from the Internet Movie Database IMDb. Our analysis is carried out using the Python programming language and, in particular, the tools available in the <strong>NetworkX</strong> library.</p>
-<p>example:</p>
-<p>{<br>  “title”: “Back to the Future”,<br>  “cast”: [“Michael J. Fox”, “Christopher Lloyd”, “Lea Thompson”, “Crispin Glover”, “Thomas F. Wilson”, “Claudia Wells”, “James Tolkan”, “Marc McClure”, “Wendie Jo Sperber”],<br>  “directors”: [“Robert Zemeckis”],<br>  “producers”: [“Bob Gale”, “Neil Canton”],<br>  “companies”: [“Amblin Entertainment”, “Universal Pictures”],<br>  “year”: 1985<br> }</p>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
-<li>import packages</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> networkx <span class="keyword">as</span> nx <span class="comment">#used to create the network</span></span><br><span class="line"><span class="keyword">import</span> matplotlib . pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+        <h1 id="Use-Twitter-Messages-to-analyze-people’s-emotions"><a href="#Use-Twitter-Messages-to-analyze-people’s-emotions" class="headerlink" title="Use Twitter Messages to analyze people’s emotions"></a>Use Twitter Messages to analyze people’s emotions</h1><h2 id="Introduction-and-my-thoughts"><a href="#Introduction-and-my-thoughts" class="headerlink" title="Introduction and my thoughts"></a>Introduction and my thoughts</h2><p>Automatic analysis of the emotions people express in their blogs seems to be a distant topic, which involves not only programming to control machines and language recognition, but also how to combine the two. And when the topic came up with Python, it became easier. The method we use is to look for emotive keywords in a blog and assign a score to them, then calculate the score to determine the mood of the blogger. Although it is the simplest model, it is a useful method; And, at the same time, it’s a great way to familiarize myself with Python – something I can only master with practice. When I pressed the “run” button, thousands of scores appeared in front of my eyes, and all the emotional or humorous or excited words were digitized and turned into scores. </p>
+<p>If you think about it, what’s the use of analyzing your mood? It has many USES, such as analyzing the comments on an article, whether they are positive or negative, so that we can quickly figure out how well the article is doing, and then we can easily improve it. The same is true for a commodity, and so on and so forth. But it also begs the question: Can machines really analyze people?It’s just that these simple words don’t even make it clear whether the word describes them or something else. </p>
+<p>More deeply, even though the same words may have different meanings, like irony, the model is indistinguishable. So if you want to refine this function, you have to have other discriminative conditions, not just simple words. Not only is there a long way to go, but the only way to enhance its function is to accumulate experience, and participating in such activities is a good way.</p>
+<h2 id="steps"><a href="#steps" class="headerlink" title="steps"></a>steps</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">jing=[]</span><br><span class="line">wei=[]</span><br><span class="line">words=[]</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">".\tweets"</span>) <span class="keyword">as</span> f: <span class="comment">#open the file and read in the messages with their position</span></span><br><span class="line">    tweets=f.readlines()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tweets)):</span><br><span class="line">    tweets[i]=tweets[i].replace(<span class="string">"\n"</span>,<span class="string">""</span>).split(<span class="string">" "</span>)</span><br><span class="line">    tweets[i]=[s.lower() <span class="keyword">for</span> s <span class="keyword">in</span> tweets[i]]</span><br><span class="line">    jing.append(tweets[i][<span class="number">1</span>].replace(<span class="string">"]"</span>,<span class="string">""</span>))  <span class="comment">#get rid of some useless sign</span></span><br><span class="line">    wei.append(tweets[i][<span class="number">0</span>].replace(<span class="string">"["</span>,<span class="string">""</span>).replace(<span class="string">","</span>,<span class="string">""</span>))</span><br><span class="line">    words.append(tweets[i][<span class="number">5</span>:])</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>create a movie list</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Movies = []</span><br><span class="line"><span class="keyword">with</span> open (<span class="string">"./data.json"</span>, <span class="string">"r"</span>, encoding =<span class="string">"utf -8"</span>) <span class="keyword">as</span> f: <span class="comment">#open the file</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        J = json.loads(line) </span><br><span class="line">        Movies.append(J) <span class="comment">#add movies to the list</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#read in the keywords with the value they have to make a dictionary</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">".\keywords"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    lines=f.readlines()</span><br><span class="line">keywords=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(lines)):</span><br><span class="line">    lines[i]=lines[i].replace(<span class="string">"\n"</span>,<span class="string">""</span>).split(<span class="string">","</span>)</span><br><span class="line">    keywords[lines[i][<span class="number">0</span>]] = int(lines[i][<span class="number">1</span>])</span><br><span class="line">print(keywords)</span><br></pre></td></tr></table></figure>
 
-<p>The list is a dictionary, so we can visit each parts by the index.</p>
-<ol start="3">
-<li>search the corresponding movies that meet the requirement.</li>
-</ol>
-<p>The movies can be found through the requirements like the actors.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_films</span><span class="params">(key, value)</span>:</span> </span><br><span class="line">    </span><br><span class="line">    films = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(Movies)):</span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> Movies[i]:</span><br><span class="line">            <span class="keyword">if</span> value <span class="keyword">in</span> Movies[i][key]:</span><br><span class="line">            <span class="comment">#films=films+[Movies[i]["title"]] #this can be used to print the name of movies</span></span><br><span class="line">                films=films+[i]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> films</span><br><span class="line"></span><br><span class="line">search_films(<span class="string">'cast'</span>, <span class="string">'Jackie Chan'</span>)</span><br></pre></td></tr></table></figure>
+<p>{‘alone’: 1, ‘amazed’: 10, ‘amazing’: 10, ‘bad’: 1, ‘best’: 10, ‘better’: 10, ‘excellent’: 10, ‘excited’: 10, ‘excite’: 10, ‘excites’: 10, ‘exciting’: 10, ‘glad’: 10, ‘god’: 5, ‘good’: 7, ‘great’: 7, ‘greatest’: 10, ‘haha’: 5, ‘hahaha’: 5, ‘happy’: 10, ‘hate’: 1, ‘hurt’: 1, ‘hurts’: 1, ‘hurting’: 1, ‘like’: 7, ‘likes’: 7, ‘liked’: 7, ‘lol’: 5, ‘lonely’: 1, ‘love’: 10, ‘loves’: 10, ‘loved’: 10, ‘loving’: 10, ‘lovin’: 10, ‘need’: 1, ‘needs’: 1, ‘negative’: 1, ‘please’: 5, ‘positive’: 7, ‘pretty’: 10, ‘prettiest’: 10, ‘regret’: 1, ‘regrets’: 1, ‘ruin’: 1, ‘ruins’: 1, ‘ruined’: 1, ‘sad’: 1, ‘save’: 5, ‘saves’: 5, ‘saved’: 5, ‘sorry’: 1, ‘thank’: 5, ‘thanks’: 5, ‘tired’: 1, ‘worst’: 1}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#compare each words with keywords and calculate the score each message gets</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(words[i])):</span><br><span class="line">        w=list(words[i][j])</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> w:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> n.isalpha():</span><br><span class="line">                w.remove(n)</span><br><span class="line">        words[i][j]=<span class="string">""</span>.join(w)</span><br><span class="line"></span><br><span class="line">grade=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">    s=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(words[i])):</span><br><span class="line">        <span class="keyword">if</span> words[i][j] <span class="keyword">in</span> keywords:</span><br><span class="line">            s=s+keywords[words[i][j]]</span><br><span class="line">    grade.append(s)</span><br></pre></td></tr></table></figure>
 
-<p>[26,911,1084,1103,1161,1365,1402,1793,1980,2131,2210,2394,2395,2396,2397,2398,2399,2400,2401,2412,2422,2423,2424,2425,2436,2604,3143,3406,3491,3492,3912,4277,4470,4479,5039,5040,5340,6477,6579,7248,7902,7916,7920,8087,8705,9152,9257,9555,9642,9644,9645,10260,11121,11319,11327,11523,11525,11667,11840,11975,12316,12914,13011,13012,13013,13014,15651,15727,16454,19272,21174,21513,22601,23022,24986,25142,26267,28142,28188,30893,31846,35553,35973,36505,36549,36729,38362,38444,41311,41739,44043,44107,45903,51663,51822,56326,62100,71516,72118,74710,74964,75838,75924,78144,78301,78499,83908,89644,96923,97984,99572,100993,102035,109576]</p>
-<ol start="4">
-<li>graph</li>
-</ol>
-<p>① an empty graph is needed to put the social network on</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G = nx.Graph()  <span class="comment"># create a new graph</span></span><br><span class="line">nx.draw_networkx(G)  <span class="comment"># plot the graph</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#get their longitude and latitude in one list</span></span><br><span class="line">total=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">    total.append([wei[i],jing[i],grade[i]])</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://imgchr.com/i/DP68yR" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/14/DP68yR.png" alt="DP68yR.png"></a></p>
-<p>② .add_edge() can be used to add one more edge and .add_node can be used to add one more note by NetworkX</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G.add_edge(<span class="string">'Alice'</span>, <span class="string">'Bob'</span>, title=<span class="string">'abc'</span>) <span class="comment"># title is a parameter that can be used to name the edge</span></span><br><span class="line">nx.draw_networkx(G)</span><br></pre></td></tr></table></figure>
+<p>finally we can calculate the average score in different areas:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">s1=<span class="number">0</span></span><br><span class="line">s2=<span class="number">0</span></span><br><span class="line">s3=<span class="number">0</span></span><br><span class="line">s4=<span class="number">0</span></span><br><span class="line">s5=<span class="number">0</span></span><br><span class="line">c1=<span class="number">0</span></span><br><span class="line">c2=<span class="number">0</span></span><br><span class="line">c3=<span class="number">0</span></span><br><span class="line">c4=<span class="number">0</span></span><br><span class="line">c5=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tweets)):</span><br><span class="line">    <span class="keyword">if</span> float(total[i][<span class="number">0</span>])&lt;<span class="number">49.189787</span> <span class="keyword">and</span> float(total[i][<span class="number">0</span>])&gt;<span class="number">24.660845</span>:</span><br><span class="line">        <span class="keyword">if</span> float(total[i][<span class="number">1</span>])&lt;<span class="number">-67.444574</span> <span class="keyword">and</span> float(total[i][<span class="number">1</span>])&gt;<span class="number">-87.518395</span>:</span><br><span class="line">            s1=s1+total[i][<span class="number">2</span>]</span><br><span class="line">            c1=c1+<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> float(total[i][<span class="number">1</span>])&lt;<span class="number">-87.518395</span> <span class="keyword">and</span> float(total[i][<span class="number">1</span>])&gt;<span class="number">-101.998892</span>:</span><br><span class="line">            s2=s2+total[i][<span class="number">2</span>]</span><br><span class="line">            c2=c2+<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> float(total[i][<span class="number">1</span>])&lt;<span class="number">-101.998892</span> <span class="keyword">and</span> float(total[i][<span class="number">1</span>])&gt;<span class="number">-115.236428</span>:</span><br><span class="line">            s3=s3+total[i][<span class="number">2</span>]</span><br><span class="line">            c3=c3+<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> float(total[i][<span class="number">1</span>])&lt;<span class="number">-115.236428</span> <span class="keyword">and</span> float(total[i][<span class="number">1</span>])&gt;<span class="number">-125.242264</span>:</span><br><span class="line">            s4=s4+total[i][<span class="number">2</span>]</span><br><span class="line">            c4=c4+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            s5=s5+total[i][<span class="number">2</span>]</span><br><span class="line">            c5=c5+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        s5=s5+total[i][<span class="number">2</span>]</span><br><span class="line">        c5=c5+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">a1=s1/c1</span><br><span class="line">a2=s2/c2</span><br><span class="line">a3=s3/c3</span><br><span class="line">a4=s4/c4</span><br><span class="line">a5=s5/c5</span><br><span class="line">print(s1,s2,s3,s4,s5)</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://imgchr.com/i/DP6ffg" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/14/DP6ffg.png" alt="DP6ffg.png"></a></p>
-<p>③ example of complete graph:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">G.add_edge(<span class="string">'Alice'</span>, <span class="string">'Bob'</span>, title=<span class="string">'abc'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Alice'</span>, <span class="string">'Cindy'</span>, title=<span class="string">'abc'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Cindy'</span>, <span class="string">'Bob'</span>, title=<span class="string">'abc'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Cindy'</span>, <span class="string">'Dale'</span>, title=<span class="string">'def'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Dale'</span>, <span class="string">'Eric'</span>, title=<span class="string">'def'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Frank'</span>, <span class="string">'Dale'</span>, title=<span class="string">'def'</span>)</span><br><span class="line">G.add_edge(<span class="string">'Grace'</span>, <span class="string">'Helen'</span>, title=<span class="string">'ghi'</span>)</span><br><span class="line">G.add_node(<span class="string">'Iric'</span>, title=<span class="string">'jkl'</span>)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line">nx.draw_shell(G, with_labels=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgchr.com/i/DP6OtU" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/14/DP6OtU.png" alt="DP6OtU.png"></a></p>
-<p>④ <code>nx.shortest_path(G, source, target)</code> can be used to show the shortest path between two actors or actresses. <code>.degree(v)</code> can be used to calculate how many edge a node have, so that the number of relationship of he or she can be known.</p>
-<ol start="5">
-<li>the final graph</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">G = nx.Graph()</span><br><span class="line">a=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(Movies)):   </span><br><span class="line">    <span class="keyword">if</span> <span class="string">"companies"</span> <span class="keyword">in</span> Movies[i]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'Marvel Studios'</span> <span class="keyword">in</span> Movies[i][<span class="string">"companies"</span>] <span class="keyword">and</span> <span class="string">"Iron Man"</span> <span class="keyword">in</span> Movies[i][<span class="string">"title"</span>]:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,len(Movies[i][<span class="string">"cast"</span>])):</span><br><span class="line">                <span class="keyword">for</span> n <span class="keyword">in</span> range(j+<span class="number">1</span>,len(Movies[i][<span class="string">"cast"</span>])):</span><br><span class="line">                    <span class="keyword">if</span> a==<span class="number">0</span>:</span><br><span class="line">                        G.add_edge(Movies[i][<span class="string">"cast"</span>][j], Movies[i][<span class="string">"cast"</span>][n], title=Movies[i][<span class="string">"title"</span>], color=<span class="string">"#DA70D6"</span>)</span><br><span class="line">                    <span class="keyword">elif</span> a==<span class="number">1</span>:</span><br><span class="line">                        G.add_edge(Movies[i][<span class="string">"cast"</span>][j], Movies[i][<span class="string">"cast"</span>][n], title=Movies[i][<span class="string">"title"</span>], color=<span class="string">"#87CEFA"</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        G.add_edge(Movies[i][<span class="string">"cast"</span>][j], Movies[i][<span class="string">"cast"</span>][n], title=Movies[i][<span class="string">"title"</span>], color=<span class="string">"#00FF00"</span>)  <span class="comment">#we can use different colours for different films</span></span><br><span class="line">            a=a+<span class="number">1</span></span><br><span class="line">                        </span><br><span class="line"></span><br><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>, heading=<span class="string">"Iron Man"</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">'test.html'</span>) <span class="comment"># 展示，并可生成一个名为 "test.html" 的网页文件</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgchr.com/i/DEkes0" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/16/DEkes0.png" alt="DEkes0.png"></a></p>
-<ol start="6">
-<li>calculate the centrality</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(nx.closeness_centrality(G))</span><br><span class="line">print(nx.degree_centrality(G))</span><br><span class="line">print(nx.betweenness_centrality(G))</span><br></pre></td></tr></table></figure>
-
-<p>{‘Robert Downey Jr.’: 1.0, ‘Terrence Howard’: 0.5769230769230769, ‘Jeff Bridges’: 0.5769230769230769, ‘Shaun Toub’: 0.5769230769230769, ‘Gwyneth Paltrow’: 1.0, ‘Don Cheadle’: 0.8333333333333334, ‘Scarlett Johansson’: 0.625, ‘Sam Rockwell’: 0.625, ‘Mickey Rourke’: 0.625, ‘Samuel L. Jackson’: 0.625, ‘Guy Pearce’: 0.6818181818181818, ‘Rebecca Hall’: 0.6818181818181818, ‘Stéphanie Szostak’: 0.6818181818181818, ‘James Badge Dale’: 0.6818181818181818, ‘Jon Favreau’: 0.6818181818181818, ‘Ben Kingsley’: 0.6818181818181818}</p>
-<p>{‘Robert Downey Jr.’: 1.0, ‘Terrence Howard’: 0.26666666666666666, ‘Jeff Bridges’: 0.26666666666666666, ‘Shaun Toub’: 0.26666666666666666, ‘Gwyneth Paltrow’: 1.0, ‘Don Cheadle’: 0.8, ‘Scarlett Johansson’: 0.4, ‘Sam Rockwell’: 0.4, ‘Mickey Rourke’: 0.4, ‘Samuel L. Jackson’: 0.4, ‘Guy Pearce’: 0.5333333333333333, ‘Rebecca Hall’: 0.5333333333333333, ‘Stéphanie Szostak’: 0.5333333333333333, ‘James Badge Dale’: 0.5333333333333333, ‘Jon Favreau’: 0.5333333333333333, ‘Ben Kingsley’: 0.5333333333333333}</p>
-<p>{‘Robert Downey Jr.’: 0.23333333333333342, ‘Terrence Howard’: 0.0, ‘Jeff Bridges’: 0.0, ‘Shaun Toub’: 0.0, ‘Gwyneth Paltrow’: 0.23333333333333342, ‘Don Cheadle’: 0.0761904761904762, ‘Scarlett Johansson’: 0.0, ‘Sam Rockwell’: 0.0, ‘Mickey Rourke’: 0.0, ‘Samuel L. Jackson’: 0.0, ‘Guy Pearce’: 0.0, ‘Rebecca Hall’: 0.0, ‘Stéphanie Szostak’: 0.0, ‘James Badge Dale’: 0.0, ‘Jon Favreau’: 0.0, ‘Ben Kingsley’: 0.0}</p>
-<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>As the Internet is built and the world becomes more associated, people are all connected because of different kinds of events. So the relationship between them may be complex. In order to find the the social net and who is more central in this social net, using networkx is a good way as it can help to built the relationship graph and calculate some necessary value like centrality. We can also use this to find the relationship between other objects, not only people. For example, we can draw different road to get to the destination by using the graph, so that the shortest way can be found. This can be realize by BFS(breath-first search). You can find more details through the link: </p>
-<p><a href="https://arya-1017.github.io/2020/07/13/《算法图解》读书笔记2/#more" target="_blank" rel="noopener">https://arya-1017.github.io/2020/07/13/%E3%80%8A%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B02/#more</a></p>
+<p>6920 2970 653 1767 501</p>
 
       
     </div>
@@ -486,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/09/13/automatic-drive-experience/" rel="next" title="automatic drive--experience">
-                <i class="fa fa-chevron-left"></i> automatic drive--experience
+              <a href="/2020/11/14/python-activity2/" rel="next" title="python activity2">
+                <i class="fa fa-chevron-left"></i> python activity2
               </a>
             
           </div>
@@ -578,7 +535,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Analyze-the-social-network-of-movie-stars"><span class="nav-number">1.</span> <span class="nav-text">Analyze the social network of movie stars</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">1.1.</span> <span class="nav-text">Steps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thoughts"><span class="nav-number">1.2.</span> <span class="nav-text">Thoughts</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-Twitter-Messages-to-analyze-people’s-emotions"><span class="nav-number">1.</span> <span class="nav-text">Use Twitter Messages to analyze people’s emotions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-and-my-thoughts"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction and my thoughts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#steps"><span class="nav-number">1.2.</span> <span class="nav-text">steps</span></a></li></ol></li></ol></div>
             
 
           </div>
